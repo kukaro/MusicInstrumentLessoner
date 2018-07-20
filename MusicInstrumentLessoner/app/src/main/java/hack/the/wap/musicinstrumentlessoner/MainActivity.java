@@ -3,6 +3,7 @@ package hack.the.wap.musicinstrumentlessoner;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,6 +13,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+
+import hack.the.wap.musicinstrumentlessoner.debug.DebugMode;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -97,5 +101,29 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void DEBUG_ON_NAVIGATION_ITEM_SELECTED(View v) {
+        if (DebugMode.DEBUG_MOD) {
+            Log.e("DEBUG", "DEBUG_ON_NAVIGATION_ITEM_SELECTED >>> " + v);
+        }
+    }
+
+    public void DEBUG_ON_CREATE(View v) {
+        if (DebugMode.DEBUG_MOD) {
+            Log.e("DEBUG", "DEBUG_ON_CREATE >>> " + v);
+        }
+    }
+
+    public void DEBUG_ON_BACK_PRESSED(View v) {
+        if (DebugMode.DEBUG_MOD) {
+            Log.e("DEBUG", "DEBUG_ON_BACK_PRESSED >>> " + v);
+        }
+    }
+
+    public void DEBUG_ON_START(View v) {
+        if (DebugMode.DEBUG_MOD) {
+            Log.e("TAG", "DEBUG_ON_START >>>" + v);
+        }
     }
 }

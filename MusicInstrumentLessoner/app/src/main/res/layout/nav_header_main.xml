@@ -21,7 +21,7 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/mainUser"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:contentDescription="@string/nav_header_desc"
