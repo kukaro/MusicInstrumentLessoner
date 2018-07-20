@@ -27,11 +27,11 @@ public class LoginActivity extends AppCompatActivity {
         etPassword = findViewById(R.id.etPassword);
         ivLogin = findViewById(R.id.ivLogin);
         ivLogin.setOnClickListener(v -> {
-            String name = loginProcess(etEmail.toString(), etPassword.toString());
+            String name = loginProcess(etEmail.getText().toString(), etPassword.getText().toString());
             if (name != null) {
                 Intent intent = new Intent(LoginActivity.getInstance(), MainActivity.class);
                 intent.putExtra("actLoginName", name);
-                intent.putExtra("actLoginEmail", etEmail.toString());
+                intent.putExtra("actLoginEmail", etEmail.getText().toString());
                 startActivity(intent);
                 finish();
             }

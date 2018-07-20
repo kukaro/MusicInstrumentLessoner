@@ -1,5 +1,6 @@
 package hack.the.wap.musicinstrumentlessoner;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,6 +15,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
+import java.util.ArrayList;
+
 import hack.the.wap.musicinstrumentlessoner.debug.DebugMode;
 import hack.the.wap.musicinstrumentlessoner.mytoggle.MyActionBarDrawerToggle;
 import hack.the.wap.musicinstrumentlessoner.myview.MyNavigationView;
@@ -21,6 +24,8 @@ import hack.the.wap.musicinstrumentlessoner.myview.MyNavigationView;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private static ImageView ivUserMain;
+    private String userName;
+    private String userEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +33,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        setUserNameAndEmail();
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -114,6 +120,20 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void setUserNameAndEmail() {
+        Intent intent = getIntent();
+        userName = getIntent().getStringExtra("actLoginName");
+        userEmail = getIntent().getStringExtra("actLoginEmail");
+        DEBUG_ON_SET_USER_NAME_AND_EMAIL(userName, userEmail);
+
+    }
+
+    private void DEBUG_ON_SET_USER_NAME_AND_EMAIL(String s1, String s2) {
+        if (DebugMode.DEBUG_MOD) {
+            Log.e("DEBUG", "DEBUG_ON_SET_USER_NAME_AND_EMAIL >>> " + s1 + ":" + s2);
+        }
     }
 
     private void DEBUG_ON_NAVIGATION_ITEM_SELECTED(View v) {
