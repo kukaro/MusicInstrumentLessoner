@@ -24,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
         iv = findViewById(R.id.ivLogin);
         iv.setOnClickListener(v -> {
             Intent intent = new Intent(LoginActivity.getInstance(), MainActivity.class);
-            intent.putExtra("state", "launch");
+            intent.putExtra("login", "success");
             startActivity(intent);
             finish();
         });

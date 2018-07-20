@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity
         new Thread(() -> {
             while (ivUserMain == null) {
                 ivUserMain = findViewById(R.id.mainUser);
+                Log.e("TAG", "onCreate in Thread >>> " + ivUserMain);
                 try {
                     Thread.sleep(500);
                 } catch (InterruptedException e) {
