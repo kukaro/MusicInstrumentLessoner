@@ -1,4 +1,4 @@
-package hack.the.wap.musicinstrumentlessoner;
+package hack.the.wap.musicinstrumentlessoner.mytoggle;
 
 import android.app.Activity;
 import android.graphics.drawable.ShapeDrawable;

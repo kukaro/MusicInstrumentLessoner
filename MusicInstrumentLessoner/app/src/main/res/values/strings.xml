@@ -13,4 +13,5 @@
     <string name="nav_bar_template">template</string>
     <string name="nav_bar_group">group</string>
     <string name="nav_bar_store">store</string>
+    <string name="nav_bar_information">information</string>
 </resources>
