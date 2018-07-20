@@ -4,16 +4,18 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 public class LoginActivity extends AppCompatActivity {
     private static LoginActivity instance;
-    private static ImageView iv;
+    private static ImageView ivLogin;
+    private static EditText etEmail;
+    private static EditText etPassword;
 
     /*
         init block
-     */
-    {
+     */ {
         instance = this;
     }
 
@@ -21,13 +23,28 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        iv = findViewById(R.id.ivLogin);
-        iv.setOnClickListener(v -> {
-            Intent intent = new Intent(LoginActivity.getInstance(), MainActivity.class);
-            intent.putExtra("login", "success");
-            startActivity(intent);
-            finish();
+        etEmail = findViewById(R.id.etEmail);
+        etPassword = findViewById(R.id.etPassword);
+        ivLogin = findViewById(R.id.ivLogin);
+        ivLogin.setOnClickListener(v -> {
+            String name = loginProcess(etEmail.toString(), etPassword.toString());
+            if (name != null) {
+                Intent intent = new Intent(LoginActivity.getInstance(), MainActivity.class);
+                intent.putExtra("actLoginName", name);
+                intent.putExtra("actLoginEmail", etEmail.toString());
+                startActivity(intent);
+                finish();
+            }
         });
+    }
+
+    /**
+     * @param email
+     * @param password
+     * @return If you success login then return is name. Otherwise, it is null.
+     */
+    public String loginProcess(String email, String password) {
+        return "GirlsDay Mina";
     }
 
     public static LoginActivity getInstance() {
