@@ -6,4 +6,5 @@
     <color name="colorMainBackGround">#2C3256</color>
     <color name="white">#FFFFFF</color>
     <color name="iconColor">#00E5C3</color>
+    <color name="formFontColor">#457DA5</color>
 </resources>
