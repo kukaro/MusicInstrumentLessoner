@@ -1,5 +1,7 @@
 package hack.the.wap.musicinstrumentlessoner;
 
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.OvalShape;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -16,9 +18,11 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 
 import hack.the.wap.musicinstrumentlessoner.debug.DebugMode;
+import hack.the.wap.musicinstrumentlessoner.myview.MyNavigationView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private static ImageView ivUserMain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,13 +41,25 @@ public class MainActivity extends AppCompatActivity
         });
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+        MyActionBarDrawerToggle toggle = new MyActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        MyNavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        new Thread(() -> {
+            while (ivUserMain == null) {
+                ivUserMain = findViewById(R.id.mainUser);
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }).start();
     }
 
     @Override
@@ -103,25 +119,25 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    public void DEBUG_ON_NAVIGATION_ITEM_SELECTED(View v) {
+    private void DEBUG_ON_NAVIGATION_ITEM_SELECTED(View v) {
         if (DebugMode.DEBUG_MOD) {
             Log.e("DEBUG", "DEBUG_ON_NAVIGATION_ITEM_SELECTED >>> " + v);
         }
     }
 
-    public void DEBUG_ON_CREATE(View v) {
+    private void DEBUG_ON_CREATE(View v) {
         if (DebugMode.DEBUG_MOD) {
             Log.e("DEBUG", "DEBUG_ON_CREATE >>> " + v);
         }
     }
 
-    public void DEBUG_ON_BACK_PRESSED(View v) {
+    private void DEBUG_ON_BACK_PRESSED(View v) {
         if (DebugMode.DEBUG_MOD) {
             Log.e("DEBUG", "DEBUG_ON_BACK_PRESSED >>> " + v);
         }
     }
 
-    public void DEBUG_ON_START(View v) {
+    private void DEBUG_ON_START(View v) {
         if (DebugMode.DEBUG_MOD) {
             Log.e("TAG", "DEBUG_ON_START >>>" + v);
         }
