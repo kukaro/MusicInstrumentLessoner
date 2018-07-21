@@ -8,12 +8,11 @@
     tools:context=".NotificationFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <SearchView
-        android:id="@+id/svNotificationFragment"
+
+    <hack.the.wap.musicinstrumentlessoner.mylayout.MySearchLayout
         android:layout_width="match_parent"
-        android:gravity="left"
-        android:queryHint="search"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
+    </hack.the.wap.musicinstrumentlessoner.mylayout.MySearchLayout>
 
     <View
         android:layout_width="match_parent"
@@ -29,16 +28,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="top"
         android:orientation="vertical">
 
-        <hack.the.wap.musicinstrumentlessoner.NotificationLayout
+        <hack.the.wap.musicinstrumentlessoner.mylayout.NotificationLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-        </hack.the.wap.musicinstrumentlessoner.NotificationLayout>
-        <hack.the.wap.musicinstrumentlessoner.NotificationLayout
+        </hack.the.wap.musicinstrumentlessoner.mylayout.NotificationLayout>
+        <hack.the.wap.musicinstrumentlessoner.mylayout.NotificationLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-        </hack.the.wap.musicinstrumentlessoner.NotificationLayout>
+        </hack.the.wap.musicinstrumentlessoner.mylayout.NotificationLayout>
     </LinearLayout>
 
 </LinearLayout>
