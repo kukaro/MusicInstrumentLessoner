@@ -1,6 +1,10 @@
 package hack.the.wap.musicinstrumentlessoner;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -22,10 +26,19 @@ import hack.the.wap.musicinstrumentlessoner.mytoggle.MyActionBarDrawerToggle;
 import hack.the.wap.musicinstrumentlessoner.myview.MyNavigationView;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, NotificationFragment.OnFragmentInteractionListener, TemplateFragment.OnFragmentInteractionListener {
     private static ImageView ivUserMain;
+    private static NotificationFragment notificationFragment;
+    private static TemplateFragment templateFragment;
     private String userName;
     private String userEmail;
+
+    /*
+     * Initial Block
+     */ {
+        notificationFragment = new NotificationFragment();
+        templateFragment = new TemplateFragment();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +78,11 @@ public class MainActivity extends AppCompatActivity
             }
 
         }).start();
+
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fm.beginTransaction();
+        fragmentTransaction.add(R.id.flFragment, notificationFragment);
+        fragmentTransaction.commit();
     }
 
     @Override
@@ -106,9 +124,15 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_notification) {
-            // Handle the camera action
+            FragmentManager fm = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fm.beginTransaction();
+            fragmentTransaction.replace(R.id.flFragment, notificationFragment);
+            fragmentTransaction.commit();
         } else if (id == R.id.nav_template) {
-
+            FragmentManager fm = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fm.beginTransaction();
+            fragmentTransaction.replace(R.id.flFragment, templateFragment);
+            fragmentTransaction.commit();
         } else if (id == R.id.nav_group) {
 
         } else if (id == R.id.nav_store) {
@@ -158,5 +182,15 @@ public class MainActivity extends AppCompatActivity
         if (DebugMode.DEBUG_MOD) {
             Log.e("TAG", "DEBUG_ON_START >>>" + v);
         }
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
     }
 }
