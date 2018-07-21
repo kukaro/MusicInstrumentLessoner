@@ -13,8 +13,8 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:contentDescription="seperator"
-        app:srcCompat="@drawable/seperator" />
+        android:contentDescription="separator"
+        app:srcCompat="@drawable/separator_origin" />
 
     <FrameLayout
         android:id="@+id/flFragment"

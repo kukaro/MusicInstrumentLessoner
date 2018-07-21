@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/notification_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/notification_fragment"
     android:orientation="vertical"
     tools:context=".NotificationFragment">
-
-    <!-- TODO: Update blank fragment layout -->
 
     <hack.the.wap.musicinstrumentlessoner.mylayout.MySearchLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </hack.the.wap.musicinstrumentlessoner.mylayout.MySearchLayout>
 
-    <View
+    <hack.the.wap.musicinstrumentlessoner.mylayout.MySeparatorLayout
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"/>
+        android:layout_height="wrap_content">
+    </hack.the.wap.musicinstrumentlessoner.mylayout.MySeparatorLayout>
 
     <TextView
         android:layout_width="match_parent"
@@ -33,12 +31,11 @@
 
         <hack.the.wap.musicinstrumentlessoner.mylayout.NotificationLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </hack.the.wap.musicinstrumentlessoner.mylayout.NotificationLayout>
+            android:layout_height="wrap_content"></hack.the.wap.musicinstrumentlessoner.mylayout.NotificationLayout>
+
         <hack.the.wap.musicinstrumentlessoner.mylayout.NotificationLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </hack.the.wap.musicinstrumentlessoner.mylayout.NotificationLayout>
+            android:layout_height="wrap_content"></hack.the.wap.musicinstrumentlessoner.mylayout.NotificationLayout>
     </LinearLayout>
 
 </LinearLayout>
