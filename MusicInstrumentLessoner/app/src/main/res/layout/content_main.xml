@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:contentDescription="separator"
-        app:srcCompat="@drawable/separator_origin" />
+        app:srcCompat="@drawable/separator_thin" />
 
     <FrameLayout
         android:id="@+id/flFragment"
