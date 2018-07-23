@@ -9,13 +9,18 @@
     <string name="app_name_kor">악기 레스너</string>
     <string name="splash_comment">"Bring the joy \nto your instrument"</string>
 
+    <!--login activity string-->
     <string name="login_act_forgot_password">FORGOT \nPASSWORD?</string>
 
+    <!--navigation bar string-->
     <string name="nav_bar_notification">notification</string>
     <string name="nav_bar_template">template</string>
     <string name="nav_bar_group">group</string>
     <string name="nav_bar_store">store</string>
     <string name="nav_bar_information">information</string>
+
+    <!--search_layout string-->
+    <string name="search_lay_placeholder">Search messages</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
