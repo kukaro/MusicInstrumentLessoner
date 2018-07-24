@@ -31,15 +31,16 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/notification_lay_name"
+                android:id="@+id/tvNotificationLayName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textStyle="bold"
+                android:gravity="left"
                 android:text="@string/debug_aoa_choa_name" />
 
             <TextView
-                android:id="@+id/notification_lay_date"
+                android:id="@+id/tvNotificationLayDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -50,17 +51,19 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/notification_lay_main"
+            android:id="@+id/tvNotificationLayMain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
+            android:gravity="left"
             android:paddingBottom="5dp"
             android:text="@string/debug_aoa_choa_main" />
 
         <TextView
-            android:id="@+id/notification_lay_music_title"
+            android:id="@+id/tvNotificationLayMusicTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="left"
             android:text="@string/debug_aoa_choa_music_title" />
     </LinearLayout>
 </LinearLayout>
