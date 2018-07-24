@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -16,6 +17,7 @@ import hack.the.wap.musicinstrumentlessoner.R;
  */
 
 public class NotificationLayout extends LinearLayout {
+    private ImageView ivNotificationLayUserImage;
     private TextView tvNotificationLayName;
     private TextView tvNotificationLayDate;
     private TextView tvNotificationLayMain;
@@ -45,6 +47,7 @@ public class NotificationLayout extends LinearLayout {
 
     private void initView() {
         inflate(getContext(), R.layout.notification_layout, this);
+        ivNotificationLayUserImage = findViewById(R.id.ivNotificationUserImage);
         tvNotificationLayName = findViewById(R.id.tvNotificationLayName);
         tvNotificationLayDate = findViewById(R.id.tvNotificationLayDate);
         tvNotificationLayMain = findViewById(R.id.tvNotificationLayMain);
@@ -53,7 +56,7 @@ public class NotificationLayout extends LinearLayout {
 
     private void getAttrs(AttributeSet attributeSet) {
         TypedArray typedArray = getContext().obtainStyledAttributes(attributeSet, R.styleable.NotificationLayout);
-        Log.e("TAG", "getAttrs: "+typedArray);
+        Log.e("TAG", "getAttrs: " + typedArray);
         setTypeArray(typedArray);
     }
 
@@ -62,15 +65,17 @@ public class NotificationLayout extends LinearLayout {
         setTypeArray(typedArray);
     }
 
-    private void setTypeArray(TypedArray typedArray){
-        String notification_lay_name = typedArray.getString(R.styleable.NotificationLayout_notification_lay_name);
-        String notification_lay_date = typedArray.getString(R.styleable.NotificationLayout_notification_lay_date);
-        String notification_lay_main = typedArray.getString(R.styleable.NotificationLayout_notification_lay_main);
-        String notification_lay_music_title = typedArray.getString(R.styleable.NotificationLayout_notification_lay_music_title);
-        tvNotificationLayName.setText(notification_lay_name);
-        tvNotificationLayDate.setText(notification_lay_date);
-        tvNotificationLayMain.setText(notification_lay_main);
-        tvNotificationLayMusicTitle.setText(notification_lay_music_title);
+    private void setTypeArray(TypedArray typedArray) {
+        int notificationLayUserImage = typedArray.getResourceId(R.styleable.NotificationLayout_notification_lay_user_image, R.drawable.choa_round);
+        String notificationLayName = typedArray.getString(R.styleable.NotificationLayout_notification_lay_name);
+        String notificationLayDate = typedArray.getString(R.styleable.NotificationLayout_notification_lay_date);
+        String notificationLayMain = typedArray.getString(R.styleable.NotificationLayout_notification_lay_main);
+        String notificationLayMusicTitle = typedArray.getString(R.styleable.NotificationLayout_notification_lay_music_title);
+        ivNotificationLayUserImage.setImageResource(notificationLayUserImage);
+        tvNotificationLayName.setText(notificationLayName);
+        tvNotificationLayDate.setText(notificationLayDate);
+        tvNotificationLayMain.setText(notificationLayMain);
+        tvNotificationLayMusicTitle.setText(notificationLayMusicTitle);
         typedArray.recycle();
     }
 }

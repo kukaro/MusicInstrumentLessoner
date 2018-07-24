@@ -31,6 +31,7 @@
         <hack.the.wap.musicinstrumentlessoner.mylayout.NotificationLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:notification_lay_user_image="@drawable/choa_round"
             app:notification_lay_name="@string/debug_aoa_choa_name"
             app:notification_lay_date="@string/debug_aoa_choa_date1"
             app:notification_lay_main="@string/debug_aoa_choa_main"
@@ -40,6 +41,7 @@
         <hack.the.wap.musicinstrumentlessoner.mylayout.NotificationLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:notification_lay_user_image="@drawable/dahyun_round"
             app:notification_lay_name="@string/debug_twice_dahyun_name"
             app:notification_lay_date="@string/debug_twice_dahyun_date1"
             app:notification_lay_main="@string/debug_twice_dahyun_main"
