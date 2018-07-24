@@ -9,6 +9,7 @@ import hack.the.wap.musicinstrumentlessoner.R;
 
 /*
 참고 사이트 : https://medium.com/@douglas.iacovelli/the-beauty-of-custom-views-and-how-to-do-it-79c7d78e2088
+           http://gun0912.tistory.com/38
  */
 
 public class NotificationLayout extends LinearLayout {
