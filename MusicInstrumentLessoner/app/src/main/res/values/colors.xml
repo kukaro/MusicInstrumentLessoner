@@ -8,5 +8,6 @@
     <color name="iconColor">#00E5C3</color>
     <color name="formFontColor">#457DA5</color>
     <color name="notificationUserColor">#516573</color>
+    <color name="notificationMiColor">#3B3E60</color>
     <color name="commonDateColor">#8C8F95</color>
 </resources>

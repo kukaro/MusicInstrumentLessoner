@@ -34,4 +34,9 @@
     <string name="debug_twice_dahyun_date1">07:24 AM</string>
     <string name="debug_twice_dahyun_main">친구가 올린곡을 완주하였습니다.</string>
     <string name="debug_twice_dahyun_music_title">요한 파헬벨 캐논 변주곡</string>
+
+    <!--mi_notification_layout string-->
+    <string name="debug_mi_date1">08:13 AM</string>
+    <string name="debug_mi_main">제출기간이 3일 남았습니다.</string>
+    <string name="debug_mi_music_title">체르니 95번</string>
 </resources>

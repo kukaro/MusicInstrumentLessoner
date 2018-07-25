@@ -56,7 +56,6 @@ public class NotificationLayout extends LinearLayout {
 
     private void getAttrs(AttributeSet attributeSet) {
         TypedArray typedArray = getContext().obtainStyledAttributes(attributeSet, R.styleable.NotificationLayout);
-        Log.e("TAG", "getAttrs: " + typedArray);
         setTypeArray(typedArray);
     }
 
