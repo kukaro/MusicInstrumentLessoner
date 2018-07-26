@@ -137,9 +137,31 @@ public class LoginActivity extends AppCompatActivity {
             TemplateDto canon = new TemplateDto(owner4, musicTitle4, musician4, tMain4, tSub4);
 
             /*
-                Dummy Notification1 : 
+                Dummy Notification1 : not1
              */
-
+            boolean trueUser1 = true;
+            TemplateDto template1 = moonlight3rd;
+            String nMain1 = getResources().getString(R.string.teacher_upload_music);
+            String nDate1 = getResources().getString(R.string.debug_aoa_choa_date1);
+            NotificationDto not1 = new NotificationDto(trueUser1, template1, nMain1, nDate1);
+            
+            /*
+                Dummy Notification2 : not2
+            */
+            boolean trueUser2 = false;
+            TemplateDto template2 = czernyNo95;
+            String nMain2 = getResources().getString(R.string.debug_mi_main);
+            String nDate2 = getResources().getString(R.string.debug_mi_date1);
+            NotificationDto not2 = new NotificationDto(trueUser2, template2, nMain2, nDate2);
+            
+            /*
+                Dummy Notification3 : not3
+            */
+            boolean trueUser3 = true;
+            TemplateDto template3 = canon;
+            String nMain3 = getResources().getString(R.string.friend_complete_music);
+            String nDate3 = getResources().getString(R.string.debug_twice_dahyun_date1);
+            NotificationDto not3 = new NotificationDto(trueUser3, template3, nMain3, nDate3);
 
             /*
                 Insert Template data
@@ -154,12 +176,13 @@ public class LoginActivity extends AppCompatActivity {
              * insert notification data
              */
             ArrayList<NotificationDto> notifications = new ArrayList<>();
-
-//            NotificationDto notification1 = new NotificationDto(true);
+            notifications.add(not1);
+            notifications.add(not2);
+            notifications.add(not3);
 
             session.setMainUser(mina);
             session.setTemplates(templates);
-//            session.setNotifications();
+            session.setNotifications(notifications);
         }
     }
 }

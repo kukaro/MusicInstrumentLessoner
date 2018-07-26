@@ -62,4 +62,15 @@ public class TemplateDto {
     public void setSub(String sub) {
         Sub = sub;
     }
+
+    @Override
+    public String toString() {
+        return "TemplateDto{" +
+                "Owner=" + Owner +
+                ", MusicTitle='" + MusicTitle + '\'' +
+                ", Musician='" + Musician + '\'' +
+                ", Main='" + Main + '\'' +
+                ", Sub='" + Sub + '\'' +
+                '}';
+    }
 }

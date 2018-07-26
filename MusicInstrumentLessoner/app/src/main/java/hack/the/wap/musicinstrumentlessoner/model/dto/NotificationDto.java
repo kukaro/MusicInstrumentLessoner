@@ -3,8 +3,6 @@ package hack.the.wap.musicinstrumentlessoner.model.dto;
 public class NotificationDto {
     private boolean trueUser;
     private TemplateDto template;
-    private UserDto user;
-    private String name;
     private String main;
     private String date;
 
@@ -12,16 +10,12 @@ public class NotificationDto {
      * Create Notification
      * @param trueUser
      * @param template
-     * @param user
-     * @param name
      * @param main
      * @param date
      */
-    public NotificationDto(boolean trueUser, TemplateDto template, UserDto user, String name, String main, String date) {
+    public NotificationDto(boolean trueUser, TemplateDto template, String main, String date) {
         this.trueUser = trueUser;
         this.template = template;
-        this.user = user;
-        this.name = name;
         this.main = main;
         this.date = date;
     }
@@ -42,22 +36,6 @@ public class NotificationDto {
         this.template = template;
     }
 
-    public UserDto getUser() {
-        return user;
-    }
-
-    public void setUser(UserDto user) {
-        this.user = user;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getMain() {
         return main;
     }
@@ -72,5 +50,15 @@ public class NotificationDto {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    @Override
+    public String toString() {
+        return "NotificationDto{" +
+                "trueUser=" + trueUser +
+                ", template=" + template +
+                ", main='" + main + '\'' +
+                ", date='" + date + '\'' +
+                '}';
     }
 }

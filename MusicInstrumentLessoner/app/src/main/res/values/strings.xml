@@ -26,6 +26,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!--notification_layout string-->
+    <string name="teacher_upload_music">선생님께서 새로운 곡을 업로드 하였습니다.</string>
+    <string name="friend_complete_music">친구가 올린곡을 완주하였습니다.</string>
     <string name="debug_aoa_choa_name">AOA Choa</string>
     <string name="debug_aoa_choa_email">jiharuforgive@league.of.legend</string>
     <string name="debug_aoa_choa_date1">11:12 AM</string>

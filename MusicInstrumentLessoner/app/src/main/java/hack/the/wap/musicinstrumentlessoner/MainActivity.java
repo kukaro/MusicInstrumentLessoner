@@ -22,22 +22,27 @@ import android.widget.ImageView;
 import java.util.ArrayList;
 
 import hack.the.wap.musicinstrumentlessoner.debug.DebugMode;
+import hack.the.wap.musicinstrumentlessoner.model.dto.NotificationDto;
+import hack.the.wap.musicinstrumentlessoner.model.dto.TemplateDto;
 import hack.the.wap.musicinstrumentlessoner.mytoggle.MyActionBarDrawerToggle;
 import hack.the.wap.musicinstrumentlessoner.myview.MyNavigationView;
+import hack.the.wap.musicinstrumentlessoner.session.Session;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, NotificationFragment.OnFragmentInteractionListener, TemplateFragment.OnFragmentInteractionListener {
     private static ImageView ivUserMain;
     private static NotificationFragment notificationFragment;
     private static TemplateFragment templateFragment;
+    private static Session session;
     private String userName;
     private String userEmail;
 
-    /*
-     * Initial Block
-     */ {
+    // Initial Block
+    {
         notificationFragment = new NotificationFragment();
         templateFragment = new TemplateFragment();
+        session = Session.getInstance();
+        DEBUG_SESSION_DATA();
     }
 
     @Override
@@ -180,7 +185,22 @@ public class MainActivity extends AppCompatActivity
 
     private void DEBUG_ON_START(View v) {
         if (DebugMode.DEBUG_MOD) {
-            Log.e("TAG", "DEBUG_ON_START >>>" + v);
+            Log.e("DEBUG", "DEBUG_ON_START >>>" + v);
+        }
+    }
+
+    private void DEBUG_SESSION_DATA() {
+        if (DebugMode.DEBUG_MOD) {
+            Log.e("DEBUG", "DEBUG_SESSION_DATA list ▼ ");
+            Log.e("DEBUG", "DEBUG_SESSION_DATA >>> user : " + session.getMainUser());
+            ArrayList<TemplateDto> templates = session.getTemplates();
+            ArrayList<NotificationDto> notifications = session.getNotifications();
+            for (TemplateDto dto : templates) {
+                Log.e("DEBUG", "DEBUG_SESSION_DATA >>> template : " + dto);
+            }
+            for(NotificationDto dto : notifications){
+                Log.e("DEBUG", "DEBUG_SESSION_DATA >>> notification : " + dto);
+            }
         }
     }
 
