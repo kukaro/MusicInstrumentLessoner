@@ -36,7 +36,8 @@
             app:template_lay_user_image="@drawable/beethoven_round"
             app:template_lay_main="@string/debug_beethoven_main"
             app:template_lay_music_title="@string/debug_beethoven_music"
-            app:template_lay_sub="@string/debug_beethoven_sub">
+            app:template_lay_sub="@string/debug_beethoven_sub"
+            app:template_lay_teacher_image="@drawable/choa_round">
 
         </hack.the.wap.musicinstrumentlessoner.mylayout.TemplateLayout>
 
@@ -46,7 +47,8 @@
             app:template_lay_user_image="@drawable/haydn_round"
             app:template_lay_main="@string/debug_haydn_main"
             app:template_lay_music_title="@string/debug_haydn_music"
-            app:template_lay_sub="@string/debug_haydn_sub">
+            app:template_lay_sub="@string/debug_haydn_sub"
+            app:template_lay_teacher_image="@drawable/mina_round">
 
         </hack.the.wap.musicinstrumentlessoner.mylayout.TemplateLayout>
     </LinearLayout>

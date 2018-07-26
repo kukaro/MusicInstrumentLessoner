@@ -20,6 +20,7 @@ public class TemplateLayout extends LinearLayout {
     private TextView tvTemplateLayMusicTitle;
     private TextView tvTemplateLayMain;
     private TextView tvTemplateLaySub;
+    private ImageView ivTemplateLayTeacherImage;
 
     {
         initView();
@@ -48,6 +49,7 @@ public class TemplateLayout extends LinearLayout {
         tvTemplateLayMusicTitle = findViewById(R.id.tvTemplateLayMusicTitle);
         tvTemplateLayMain = findViewById(R.id.tvTemplateLayMain);
         tvTemplateLaySub= findViewById(R.id.tvTemplateLaySub);
+        ivTemplateLayTeacherImage = findViewById(R.id.ivTemplateLayTeacherImage);
     }
 
     private void getAttrs(AttributeSet attributeSet) {
@@ -61,14 +63,16 @@ public class TemplateLayout extends LinearLayout {
     }
 
     private void setTypeArray(TypedArray typedArray) {
-        int TemplateLayUserImage = typedArray.getResourceId(R.styleable.TemplateLayout_template_lay_user_image, R.drawable.choa_round);
-        String TemplateLayMusicTitle = typedArray.getString(R.styleable.TemplateLayout_template_lay_music_title);
-        String TemplateLayMain = typedArray.getString(R.styleable.TemplateLayout_template_lay_main);
-        String TemplateLaySub = typedArray.getString(R.styleable.TemplateLayout_template_lay_sub);
-        ivTemplateLayUserImage.setImageResource(TemplateLayUserImage);
-        tvTemplateLayMusicTitle.setText(TemplateLayMusicTitle);
-        tvTemplateLayMain.setText(TemplateLayMain);
-        tvTemplateLaySub.setText(TemplateLaySub);
+        int templateLayUserImage = typedArray.getResourceId(R.styleable.TemplateLayout_template_lay_user_image, R.drawable.beethoven_round);
+        String templateLayMusicTitle = typedArray.getString(R.styleable.TemplateLayout_template_lay_music_title);
+        String templateLayMain = typedArray.getString(R.styleable.TemplateLayout_template_lay_main);
+        String templateLaySub = typedArray.getString(R.styleable.TemplateLayout_template_lay_sub);
+        int templateLayTeacherImage = typedArray.getResourceId(R.styleable.TemplateLayout_template_lay_teacher_image,R.drawable.choa_round);
+        ivTemplateLayUserImage.setImageResource(templateLayUserImage);
+        tvTemplateLayMusicTitle.setText(templateLayMusicTitle);
+        tvTemplateLayMain.setText(templateLayMain);
+        tvTemplateLaySub.setText(templateLaySub);
+        ivTemplateLayTeacherImage.setImageResource(templateLayTeacherImage);
         typedArray.recycle();
     }
 }

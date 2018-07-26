@@ -6,5 +6,6 @@
         <attr name="template_lay_main" format="reference|string"></attr>
         <attr name="template_lay_music_title" format="reference|string"></attr>
         <attr name="template_lay_sub" format="reference|string"></attr>
+        <attr name="template_lay_teacher_image" format="reference|integer"></attr>
     </declare-styleable>
 </resources>
