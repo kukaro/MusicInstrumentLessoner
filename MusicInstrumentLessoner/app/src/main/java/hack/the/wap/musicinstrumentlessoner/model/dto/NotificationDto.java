@@ -8,6 +8,15 @@ public class NotificationDto {
     private String main;
     private String date;
 
+    /**
+     * Create Notification
+     * @param trueUser
+     * @param template
+     * @param user
+     * @param name
+     * @param main
+     * @param date
+     */
     public NotificationDto(boolean trueUser, TemplateDto template, UserDto user, String name, String main, String date) {
         this.trueUser = trueUser;
         this.template = template;
