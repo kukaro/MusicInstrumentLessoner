@@ -107,7 +107,7 @@ public class LoginActivity extends AppCompatActivity {
             TemplateDto moonlight3rd = new TemplateDto(owner1, musicTitle1, musician1, tMain1, tSub1);
 
              /*
-                Dummy Template1 : SurpriseSymphony
+                Dummy Template2 : SurpriseSymphony
              */
             UserDto owner2 = dahyun;
             String musicTitle2 = getResources().getString(R.string.debug_haydn_music);
@@ -115,14 +115,50 @@ public class LoginActivity extends AppCompatActivity {
             String tMain2 = getResources().getString(R.string.debug_haydn_main);
             String tSub2 = getResources().getString(R.string.debug_haydn_sub);
             TemplateDto surpriseSymphony = new TemplateDto(owner2, musicTitle2, musician2, tMain2, tSub2);
+            
+            /*
+                Dummy Template3 : CzernyNo95
+             */
+            UserDto owner3 = choa;
+            String musicTitle3 = getResources().getString(R.string.debug_czerny_music);
+            String musician3 = getResources().getString(R.string.debug_czerny_name);
+            String tMain3 = getResources().getString(R.string.debug_czerny_main);
+            String tSub3 = getResources().getString(R.string.debug_czerny_sub);
+            TemplateDto czernyNo95 = new TemplateDto(owner3, musicTitle3, musician3, tMain3, tSub3);
+            
+            /*
+                Dummy Template4 : Canon
+             */
+            UserDto owner4 = choa;
+            String musicTitle4 = getResources().getString(R.string.debug_pachelbel_music);
+            String musician4 = getResources().getString(R.string.debug_pachelbel_name);
+            String tMain4 = getResources().getString(R.string.debug_pachelbel_main);
+            String tSub4 = getResources().getString(R.string.debug_pachelbel_sub);
+            TemplateDto canon = new TemplateDto(owner4, musicTitle4, musician4, tMain4, tSub4);
+
+            /*
+                Dummy Notification1 : 
+             */
+
+
+            /*
+                Insert Template data
+             */
+            ArrayList<TemplateDto> templates = new ArrayList<>();
+            templates.add(moonlight3rd);
+            templates.add(surpriseSymphony);
+            templates.add(czernyNo95);
+            templates.add(canon);
 
             /**
              * insert notification data
              */
             ArrayList<NotificationDto> notifications = new ArrayList<>();
+
 //            NotificationDto notification1 = new NotificationDto(true);
 
             session.setMainUser(mina);
+            session.setTemplates(templates);
 //            session.setNotifications();
         }
     }

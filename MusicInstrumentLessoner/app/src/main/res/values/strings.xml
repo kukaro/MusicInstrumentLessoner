@@ -47,8 +47,19 @@
     <string name="debug_beethoven_music">월광 소나타 제3악장</string>
     <string name="debug_beethoven_main">남은 반복횟수 : 0 / 10</string>
     <string name="debug_beethoven_sub">곡 성공률 : 0%</string>
+
     <string name="debug_haydn_name">Haydn</string>
     <string name="debug_haydn_music">놀람 교향곡</string>
     <string name="debug_haydn_main">남은 반복횟수 : 9 / 10</string>
     <string name="debug_haydn_sub">곡 성공률 : 90%</string>
+
+    <string name="debug_czerny_name">Czerny</string>
+    <string name="debug_czerny_music">체르니 95번</string>
+    <string name="debug_czerny_main">남은 반복횟수 : 8 / 10</string>
+    <string name="debug_czerny_sub">곡 성공률 : 70%</string>
+
+    <string name="debug_pachelbel_name">Pachelbel</string>
+    <string name="debug_pachelbel_music">요한 파헬벨 캐논 변주곡</string>
+    <string name="debug_pachelbel_main">남은 반복횟수 : 14 / 20</string>
+    <string name="debug_pachelbel_sub">곡 성공률 : 70%</string>
 </resources>
