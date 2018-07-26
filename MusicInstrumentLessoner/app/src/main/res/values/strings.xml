@@ -39,4 +39,14 @@
     <string name="debug_mi_date1">08:13 AM</string>
     <string name="debug_mi_main">제출기간이 3일 남았습니다.</string>
     <string name="debug_mi_music_title">체르니 95번</string>
+
+    <!--template_layout string-->
+    <string name="debug_beethoven_name">Beethoven</string>
+    <string name="debug_beethoven_music">월광 소나타 제3악장</string>
+    <string name="debug_beethoven_main">남은 반복횟수 : 0 / 10</string>
+    <string name="debug_beethoven_sub">곡 성공률 : 0%</string>
+    <string name="debug_haydn_name">Haydn</string>
+    <string name="debug_haydn_music">놀람 교향곡</string>
+    <string name="debug_haydn_main">남은 반복횟수 : 9 / 10</string>
+    <string name="debug_haydn_sub">곡 성공률 : 90%</string>
 </resources>

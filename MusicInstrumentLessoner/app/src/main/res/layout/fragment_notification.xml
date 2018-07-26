@@ -16,11 +16,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></hack.the.wap.musicinstrumentlessoner.mylayout.MySeparatorLayout>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="left"
-        android:text="Notification Fragment" />
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="left"-->
+        <!--android:text="Notification Fragment" />-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -53,7 +53,8 @@
             app:notification_lay_main="@string/debug_twice_dahyun_main"
             app:notification_lay_music_title="@string/debug_twice_dahyun_music_title"
             app:notification_lay_name="@string/debug_twice_dahyun_name"
-            app:notification_lay_user_image="@drawable/dahyun_round"></hack.the.wap.musicinstrumentlessoner.mylayout.NotificationLayout>
+            app:notification_lay_user_image="@drawable/dahyun_round">
+        </hack.the.wap.musicinstrumentlessoner.mylayout.NotificationLayout>
     </LinearLayout>
 
 </LinearLayout>
