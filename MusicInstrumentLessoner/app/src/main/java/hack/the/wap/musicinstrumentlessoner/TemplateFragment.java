@@ -7,6 +7,13 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+
+import java.util.ArrayList;
+
+import hack.the.wap.musicinstrumentlessoner.model.dto.TemplateDto;
+import hack.the.wap.musicinstrumentlessoner.mylayout.TemplateLayout;
+import hack.the.wap.musicinstrumentlessoner.session.Session;
 
 
 /**
@@ -18,10 +25,12 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class TemplateFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private static View templateFragmentView;
+    private static LinearLayout llFragTemplate;
+    private static Session session;
+    private static ArrayList<TemplateDto> templates;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -30,7 +39,7 @@ public class TemplateFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
 
     public TemplateFragment() {
-        // Required empty public constructor
+        session = Session.getInstance();
     }
 
     /**
@@ -63,8 +72,15 @@ public class TemplateFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_template, container, false);
+        templateFragmentView = inflater.inflate(R.layout.fragment_template, container, false);
+        llFragTemplate = templateFragmentView.findViewById(R.id.llFragTemplate);
+        templates = session.getTemplates();
+        for (TemplateDto dto : templates) {
+            TemplateLayout atom = new TemplateLayout(getContext());
+            atom.setCustomAttr(dto);
+            llFragTemplate.addView(atom);
+        }
+        return templateFragmentView;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

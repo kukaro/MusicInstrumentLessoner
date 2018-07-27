@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import hack.the.wap.musicinstrumentlessoner.R;
+import hack.the.wap.musicinstrumentlessoner.model.dto.TemplateDto;
 
 /*
 참고 사이트 : https://medium.com/@douglas.iacovelli/the-beauty-of-custom-views-and-how-to-do-it-79c7d78e2088
@@ -74,5 +75,11 @@ public class TemplateLayout extends LinearLayout {
         tvTemplateLaySub.setText(templateLaySub);
         ivTemplateLayTeacherImage.setImageResource(templateLayTeacherImage);
         typedArray.recycle();
+    }
+
+    public void setCustomAttr(TemplateDto dto){
+        tvTemplateLayMusicTitle.setText(dto.getMusicTitle());
+        tvTemplateLayMain.setText(dto.getMain());
+        tvTemplateLaySub.setText(dto.getSub());
     }
 }
