@@ -1,16 +1,34 @@
 package hack.the.wap.musicinstrumentlessoner;
 
+import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.util.AttributeSet;
+import android.util.Log;
+import android.util.Xml;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.SearchView;
+
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlPullParserFactory;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.StringReader;
+import java.util.ArrayList;
+
+import hack.the.wap.musicinstrumentlessoner.model.dto.NotificationDto;
+import hack.the.wap.musicinstrumentlessoner.mylayout.MiNotificationLayout;
+import hack.the.wap.musicinstrumentlessoner.mylayout.NotificationLayout;
+import hack.the.wap.musicinstrumentlessoner.session.Session;
 
 
 /**
@@ -27,6 +45,9 @@ public class NotificationFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private static View notificationFragmentView;
+    private static LinearLayout llFragNotification;
+    private static Session session;
+    private static ArrayList<NotificationDto> notifications;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -35,8 +56,7 @@ public class NotificationFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
 
     public NotificationFragment() {
-        // Required empty public constructor
-
+        session = Session.getInstance();
     }
 
     /**
@@ -64,7 +84,6 @@ public class NotificationFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
     }
 
     @Override
@@ -72,6 +91,20 @@ public class NotificationFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         notificationFragmentView = inflater.inflate(R.layout.fragment_notification, container, false);
+        llFragNotification = notificationFragmentView.findViewById(R.id.llFragNotification);
+        notifications = session.getNotifications();
+
+        for (NotificationDto dto : notifications) {
+            if(dto.isTrueUser()){
+                NotificationLayout atom = new NotificationLayout(getContext());
+                atom.setCustomAttr(dto);
+                llFragNotification.addView(atom);
+            }else{
+                MiNotificationLayout atom = new MiNotificationLayout(getContext());
+                atom.setCustomAttr(dto);
+                llFragNotification.addView(atom);
+            }
+        }
         return notificationFragmentView;
     }
 

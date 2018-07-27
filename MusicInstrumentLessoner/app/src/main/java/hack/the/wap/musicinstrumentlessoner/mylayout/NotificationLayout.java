@@ -9,7 +9,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 import hack.the.wap.musicinstrumentlessoner.R;
+import hack.the.wap.musicinstrumentlessoner.model.dto.NotificationDto;
+import hack.the.wap.musicinstrumentlessoner.session.Session;
 
 /*
 참고 사이트 : https://medium.com/@douglas.iacovelli/the-beauty-of-custom-views-and-how-to-do-it-79c7d78e2088
@@ -22,7 +26,6 @@ public class NotificationLayout extends LinearLayout {
     private TextView tvNotificationLayDate;
     private TextView tvNotificationLayMain;
     private TextView tvNotificationLayMusicTitle;
-
 
     {
         initView();
@@ -52,6 +55,7 @@ public class NotificationLayout extends LinearLayout {
         tvNotificationLayDate = findViewById(R.id.tvNotificationLayDate);
         tvNotificationLayMain = findViewById(R.id.tvNotificationLayMain);
         tvNotificationLayMusicTitle = findViewById(R.id.tvNotificationLayMusicTitle);
+
     }
 
     private void getAttrs(AttributeSet attributeSet) {
@@ -76,5 +80,19 @@ public class NotificationLayout extends LinearLayout {
         tvNotificationLayMain.setText(notificationLayMain);
         tvNotificationLayMusicTitle.setText(notificationLayMusicTitle);
         typedArray.recycle();
+    }
+
+    public void setCustomAttr(String name,String date,String main,String musicTitle){
+        tvNotificationLayName.setText(name);
+        tvNotificationLayDate.setText(date);
+        tvNotificationLayMain.setText(main);
+        tvNotificationLayMusicTitle.setText(musicTitle);
+    }
+
+    public void setCustomAttr(NotificationDto dto){
+        tvNotificationLayName.setText(dto.getTemplate().getOwner().getName());
+        tvNotificationLayDate.setText(dto.getDate());
+        tvNotificationLayMain.setText(dto.getMain());
+        tvNotificationLayMusicTitle.setText(dto.getTemplate().getMusicTitle());
     }
 }
