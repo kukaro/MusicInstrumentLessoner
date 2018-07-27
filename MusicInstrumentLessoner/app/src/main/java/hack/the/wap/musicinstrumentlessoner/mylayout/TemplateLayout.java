@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import hack.the.wap.musicinstrumentlessoner.R;
+import hack.the.wap.musicinstrumentlessoner.debug.DebugImageMatch;
 import hack.the.wap.musicinstrumentlessoner.model.dto.TemplateDto;
 
 /*
@@ -78,8 +79,10 @@ public class TemplateLayout extends LinearLayout {
     }
 
     public void setCustomAttr(TemplateDto dto){
+        ivTemplateLayUserImage.setImageResource(DebugImageMatch.getImageFromName(dto.getMusician()));
         tvTemplateLayMusicTitle.setText(dto.getMusicTitle());
         tvTemplateLayMain.setText(dto.getMain());
         tvTemplateLaySub.setText(dto.getSub());
+        ivTemplateLayTeacherImage.setImageResource(DebugImageMatch.getImageFromName(dto.getOwner().getName()));
     }
 }

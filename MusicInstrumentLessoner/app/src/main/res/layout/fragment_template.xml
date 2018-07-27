@@ -34,27 +34,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-            <hack.the.wap.musicinstrumentlessoner.mylayout.TemplateLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:template_lay_main="@string/debug_beethoven_main"
-                app:template_lay_music_title="@string/debug_beethoven_music"
-                app:template_lay_sub="@string/debug_beethoven_sub"
-                app:template_lay_teacher_image="@drawable/choa_round"
-                app:template_lay_user_image="@drawable/beethoven_round">
-
-            </hack.the.wap.musicinstrumentlessoner.mylayout.TemplateLayout>
-
-            <hack.the.wap.musicinstrumentlessoner.mylayout.TemplateLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:template_lay_main="@string/debug_haydn_main"
-                app:template_lay_music_title="@string/debug_haydn_music"
-                app:template_lay_sub="@string/debug_haydn_sub"
-                app:template_lay_teacher_image="@drawable/dahyun_round"
-                app:template_lay_user_image="@drawable/haydn_round">
-
-            </hack.the.wap.musicinstrumentlessoner.mylayout.TemplateLayout>
         </LinearLayout>
     </ScrollView>
 
