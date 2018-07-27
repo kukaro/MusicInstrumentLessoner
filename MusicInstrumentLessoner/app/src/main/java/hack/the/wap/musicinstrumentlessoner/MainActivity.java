@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.util.Log;
+import android.view.MenuInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity
     private static NotificationFragment notificationFragment;
     private static TemplateFragment templateFragment;
     private static Session session;
+    private static Menu menu;
     private String userName;
     private String userEmail;
 
@@ -102,19 +104,18 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        MainActivity.menu = menu;
+        getMenuInflater().inflate(R.menu.notification_menu, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
+        Fragment fr = getFragmentManager().findFragmentById(R.id.flFragment);
+        Log.e("onOptionsItemSelected: ", fr+"");
+
         if (id == R.id.action_settings) {
             return true;
         }
@@ -133,11 +134,16 @@ public class MainActivity extends AppCompatActivity
             FragmentTransaction fragmentTransaction = fm.beginTransaction();
             fragmentTransaction.replace(R.id.flFragment, notificationFragment);
             fragmentTransaction.commit();
+            menu.clear();
+            getMenuInflater().inflate(R.menu.notification_menu, menu);
         } else if (id == R.id.nav_template) {
             FragmentManager fm = getFragmentManager();
             FragmentTransaction fragmentTransaction = fm.beginTransaction();
             fragmentTransaction.replace(R.id.flFragment, templateFragment);
             fragmentTransaction.commit();
+            menu.clear();
+            getMenuInflater().inflate(R.menu.template_menu, menu);
+
         } else if (id == R.id.nav_group) {
 
         } else if (id == R.id.nav_store) {
@@ -198,7 +204,7 @@ public class MainActivity extends AppCompatActivity
             for (TemplateDto dto : templates) {
                 Log.e("DEBUG", "DEBUG_SESSION_DATA >>> template : " + dto);
             }
-            for(NotificationDto dto : notifications){
+            for (NotificationDto dto : notifications) {
                 Log.e("DEBUG", "DEBUG_SESSION_DATA >>> notification : " + dto);
             }
         }
