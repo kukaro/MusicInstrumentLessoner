@@ -26,4 +26,20 @@ public class UserGroupDto {
     public void setTeachers(ArrayList<TeacherDto> teachers) {
         this.teachers = teachers;
     }
+
+    public void addTeacher(TeacherDto dto){
+        teachers.add(dto);
+    }
+
+    public void addUser(UserDto dto){
+        users.add(dto);
+    }
+
+    @Override
+    public String toString() {
+        return "UserGroupDto{" +
+                "teachers=" + teachers +
+                ", users=" + users +
+                '}';
+    }
 }

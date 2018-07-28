@@ -11,8 +11,10 @@ import java.util.ArrayList;
 
 import hack.the.wap.musicinstrumentlessoner.debug.DebugMode;
 import hack.the.wap.musicinstrumentlessoner.model.dto.NotificationDto;
+import hack.the.wap.musicinstrumentlessoner.model.dto.TeacherDto;
 import hack.the.wap.musicinstrumentlessoner.model.dto.TemplateDto;
 import hack.the.wap.musicinstrumentlessoner.model.dto.UserDto;
+import hack.the.wap.musicinstrumentlessoner.model.dto.UserGroupDto;
 import hack.the.wap.musicinstrumentlessoner.session.Session;
 
 public class LoginActivity extends AppCompatActivity {
@@ -87,14 +89,42 @@ public class LoginActivity extends AppCompatActivity {
              */
             String name1 = getResources().getString(R.string.debug_aoa_choa_name);
             String email1 = getResources().getString(R.string.debug_aoa_choa_email);
-            UserDto choa = new UserDto(name1, email1, password);
+            UserDto choa = new TeacherDto(name1, email1, password);
 
             /*
                 Dummy User2 : Dahyun
              */
             String name2 = getResources().getString(R.string.debug_twice_dahyun_name);
             String email2 = getResources().getString(R.string.debug_twice_dahyun_emai);
-            UserDto dahyun = new UserDto(name2, email2, password);
+            UserDto dahyun = new TeacherDto(name2, email2, password);
+
+            /*
+                Dummy User3 : Segyong
+             */
+            String name3 = getResources().getString(R.string.debug_segyong_name);
+            String email3 = getResources().getString(R.string.debug_segyong_email);
+            UserDto segyong = new UserDto(name3, email3, password);
+            
+            /*
+                Dummy User4 : gain
+             */
+            String name4 = getResources().getString(R.string.debug_gain_name);
+            String email4 = getResources().getString(R.string.debug_gain_email);
+            UserDto gain = new UserDto(name4, email4, password);
+            
+            /*
+                Dummy User5 : gain
+             */
+            String name5 = getResources().getString(R.string.debug_hyoju_name);
+            String email5 = getResources().getString(R.string.debug_hyoju_email);
+            UserDto hyoju = new UserDto(name5, email5, password);
+            
+            /*
+                Dummy User6 : gain
+             */
+            String name6 = getResources().getString(R.string.debug_kanna_name);
+            String email6 = getResources().getString(R.string.debug_kanna_email);
+            UserDto kanna = new UserDto(name6, email6, password);
 
             /*
                 Dummy Template1 : Moonlight3rd
@@ -164,6 +194,22 @@ public class LoginActivity extends AppCompatActivity {
             NotificationDto not3 = new NotificationDto(trueUser3, template3, nMain3, nDate3);
 
             /*
+                Dummy Group1 : Libre
+             */
+            UserGroupDto libre = new UserGroupDto();
+            libre.addTeacher((TeacherDto) choa);
+            libre.addUser(kanna);
+            libre.addUser(segyong);
+            libre.addUser(gain);
+
+            /*
+                Dummy Group2 : SMMA
+             */
+            UserGroupDto smma = new UserGroupDto();
+            smma.addTeacher((TeacherDto) dahyun);
+            smma.addUser(hyoju);
+
+            /*
                 Insert Template data
              */
             ArrayList<TemplateDto> templates = new ArrayList<>();
@@ -172,17 +218,25 @@ public class LoginActivity extends AppCompatActivity {
             templates.add(czernyNo95);
             templates.add(canon);
 
-            /**
-             * insert notification data
+            /*
+                Insert Notification data
              */
             ArrayList<NotificationDto> notifications = new ArrayList<>();
             notifications.add(not1);
             notifications.add(not2);
             notifications.add(not3);
 
+            /*
+                Insert User Group data
+             */
+            ArrayList<UserGroupDto> userGroups = new ArrayList<>();
+            userGroups.add(libre);
+            userGroups.add(smma);
+
             session.setMainUser(mina);
             session.setTemplates(templates);
             session.setNotifications(notifications);
+            session.setUserGroups(userGroups);
         }
     }
 }

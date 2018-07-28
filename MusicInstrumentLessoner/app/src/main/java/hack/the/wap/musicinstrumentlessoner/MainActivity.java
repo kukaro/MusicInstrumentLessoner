@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import hack.the.wap.musicinstrumentlessoner.debug.DebugMode;
 import hack.the.wap.musicinstrumentlessoner.model.dto.NotificationDto;
 import hack.the.wap.musicinstrumentlessoner.model.dto.TemplateDto;
+import hack.the.wap.musicinstrumentlessoner.model.dto.UserGroupDto;
 import hack.the.wap.musicinstrumentlessoner.mytoggle.MyActionBarDrawerToggle;
 import hack.the.wap.musicinstrumentlessoner.myview.MyNavigationView;
 import hack.the.wap.musicinstrumentlessoner.session.Session;
@@ -201,11 +202,15 @@ public class MainActivity extends AppCompatActivity
             Log.e("DEBUG", "DEBUG_SESSION_DATA >>> user : " + session.getMainUser());
             ArrayList<TemplateDto> templates = session.getTemplates();
             ArrayList<NotificationDto> notifications = session.getNotifications();
+            ArrayList<UserGroupDto> userGroups = session.getUserGroups();
             for (TemplateDto dto : templates) {
                 Log.e("DEBUG", "DEBUG_SESSION_DATA >>> template : " + dto);
             }
             for (NotificationDto dto : notifications) {
                 Log.e("DEBUG", "DEBUG_SESSION_DATA >>> notification : " + dto);
+            }
+            for (UserGroupDto dto : userGroups){
+                Log.e("DEBUG", "DEBUG_SESSION_DATA >>> userGroups : " + dto);
             }
         }
     }

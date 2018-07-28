@@ -64,4 +64,5 @@
     <string name="debug_pachelbel_music">요한 파헬벨 캐논 변주곡</string>
     <string name="debug_pachelbel_main">남은 반복횟수 : 14 / 20</string>
     <string name="debug_pachelbel_sub">곡 성공률 : 70%</string>
+
 </resources>

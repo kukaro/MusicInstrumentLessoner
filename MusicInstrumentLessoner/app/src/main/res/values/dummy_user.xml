@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="debug_segyong_name">Segyong</string>
+    <string name="debug_segyong_email">jinzza@namol.pam</string>
+    <string name="debug_segyong_password">3456</string>
+
+    <string name="debug_gain_name">Gain</string>
+    <string name="debug_gain_email">han@hain.dev</string>
+    <string name="debug_gain_password">no pain no gain</string>
+
+    <string name="debug_hyoju_name">Hyoju</string>
+    <string name="debug_hyoju_email">hyoju@gyoju.devil</string>
+    <string name="debug_hyoju_password">mola</string>
+
+    <string name="debug_kanna_name">Kanna</string>
+    <string name="debug_kanna_email">dokdo@woorittang.kanna</string>
+    <string name="debug_kanna_password">hasimoto</string>
+</resources>
