@@ -36,6 +36,7 @@ import hack.the.wap.musicinstrumentlessoner.session.Session;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, GroupFragment.OnFragmentInteractionListener,
         NotificationFragment.OnFragmentInteractionListener, TemplateFragment.OnFragmentInteractionListener {
+    private static MainActivity instance;
     private static ImageView ivUserMain;
     private static NotificationFragment notificationFragment;
     private static TemplateFragment templateFragment;
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity
 
     // Initial Block
     {
+        instance = this;
         notificationFragment = new NotificationFragment();
         templateFragment = new TemplateFragment();
         groupFragment = new GroupFragment();
@@ -233,5 +235,9 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
 
+    }
+
+    public static MainActivity getInstance(){
+        return instance;
     }
 }

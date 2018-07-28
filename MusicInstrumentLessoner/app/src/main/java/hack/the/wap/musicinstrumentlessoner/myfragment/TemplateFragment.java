@@ -1,6 +1,7 @@
 package hack.the.wap.musicinstrumentlessoner.myfragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -13,6 +14,8 @@ import java.util.ArrayList;
 
 import hack.the.wap.musicinstrumentlessoner.R;
 import hack.the.wap.musicinstrumentlessoner.model.dto.TemplateDto;
+import hack.the.wap.musicinstrumentlessoner.myactivity.MainActivity;
+import hack.the.wap.musicinstrumentlessoner.myactivity.TemplateDetailActivity;
 import hack.the.wap.musicinstrumentlessoner.mylayout.TemplateLayout;
 import hack.the.wap.musicinstrumentlessoner.session.Session;
 
@@ -79,6 +82,11 @@ public class TemplateFragment extends Fragment {
         for (TemplateDto dto : templates) {
             TemplateLayout atom = new TemplateLayout(getContext());
             atom.setCustomAttr(dto);
+            atom.setOnClickListener(v -> {
+                Intent intent = new Intent(MainActivity.getInstance(), TemplateDetailActivity.class);
+                intent.putExtra("data", dto);
+                startActivity(intent);
+            });
             llFragTemplate.addView(atom);
         }
         return templateFragmentView;

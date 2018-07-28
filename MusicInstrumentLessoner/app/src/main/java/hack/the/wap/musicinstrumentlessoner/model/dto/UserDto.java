@@ -1,6 +1,8 @@
 package hack.the.wap.musicinstrumentlessoner.model.dto;
 
-public class UserDto {
+import java.io.Serializable;
+
+public class UserDto implements Serializable{
     private String name;
     private String email;
     private String password;

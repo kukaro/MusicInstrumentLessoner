@@ -1,6 +1,8 @@
 package hack.the.wap.musicinstrumentlessoner.model.dto;
 
-public class TemplateDto {
+import java.io.Serializable;
+
+public class TemplateDto implements Serializable{
     private UserDto Owner;
     private String MusicTitle;
     private String Musician;
