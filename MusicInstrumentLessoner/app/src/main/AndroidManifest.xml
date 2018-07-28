@@ -21,11 +21,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".myactivity.LoginActivity" />
+        <activity android:name=".myactivity.LoginActivity"></activity>
         <activity
             android:name=".myactivity.MainActivity"
             android:theme="@style/MainAppTheme" />
         <activity android:name=".myactivity.TemplateDetailActivity"></activity>
     </application>
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 </manifest>
