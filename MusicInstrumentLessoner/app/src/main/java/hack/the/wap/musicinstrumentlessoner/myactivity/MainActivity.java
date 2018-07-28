@@ -127,11 +127,16 @@ public class MainActivity extends AppCompatActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        Fragment fr = getFragmentManager().findFragmentById(R.id.flFragment);
-        Log.e("onOptionsItemSelected: ", fr + "");
-
-        if (id == R.id.action_settings) {
-            return true;
+        Fragment frPresent = getFragmentManager().findFragmentById(R.id.flFragment);
+        Log.e("onOptionsItemSelected: ", frPresent + "");
+        switch (id) {
+            case R.id.notificationMenuRmAllNotificationItem:
+                ((NotificationFragment) frPresent).removeAllNotification();
+                break;
+            case R.id.notificationMenuRmRecentNotificationItem:
+                ((NotificationFragment) frPresent).removeRecentNotification();
+                break;
+            default:
         }
 
         return super.onOptionsItemSelected(item);

@@ -131,4 +131,15 @@ public class NotificationFragment extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+    public void removeAllNotification(){
+        notifications.clear();
+        llFragNotification.removeAllViews();
+    }
+
+
+    public void removeRecentNotification() {
+        notifications.remove(0);
+        llFragNotification.removeViewAt(0);
+    }
 }
