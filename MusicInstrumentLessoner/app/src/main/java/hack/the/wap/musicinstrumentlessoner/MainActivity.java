@@ -31,10 +31,11 @@ import hack.the.wap.musicinstrumentlessoner.myview.MyNavigationView;
 import hack.the.wap.musicinstrumentlessoner.session.Session;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, NotificationFragment.OnFragmentInteractionListener, TemplateFragment.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener, GroupFragment.OnFragmentInteractionListener, NotificationFragment.OnFragmentInteractionListener, TemplateFragment.OnFragmentInteractionListener {
     private static ImageView ivUserMain;
     private static NotificationFragment notificationFragment;
     private static TemplateFragment templateFragment;
+    private static GroupFragment groupFragment;
     private static Session session;
     private static Menu menu;
     private String userName;
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity
     {
         notificationFragment = new NotificationFragment();
         templateFragment = new TemplateFragment();
+        groupFragment = new GroupFragment();
         session = Session.getInstance();
         DEBUG_SESSION_DATA();
     }
@@ -146,7 +148,11 @@ public class MainActivity extends AppCompatActivity
             getMenuInflater().inflate(R.menu.template_menu, menu);
 
         } else if (id == R.id.nav_group) {
-
+            FragmentManager fm = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fm.beginTransaction();
+            fragmentTransaction.replace(R.id.flFragment, groupFragment);
+            fragmentTransaction.commit();
+            menu.clear();
         } else if (id == R.id.nav_store) {
 
         } else if (id == R.id.nav_information) {
