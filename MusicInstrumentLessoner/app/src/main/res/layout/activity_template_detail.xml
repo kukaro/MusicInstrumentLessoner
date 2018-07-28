@@ -127,5 +127,26 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivTemplateDetailActGuide"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:maxHeight="50dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/guide" />
+        </LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>
