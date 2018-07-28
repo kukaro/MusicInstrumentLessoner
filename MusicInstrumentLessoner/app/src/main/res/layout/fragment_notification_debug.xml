@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".NotificationFragment">
+    tools:context=".myfragment.NotificationFragment">
 
     <hack.the.wap.musicinstrumentlessoner.mylayout.MySearchLayout
         android:layout_width="match_parent"

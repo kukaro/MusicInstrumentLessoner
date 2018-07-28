@@ -1,6 +1,5 @@
-package hack.the.wap.musicinstrumentlessoner;
+package hack.the.wap.musicinstrumentlessoner.myactivity;
 
-import android.app.Notification;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +8,7 @@ import android.widget.ImageView;
 
 import java.util.ArrayList;
 
+import hack.the.wap.musicinstrumentlessoner.R;
 import hack.the.wap.musicinstrumentlessoner.debug.DebugMode;
 import hack.the.wap.musicinstrumentlessoner.model.dto.NotificationDto;
 import hack.the.wap.musicinstrumentlessoner.model.dto.TeacherDto;

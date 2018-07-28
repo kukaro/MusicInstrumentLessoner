@@ -1,4 +1,4 @@
-package hack.the.wap.musicinstrumentlessoner;
+package hack.the.wap.musicinstrumentlessoner.myfragment;
 
 import android.content.Context;
 import android.net.Uri;
@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import hack.the.wap.musicinstrumentlessoner.R;
 import hack.the.wap.musicinstrumentlessoner.session.Session;
 
 

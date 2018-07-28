@@ -1,10 +1,11 @@
-package hack.the.wap.musicinstrumentlessoner;
+package hack.the.wap.musicinstrumentlessoner.myactivity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
+
+import hack.the.wap.musicinstrumentlessoner.R;
 
 public class SplashActivity extends AppCompatActivity {
     /*

@@ -1,4 +1,4 @@
-package hack.the.wap.musicinstrumentlessoner;
+package hack.the.wap.musicinstrumentlessoner.myactivity;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.util.Log;
-import android.view.MenuInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -22,10 +21,14 @@ import android.widget.ImageView;
 
 import java.util.ArrayList;
 
+import hack.the.wap.musicinstrumentlessoner.R;
 import hack.the.wap.musicinstrumentlessoner.debug.DebugMode;
 import hack.the.wap.musicinstrumentlessoner.model.dto.NotificationDto;
 import hack.the.wap.musicinstrumentlessoner.model.dto.TemplateDto;
 import hack.the.wap.musicinstrumentlessoner.model.dto.UserGroupDto;
+import hack.the.wap.musicinstrumentlessoner.myfragment.GroupFragment;
+import hack.the.wap.musicinstrumentlessoner.myfragment.NotificationFragment;
+import hack.the.wap.musicinstrumentlessoner.myfragment.TemplateFragment;
 import hack.the.wap.musicinstrumentlessoner.mytoggle.MyActionBarDrawerToggle;
 import hack.the.wap.musicinstrumentlessoner.myview.MyNavigationView;
 import hack.the.wap.musicinstrumentlessoner.session.Session;

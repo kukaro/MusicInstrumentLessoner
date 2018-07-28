@@ -1,51 +1,37 @@
-package hack.the.wap.musicinstrumentlessoner;
+package hack.the.wap.musicinstrumentlessoner.myfragment;
 
-import android.annotation.SuppressLint;
-import android.app.ActionBar;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
-import android.util.AttributeSet;
-import android.util.Log;
-import android.util.Xml;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.SearchView;
 
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-import org.xmlpull.v1.XmlPullParserFactory;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.StringReader;
 import java.util.ArrayList;
 
-import hack.the.wap.musicinstrumentlessoner.model.dto.NotificationDto;
-import hack.the.wap.musicinstrumentlessoner.mylayout.MiNotificationLayout;
-import hack.the.wap.musicinstrumentlessoner.mylayout.NotificationLayout;
+import hack.the.wap.musicinstrumentlessoner.R;
+import hack.the.wap.musicinstrumentlessoner.model.dto.TemplateDto;
+import hack.the.wap.musicinstrumentlessoner.mylayout.TemplateLayout;
 import hack.the.wap.musicinstrumentlessoner.session.Session;
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link NotificationFragment.OnFragmentInteractionListener} interface
+ * {@link TemplateFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link NotificationFragment#newInstance} factory method to
+ * Use the {@link TemplateFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class NotificationFragment extends Fragment {
+public class TemplateFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    private static View notificationFragmentView;
-    private static LinearLayout llFragNotification;
+    private static View templateFragmentView;
+    private static LinearLayout llFragTemplate;
     private static Session session;
-    private static ArrayList<NotificationDto> notifications;
+    private static ArrayList<TemplateDto> templates;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -53,7 +39,7 @@ public class NotificationFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public NotificationFragment() {
+    public TemplateFragment() {
         session = Session.getInstance();
     }
 
@@ -63,11 +49,11 @@ public class NotificationFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment NotificationFragment.
+     * @return A new instance of fragment TemplateFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static NotificationFragment newInstance(String param1, String param2) {
-        NotificationFragment fragment = new NotificationFragment();
+    public static TemplateFragment newInstance(String param1, String param2) {
+        TemplateFragment fragment = new TemplateFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -87,23 +73,15 @@ public class NotificationFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        notificationFragmentView = inflater.inflate(R.layout.fragment_notification, container, false);
-        llFragNotification = notificationFragmentView.findViewById(R.id.llFragNotification);
-        notifications = session.getNotifications();
-
-        for (NotificationDto dto : notifications) {
-            if(dto.isTrueUser()){
-                NotificationLayout atom = new NotificationLayout(getContext());
-                atom.setCustomAttr(dto);
-                llFragNotification.addView(atom);
-            }else{
-                MiNotificationLayout atom = new MiNotificationLayout(getContext());
-                atom.setCustomAttr(dto);
-                llFragNotification.addView(atom);
-            }
+        templateFragmentView = inflater.inflate(R.layout.fragment_template, container, false);
+        llFragTemplate = templateFragmentView.findViewById(R.id.llFragTemplate);
+        templates = session.getTemplates();
+        for (TemplateDto dto : templates) {
+            TemplateLayout atom = new TemplateLayout(getContext());
+            atom.setCustomAttr(dto);
+            llFragTemplate.addView(atom);
         }
-        return notificationFragmentView;
+        return templateFragmentView;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
