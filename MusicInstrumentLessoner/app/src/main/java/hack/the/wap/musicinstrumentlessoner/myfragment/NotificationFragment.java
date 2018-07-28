@@ -4,15 +4,18 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 
 import hack.the.wap.musicinstrumentlessoner.R;
 import hack.the.wap.musicinstrumentlessoner.model.dto.NotificationDto;
+import hack.the.wap.musicinstrumentlessoner.myactivity.MainActivity;
 import hack.the.wap.musicinstrumentlessoner.mylayout.MiNotificationLayout;
 import hack.the.wap.musicinstrumentlessoner.mylayout.NotificationLayout;
 import hack.the.wap.musicinstrumentlessoner.session.Session;
@@ -29,7 +32,9 @@ import hack.the.wap.musicinstrumentlessoner.session.Session;
 public class NotificationFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private static MainActivity mainActivity;
     private static View notificationFragmentView;
+    private static EditText etMySearchLaySearchText;
     private static LinearLayout llFragNotification;
     private static Session session;
     private static ArrayList<NotificationDto> notifications;
@@ -41,6 +46,7 @@ public class NotificationFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
 
     public NotificationFragment() {
+        mainActivity = MainActivity.getInstance();
         session = Session.getInstance();
     }
 
