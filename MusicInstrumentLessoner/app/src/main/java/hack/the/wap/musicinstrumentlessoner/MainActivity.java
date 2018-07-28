@@ -31,7 +31,8 @@ import hack.the.wap.musicinstrumentlessoner.myview.MyNavigationView;
 import hack.the.wap.musicinstrumentlessoner.session.Session;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, GroupFragment.OnFragmentInteractionListener, NotificationFragment.OnFragmentInteractionListener, TemplateFragment.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener, GroupFragment.OnFragmentInteractionListener,
+        NotificationFragment.OnFragmentInteractionListener, TemplateFragment.OnFragmentInteractionListener {
     private static ImageView ivUserMain;
     private static NotificationFragment notificationFragment;
     private static TemplateFragment templateFragment;
@@ -117,7 +118,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         Fragment fr = getFragmentManager().findFragmentById(R.id.flFragment);
-        Log.e("onOptionsItemSelected: ", fr+"");
+        Log.e("onOptionsItemSelected: ", fr + "");
 
         if (id == R.id.action_settings) {
             return true;
@@ -215,7 +216,7 @@ public class MainActivity extends AppCompatActivity
             for (NotificationDto dto : notifications) {
                 Log.e("DEBUG", "DEBUG_SESSION_DATA >>> notification : " + dto);
             }
-            for (UserGroupDto dto : userGroups){
+            for (UserGroupDto dto : userGroups) {
                 Log.e("DEBUG", "DEBUG_SESSION_DATA >>> userGroups : " + dto);
             }
         }

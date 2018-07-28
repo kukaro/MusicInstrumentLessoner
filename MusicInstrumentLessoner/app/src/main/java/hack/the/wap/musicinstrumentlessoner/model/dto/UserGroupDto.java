@@ -3,10 +3,12 @@ package hack.the.wap.musicinstrumentlessoner.model.dto;
 import java.util.ArrayList;
 
 public class UserGroupDto {
+    private String name;
     private ArrayList<TeacherDto> teachers;
     private ArrayList<UserDto> users;
 
-    public UserGroupDto() {
+    public UserGroupDto(String name) {
+        this.name = name;
         users = new ArrayList<>();
         teachers = new ArrayList<>();
     }
@@ -27,12 +29,20 @@ public class UserGroupDto {
         this.teachers = teachers;
     }
 
-    public void addTeacher(TeacherDto dto){
+    public void addTeacher(TeacherDto dto) {
         teachers.add(dto);
     }
 
-    public void addUser(UserDto dto){
+    public void addUser(UserDto dto) {
         users.add(dto);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
