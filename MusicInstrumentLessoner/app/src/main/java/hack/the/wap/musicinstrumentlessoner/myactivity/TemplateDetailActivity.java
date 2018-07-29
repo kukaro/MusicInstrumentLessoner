@@ -14,8 +14,9 @@ import android.widget.TextView;
 import java.io.File;
 import java.util.ArrayList;
 
-//import cafe.adriel.androidaudioconverter.AndroidAudioConverter;
-//import cafe.adriel.androidaudioconverter.model.AudioFormat;
+import cafe.adriel.androidaudioconverter.AndroidAudioConverter;
+import cafe.adriel.androidaudioconverter.callback.IConvertCallback;
+import cafe.adriel.androidaudioconverter.model.AudioFormat;
 import cafe.adriel.androidaudiorecorder.AndroidAudioRecorder;
 import cafe.adriel.androidaudiorecorder.model.AudioChannel;
 import cafe.adriel.androidaudiorecorder.model.AudioSampleRate;
@@ -134,6 +135,23 @@ public class TemplateDetailActivity extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
                 TemplatePracticeDto dto = new TemplatePracticeDto(curPractice, curFile);
                 mainTemplate.getTemplatePractices().set(curPractice, dto);
+                AndroidAudioConverter.with(this)
+                        .setFile(new File(filePath))
+                        .setFormat(AudioFormat.MP3)
+                        .setCallback(new IConvertCallback() {
+                            @Override
+                            public void onSuccess(File file) {
+                                dto.setFileName(file.getAbsolutePath());
+                                Log.e("TAG", "onSuccess: "+file.getAbsolutePath() );
+                            }
+
+                            @Override
+                            public void onFailure(Exception e) {
+                                e.printStackTrace();
+                            }
+                        })
+                        .convert();
+
                 session.getTemplates().get(TemplateFragment.curTemplate).getTemplatePractices().set(curPractice - 1, dto);
                 session.showAllSession();
             } else if (resultCode == RESULT_CANCELED) {
@@ -153,4 +171,5 @@ public class TemplateDetailActivity extends AppCompatActivity {
         }
         return getResources().getString(R.string.file_default_dir) + mainTemplate.getMusicTitle() + "/" + dto.getPracticeId();
     }
+
 }

@@ -65,5 +65,6 @@ public class Session {
         Log.e("Session", ">>>" + notifications);
         Log.e("Session", ">>>" + templates);
         Log.e("Session", ">>>" + userGroups);
+
     }
 }

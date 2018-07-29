@@ -33,4 +33,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.github.Semantive:waveform-android:v1.2'
     implementation 'com.github.adrielcafe:AndroidAudioRecorder:0.3.0'
+    compile 'com.github.adrielcafe:AndroidAudioConverter:0.0.8'
+
 }
