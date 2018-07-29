@@ -17,7 +17,8 @@ https://github.com/adrielcafe/AndroidAudioConverter
 https://github.com/adrielcafe/AndroidAudioRecorder  
 
 ##TODO
-선생님의 피드백 받는거,그룹  
+선생님의 피드백 받는거,그룹 디테일 뷰, 마켓, 마켓 디테일  
+선생님이 올린음악 들을수 있고 누를수 있어서 실행할 수 있어야함  
 
 ##Use Liblary
 music visaulizer -> waveform
