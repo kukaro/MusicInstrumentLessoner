@@ -13,14 +13,15 @@ gradle offline뜨면 이거보셈. 개삽질함
 
 ##Important 
 녹음 파일 디렉터리 -> MI/음악이름/번호/resource  
-선생님 파일 디렉터리 -> MI/음악이름
+선생님 파일 디렉터리 -> MI/음악이름/T/
 https://github.com/adrielcafe/AndroidAudioConverter  
 https://github.com/adrielcafe/AndroidAudioRecorder  
 
 ##TODO
 선생님의 피드백 받는거,그룹 디테일 뷰, 마켓, 마켓 디테일  
 선생님이 올린음악 들을수 있고 누를수 있어서 실행할 수 있어야함 
-템플릿 만드는 뷰 필요함   
+템플릿 만드는 뷰 필요함  
+음악의 전체길이 알아내는 방법  
 
 ##Use Liblary
 music visaulizer -> waveform
