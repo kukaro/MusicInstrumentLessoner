@@ -1,12 +1,17 @@
 package hack.the.wap.musicinstrumentlessoner.myfragment;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 
 import com.semantive.waveformandroid.waveform.Segment;
 import com.semantive.waveformandroid.waveform.WaveformFragment;
 
 import java.util.Arrays;
 import java.util.List;
+
+import hack.the.wap.musicinstrumentlessoner.myactivity.PracticeDetailActivity;
 
 public class CustomWaveformFragment extends WaveformFragment {
 
@@ -17,7 +22,7 @@ public class CustomWaveformFragment extends WaveformFragment {
      */
     @Override
     protected String getFileName() {
-        return "/storage/self/primary/Music/rarara.mp3";
+        return PracticeDetailActivity.fileName;
     }
 
     /**

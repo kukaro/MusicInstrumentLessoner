@@ -2,7 +2,8 @@
 http://wimir-dev.tistory.com/44  
 테두리참조  
 선생님의 연주 팁 -> guide  
-온라인 선생님 매칭 기능 필요  
+온라인 선생님 매칭 기능 필요
+Segment -> 이게 중요함 색칠해줌 개꿀
 
 #2018 07 28
 ##notification menu

@@ -1,6 +1,10 @@
 package hack.the.wap.musicinstrumentlessoner.myactivity;
 
+
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,10 +15,13 @@ import hack.the.wap.musicinstrumentlessoner.R;
 import hack.the.wap.musicinstrumentlessoner.debug.DebugImageMatch;
 import hack.the.wap.musicinstrumentlessoner.model.dto.TemplateDto;
 import hack.the.wap.musicinstrumentlessoner.model.dto.TemplatePracticeDto;
+import hack.the.wap.musicinstrumentlessoner.myfragment.CustomWaveformFragment;
 import hack.the.wap.musicinstrumentlessoner.session.Session;
 
 public class PracticeDetailActivity extends AppCompatActivity {
     private static Session session;
+    public static String fileName;
+    private Fragment customWaveformFragment;
     private ImageView ivPracticeDetailLayLeftArrow;
     private TextView tvPracticeDetailLayName;
     private TextView tvPracticeDetailLayCount;
@@ -33,8 +40,10 @@ public class PracticeDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_practice_detail);
         Intent intent = getIntent();
+        customWaveformFragment = new CustomWaveformFragment();
         mainTemplatePractice = (TemplatePracticeDto) intent.getSerializableExtra("data");
         mainTemplate = (TemplateDto) intent.getSerializableExtra("main");
         Log.e("SAFE", "onCreate >>> " + mainTemplate);
@@ -46,6 +55,11 @@ public class PracticeDetailActivity extends AppCompatActivity {
         tvPracticeDetailLayFileName = findViewById(R.id.tvPracticeDetailLayFileName);
         ivPracticeDetailLayTeacher = findViewById(R.id.ivPracticeDetailLayTeacher);
         ivPracticeDetailLayMusician = findViewById(R.id.ivPracticeDetailLayMusician);
+
+        if(savedInstanceState==null){
+            getSupportFragmentManager().beginTransaction().add(R.id.flPracticeFragment, customWaveformFragment).commit();
+        }
+
         viewSetValue();
         viewSetListener();
     }
@@ -59,9 +73,10 @@ public class PracticeDetailActivity extends AppCompatActivity {
     private void viewSetValue() {
         ivPracticeDetailLayTeacher.setImageResource(DebugImageMatch.getImageFromName(mainTemplate.getOwner().getName()));
         ivPracticeDetailLayMusician.setImageResource(DebugImageMatch.getImageFromName(mainTemplate.getMusician()));
-        tvPracticeDetailLayName.setText(""+mainTemplate.getMusicTitle());
+        tvPracticeDetailLayName.setText("" + mainTemplate.getMusicTitle());
         tvPracticeDetailLayCount.setText("" + getResources().getText(R.string.template_practice_lay_count) + mainTemplatePractice.getPracticeId());
-        tvPracticeDetailLayPercent.setText("" + getResources().getText(R.string.template_practice_lay_percent) + mainTemplatePractice.getPercent()+getResources().getText(R.string.template_practice_lay_percent_end));
-        tvPracticeDetailLayFileName.setText(""+getResources().getText(R.string.template_practice_lay_fileName_pre)+mainTemplatePractice.getFileName());
+        tvPracticeDetailLayPercent.setText("" + getResources().getText(R.string.template_practice_lay_percent) + mainTemplatePractice.getPercent() + getResources().getText(R.string.template_practice_lay_percent_end));
+        tvPracticeDetailLayFileName.setText("" + getResources().getText(R.string.template_practice_lay_fileName_pre) + mainTemplatePractice.getFileName());
+        fileName = mainTemplatePractice.getFileName();
     }
 }
