@@ -42,6 +42,7 @@ public class TemplateDetailActivity extends AppCompatActivity {
     private TextView tvTemplateDetailLayMusicianName;
     private TextView tvTemplateDetailLayTeacherNameSlot;
     private LinearLayout llActTemplateDetail;
+    private LinearLayout llTemplateDetailLayTeacherListen;
 
     /*
         Global Instance
@@ -66,6 +67,7 @@ public class TemplateDetailActivity extends AppCompatActivity {
         tvTemplateDetailLayMusicianName = findViewById(R.id.tvTemplateDetailLayMusicianName);
         tvTemplateDetailLayTeacherNameSlot = findViewById(R.id.tvTemplateDetailLayTeacherNameSlot);
         llActTemplateDetail = findViewById(R.id.llActTemplateDetail);
+        llTemplateDetailLayTeacherListen = findViewById(R.id.llTemplateDetailLayTeacherListen);
         instance = this;
 
         Intent intent = getIntent();
@@ -125,6 +127,11 @@ public class TemplateDetailActivity extends AppCompatActivity {
     private void viewSetListener() {
         ivTemplateDetailLayLeftArrow.setOnClickListener(v -> {
             finish();
+        });
+        llTemplateDetailLayTeacherListen.setOnClickListener(v->{
+            Intent teacherIntent = new Intent(this, TeacherPracticeDetailActivity.class);
+            teacherIntent.putExtra("main", mainTemplate);
+            startActivity(teacherIntent);
         });
     }
 

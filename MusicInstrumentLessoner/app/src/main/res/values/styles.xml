@@ -23,7 +23,7 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <style name="AppTheme.NavBar" parent="AppTheme"/>
+    <style name="AppTheme.NavBar" parent="AppTheme" />
 
     <style name="TextAppearance" parent="Theme.AppCompat.NoActionBar">
         <item name="android:textColor">@color/white</item>

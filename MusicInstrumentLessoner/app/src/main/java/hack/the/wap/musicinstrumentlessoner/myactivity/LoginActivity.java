@@ -142,6 +142,7 @@ public class LoginActivity extends AppCompatActivity {
             TemplatePracticeDto m3rdPractice = new TemplatePracticeDto(1, getResources().getString(R.string.debug_tempate_detail_moonlight_index0));
             m3rdPractice.setPercent(30);
             moonlight3rd.getTemplatePractices().set(0, m3rdPractice);
+            ((TeacherDto) owner1).addTemplate(moonlight3rd);
 
              /*
                 Dummy Template2 : SurpriseSymphony
@@ -152,6 +153,7 @@ public class LoginActivity extends AppCompatActivity {
             String tMain2 = getResources().getString(R.string.debug_haydn_main);
             String tSub2 = getResources().getString(R.string.debug_haydn_sub);
             TemplateDto surpriseSymphony = new TemplateDto(owner2, musicTitle2, musician2, tMain2, tSub2);
+            ((TeacherDto) owner2).addTemplate(surpriseSymphony);
             
             /*
                 Dummy Template3 : CzernyNo95
@@ -162,6 +164,7 @@ public class LoginActivity extends AppCompatActivity {
             String tMain3 = getResources().getString(R.string.debug_czerny_main);
             String tSub3 = getResources().getString(R.string.debug_czerny_sub);
             TemplateDto czernyNo95 = new TemplateDto(owner3, musicTitle3, musician3, tMain3, tSub3);
+            ((TeacherDto) owner3).addTemplate(czernyNo95);
             
             /*
                 Dummy Template4 : Canon
@@ -172,6 +175,7 @@ public class LoginActivity extends AppCompatActivity {
             String tMain4 = getResources().getString(R.string.debug_pachelbel_main);
             String tSub4 = getResources().getString(R.string.debug_pachelbel_sub);
             TemplateDto canon = new TemplateDto(owner4, musicTitle4, musician4, tMain4, tSub4, 20);
+            ((TeacherDto) owner4).addTemplate(canon);
 
             /*
                 Dummy Notification1 : not1

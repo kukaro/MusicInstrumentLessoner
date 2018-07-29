@@ -66,4 +66,5 @@
     <string name="debug_pachelbel_sub">곡 성공률 : 70%</string>
 
     <string name="tempalte_detail_act_teacher_pre">Teacher : </string>
+    <string name="title_activity_teacher_practice_detail">TeacherPracticeDetailActivity</string>
 </resources>

@@ -1,8 +1,5 @@
 package hack.the.wap.musicinstrumentlessoner.myactivity;
 
-
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -16,11 +13,11 @@ import hack.the.wap.musicinstrumentlessoner.debug.DebugImageMatch;
 import hack.the.wap.musicinstrumentlessoner.model.dto.TemplateDto;
 import hack.the.wap.musicinstrumentlessoner.model.dto.TemplatePracticeDto;
 import hack.the.wap.musicinstrumentlessoner.myfragment.CustomWaveformFragment;
+import hack.the.wap.musicinstrumentlessoner.session.PresentFile;
 import hack.the.wap.musicinstrumentlessoner.session.Session;
 
 public class PracticeDetailActivity extends AppCompatActivity {
     private static Session session;
-    public static String fileName;
     private Fragment customWaveformFragment;
     private ImageView ivPracticeDetailLayLeftArrow;
     private TextView tvPracticeDetailLayName;
@@ -56,12 +53,13 @@ public class PracticeDetailActivity extends AppCompatActivity {
         ivPracticeDetailLayTeacher = findViewById(R.id.ivPracticeDetailLayTeacher);
         ivPracticeDetailLayMusician = findViewById(R.id.ivPracticeDetailLayMusician);
 
-        if(savedInstanceState==null){
+        viewSetValue();
+        viewSetListener();
+
+        if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().add(R.id.flPracticeFragment, customWaveformFragment).commit();
         }
 
-        viewSetValue();
-        viewSetListener();
     }
 
     private void viewSetListener() {
@@ -77,6 +75,6 @@ public class PracticeDetailActivity extends AppCompatActivity {
         tvPracticeDetailLayCount.setText("" + getResources().getText(R.string.template_practice_lay_count) + mainTemplatePractice.getPracticeId());
         tvPracticeDetailLayPercent.setText("" + getResources().getText(R.string.template_practice_lay_percent) + mainTemplatePractice.getPercent() + getResources().getText(R.string.template_practice_lay_percent_end));
         tvPracticeDetailLayFileName.setText("" + getResources().getText(R.string.template_practice_lay_fileName_pre) + mainTemplatePractice.getFileName());
-        fileName = mainTemplatePractice.getFileName();
+        PresentFile.fileName = mainTemplatePractice.getFileName();
     }
 }

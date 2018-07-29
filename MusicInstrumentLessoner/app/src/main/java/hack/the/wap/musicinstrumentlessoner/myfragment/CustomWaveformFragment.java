@@ -12,6 +12,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import hack.the.wap.musicinstrumentlessoner.myactivity.PracticeDetailActivity;
+import hack.the.wap.musicinstrumentlessoner.session.PresentFile;
 
 public class CustomWaveformFragment extends WaveformFragment {
 
@@ -22,7 +23,7 @@ public class CustomWaveformFragment extends WaveformFragment {
      */
     @Override
     protected String getFileName() {
-        return PracticeDetailActivity.fileName;
+        return PresentFile.fileName;
     }
 
     /**
