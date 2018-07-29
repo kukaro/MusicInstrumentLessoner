@@ -86,6 +86,24 @@
             android:padding="30dp"
             android:weightSum="1">
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/ivTemplateDetailLayMusician"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:adjustViewBounds="true"
+                    android:maxHeight="50dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/beethoven_round" />
+            </LinearLayout>
+
             <TextView
                 android:id="@+id/tvTemplateDetailLayMusicianName"
                 android:layout_width="wrap_content"
@@ -173,23 +191,5 @@
 
         </LinearLayout>
     </ScrollView>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <ImageView
-            android:id="@+id/ivTemplateDetailLayMusician"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:adjustViewBounds="true"
-            android:maxHeight="50dp"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/beethoven_round" />
-    </LinearLayout>
 
 </LinearLayout>
