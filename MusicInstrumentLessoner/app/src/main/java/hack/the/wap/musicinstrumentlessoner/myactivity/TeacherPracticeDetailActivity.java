@@ -64,7 +64,7 @@ public class TeacherPracticeDetailActivity extends AppCompatActivity {
         ivTeacherPracticeDetailLayTeacher.setImageResource(DebugImageMatch.getImageFromName(mainTemplate.getOwner().getName()));
         ivTeacherPracticeDetailLayMusician.setImageResource(DebugImageMatch.getImageFromName(mainTemplate.getMusician()));
         tvTeacherPracticeDetailLayName.setText("" + mainTemplate.getMusicTitle());
-        tvTeacherPracticeDetailLayTeacherName.setText("" + mainTemplate.getOwner().getName());
+        tvTeacherPracticeDetailLayTeacherName.setText(getResources().getText(R.string.template_teacher_practice_act_pre) + mainTemplate.getOwner().getName());
         PresentFile.fileName = "" + getResources().getText(R.string.file_default_dir)
                 + mainTemplate.getMusicTitle()+"/"
                 + getResources().getText(R.string.file_defulat_teacher)

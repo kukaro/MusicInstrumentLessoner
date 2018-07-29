@@ -15,4 +15,6 @@
 
     <string name="debug_template_practice_lay_count2">No.10</string>
     <string name="debug_template_practice_lay_percent2">곡 완성도 : 0%</string>
+
+    <string name="template_teacher_practice_act_pre">연주자 : </string>
 </resources>

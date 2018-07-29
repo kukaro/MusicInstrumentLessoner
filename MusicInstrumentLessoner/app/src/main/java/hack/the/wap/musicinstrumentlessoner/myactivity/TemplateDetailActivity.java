@@ -128,7 +128,7 @@ public class TemplateDetailActivity extends AppCompatActivity {
         ivTemplateDetailLayLeftArrow.setOnClickListener(v -> {
             finish();
         });
-        llTemplateDetailLayTeacherListen.setOnClickListener(v->{
+        llTemplateDetailLayTeacherListen.setOnClickListener(v -> {
             Intent teacherIntent = new Intent(this, TeacherPracticeDetailActivity.class);
             teacherIntent.putExtra("main", mainTemplate);
             startActivity(teacherIntent);
@@ -141,7 +141,7 @@ public class TemplateDetailActivity extends AppCompatActivity {
         if (requestCode == 0) {
             if (resultCode == RESULT_OK) {
                 TemplatePracticeDto dto = new TemplatePracticeDto(curPractice, curFile);
-                mainTemplate.getTemplatePractices().set(curPractice, dto);
+                mainTemplate.getTemplatePractices().set(curPractice - 1, dto);
                 AndroidAudioConverter.with(this)
                         .setFile(new File(filePath))
                         .setFormat(AudioFormat.MP3)
@@ -149,7 +149,7 @@ public class TemplateDetailActivity extends AppCompatActivity {
                             @Override
                             public void onSuccess(File file) {
                                 dto.setFileName(file.getAbsolutePath());
-                                Log.e("TAG", "onSuccess: "+file.getAbsolutePath() );
+                                Log.e("TAG", "onSuccess: " + file.getAbsolutePath());
                             }
 
                             @Override
