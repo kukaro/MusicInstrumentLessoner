@@ -12,7 +12,8 @@ https://stackoverflow.com/questions/47001656/unable-to-resolve-dependency-androi
 gradle offline뜨면 이거보셈. 개삽질함  
 
 ##Important 
-녹음 파일 디렉터리 -> MI/음악이름/번호.확장자  
+녹음 파일 디렉터리 -> MI/음악이름/번호/resource  
+선생님 파일 디렉터리 -> MI/음악이름
 https://github.com/adrielcafe/AndroidAudioConverter  
 https://github.com/adrielcafe/AndroidAudioRecorder  
 

@@ -95,7 +95,7 @@ public class TemplateDetailActivity extends AppCompatActivity {
                 atom.setCustomAttr(dto);
                 atom.setOnClickListener(v -> {
                     rootDir = mkdir(dto);
-                    filePath = rootDir + "/recorded_audio.wav";
+                    filePath = rootDir + getResources().getString(R.string.file_default_name);
                     int requestCode = 0;
                     curPractice = dto.getPracticeId();
                     curFile = filePath;
