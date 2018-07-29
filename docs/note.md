@@ -8,6 +8,9 @@ Segment -> 이게 중요함 색칠해줌 개꿀
 http://webnautes.tistory.com/1094  
 다이얼로그 예제
 
+https://stackoverflow.com/questions/47001656/unable-to-resolve-dependency-android-studio-3-0  
+gradle offline뜨면 이거보셈. 개삽질함  
+
 ##Important 
 녹음 파일 디렉터리 -> MI/음악이름/번호.확장자  
 https://github.com/adrielcafe/AndroidAudioConverter  

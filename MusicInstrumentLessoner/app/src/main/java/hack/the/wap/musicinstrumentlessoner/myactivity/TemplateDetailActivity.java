@@ -14,6 +14,8 @@ import android.widget.TextView;
 import java.io.File;
 import java.util.ArrayList;
 
+//import cafe.adriel.androidaudioconverter.AndroidAudioConverter;
+//import cafe.adriel.androidaudioconverter.model.AudioFormat;
 import cafe.adriel.androidaudiorecorder.AndroidAudioRecorder;
 import cafe.adriel.androidaudiorecorder.model.AudioChannel;
 import cafe.adriel.androidaudiorecorder.model.AudioSampleRate;
@@ -22,6 +24,7 @@ import hack.the.wap.musicinstrumentlessoner.R;
 import hack.the.wap.musicinstrumentlessoner.debug.DebugImageMatch;
 import hack.the.wap.musicinstrumentlessoner.model.dto.TemplateDto;
 import hack.the.wap.musicinstrumentlessoner.model.dto.TemplatePracticeDto;
+import hack.the.wap.musicinstrumentlessoner.myfragment.TemplateFragment;
 import hack.the.wap.musicinstrumentlessoner.mylayout.TemplateNegativePracticeLayout;
 import hack.the.wap.musicinstrumentlessoner.mylayout.TemplatePositivePracticeLayout;
 import hack.the.wap.musicinstrumentlessoner.session.Session;
@@ -38,8 +41,14 @@ public class TemplateDetailActivity extends AppCompatActivity {
     private TextView tvTemplateDetailLayMusicianName;
     private TextView tvTemplateDetailLayTeacherNameSlot;
     private LinearLayout llActTemplateDetail;
-    private int curChoice;
+
+    /*
+        Global Instance
+     */
+    private int curPractice;
     private String curFile;
+    private String rootDir;
+    private String filePath;
 
     {
         session = Session.getInstance();
@@ -84,10 +93,10 @@ public class TemplateDetailActivity extends AppCompatActivity {
                 TemplateNegativePracticeLayout atom = new TemplateNegativePracticeLayout(this);
                 atom.setCustomAttr(dto);
                 atom.setOnClickListener(v -> {
-                    String rootDir = mkdir(dto);
-                    String filePath = rootDir + "/recorded_audio.wav";
+                    rootDir = mkdir(dto);
+                    filePath = rootDir + "/recorded_audio.wav";
                     int requestCode = 0;
-                    curChoice = dto.getPracticeId();
+                    curPractice = dto.getPracticeId();
                     curFile = filePath;
                     AndroidAudioRecorder.with(this)
                             // Required
@@ -123,8 +132,10 @@ public class TemplateDetailActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 0) {
             if (resultCode == RESULT_OK) {
-                TemplatePracticeDto dto = new TemplatePracticeDto(curChoice, curFile);
-                //TODO
+                TemplatePracticeDto dto = new TemplatePracticeDto(curPractice, curFile);
+                mainTemplate.getTemplatePractices().set(curPractice, dto);
+                session.getTemplates().get(TemplateFragment.curTemplate).getTemplatePractices().set(curPractice - 1, dto);
+                session.showAllSession();
             } else if (resultCode == RESULT_CANCELED) {
                 // Oops! User has canceled the recording
             }

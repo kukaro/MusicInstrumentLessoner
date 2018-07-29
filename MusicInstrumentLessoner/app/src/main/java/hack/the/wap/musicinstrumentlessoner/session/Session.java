@@ -1,6 +1,7 @@
 package hack.the.wap.musicinstrumentlessoner.session;
 
 import android.os.Debug;
+import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -57,5 +58,12 @@ public class Session {
             instance = new Session();
         }
         return instance;
+    }
+
+    public void showAllSession() {
+        Log.e("Session", ">>>" + mainUser);
+        Log.e("Session", ">>>" + notifications);
+        Log.e("Session", ">>>" + templates);
+        Log.e("Session", ">>>" + userGroups);
     }
 }

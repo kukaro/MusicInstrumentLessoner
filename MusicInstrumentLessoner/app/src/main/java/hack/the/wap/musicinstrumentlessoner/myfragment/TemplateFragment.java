@@ -29,6 +29,8 @@ import hack.the.wap.musicinstrumentlessoner.session.Session;
  * create an instance of this fragment.
  */
 public class TemplateFragment extends Fragment {
+    public static int curTemplate;
+    private int i;
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private static View templateFragmentView;
@@ -79,6 +81,7 @@ public class TemplateFragment extends Fragment {
         templateFragmentView = inflater.inflate(R.layout.fragment_template, container, false);
         llFragTemplate = templateFragmentView.findViewById(R.id.llFragTemplate);
         templates = session.getTemplates();
+        i = 0;
         for (TemplateDto dto : templates) {
             TemplateLayout atom = new TemplateLayout(getContext());
             atom.setCustomAttr(dto);
@@ -86,6 +89,7 @@ public class TemplateFragment extends Fragment {
                 Intent intent = new Intent(MainActivity.getInstance(), TemplateDetailActivity.class);
                 intent.putExtra("data", dto);
                 startActivity(intent);
+                curTemplate = i++;
             });
             llFragTemplate.addView(atom);
         }
