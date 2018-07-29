@@ -16,6 +16,9 @@ gradle offline뜨면 이거보셈. 개삽질함
 https://github.com/adrielcafe/AndroidAudioConverter  
 https://github.com/adrielcafe/AndroidAudioRecorder  
 
+##TODO
+선생님의 피드백 받는거,그룹  
+
 ##Use Liblary
 music visaulizer -> waveform
 
