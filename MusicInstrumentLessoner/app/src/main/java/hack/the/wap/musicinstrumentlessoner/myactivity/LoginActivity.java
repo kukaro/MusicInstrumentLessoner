@@ -13,6 +13,7 @@ import hack.the.wap.musicinstrumentlessoner.debug.DebugMode;
 import hack.the.wap.musicinstrumentlessoner.model.dto.NotificationDto;
 import hack.the.wap.musicinstrumentlessoner.model.dto.TeacherDto;
 import hack.the.wap.musicinstrumentlessoner.model.dto.TemplateDto;
+import hack.the.wap.musicinstrumentlessoner.model.dto.TemplatePracticeDto;
 import hack.the.wap.musicinstrumentlessoner.model.dto.UserDto;
 import hack.the.wap.musicinstrumentlessoner.model.dto.UserGroupDto;
 import hack.the.wap.musicinstrumentlessoner.session.Session;
@@ -65,7 +66,9 @@ public class LoginActivity extends AppCompatActivity {
 
     public void setSession() {
         session = Session.getInstance();
-        DEBUG_SET_SESSION();
+        if(DebugMode.DEBUG_MOD){
+            DEBUG_SET_SESSION();
+        }
     }
 
 
@@ -135,6 +138,7 @@ public class LoginActivity extends AppCompatActivity {
             String tMain1 = getResources().getString(R.string.debug_beethoven_main);
             String tSub1 = getResources().getString(R.string.debug_beethoven_sub);
             TemplateDto moonlight3rd = new TemplateDto(owner1, musicTitle1, musician1, tMain1, tSub1);
+            moonlight3rd.getTemplatePractices().set(0, new TemplatePracticeDto(1, getResources().getString(R.string.debug_tempate_detail_moonlight_index0)));
 
              /*
                 Dummy Template2 : SurpriseSymphony
@@ -164,7 +168,7 @@ public class LoginActivity extends AppCompatActivity {
             String musician4 = getResources().getString(R.string.debug_pachelbel_name);
             String tMain4 = getResources().getString(R.string.debug_pachelbel_main);
             String tSub4 = getResources().getString(R.string.debug_pachelbel_sub);
-            TemplateDto canon = new TemplateDto(owner4, musicTitle4, musician4, tMain4, tSub4);
+            TemplateDto canon = new TemplateDto(owner4, musicTitle4, musician4, tMain4, tSub4,20);
 
             /*
                 Dummy Notification1 : not1

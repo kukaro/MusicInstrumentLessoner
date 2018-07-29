@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="42dp"
     android:layout_margin="10dp"
-    android:background="@drawable/template_postive_lay_rounded">
+    android:background="@drawable/template_negative_lay_rounded">
 
     <TextView
-        android:id="@+id/tvTemplatePracticeLayCount"
+        android:id="@+id/tvTemplateNegativePracticeLayCount"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_margin="10dp"
@@ -17,11 +17,11 @@
         android:textColor="@color/black" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/tvTemplateNegativeLayPercent"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="@string/debug_template_practice_lay_percent1"
+        android:text="@string/template_practice_lay_add_state"
         android:textColor="@color/black" />
 
     <LinearLayout
@@ -32,7 +32,7 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/ivTemplateUserImage"
+            android:id="@+id/ivTemplateNegativePracticeLayView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -40,15 +40,15 @@
             android:adjustViewBounds="true"
             android:maxHeight="30dp"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/view" />
+            app:srcCompat="@drawable/add" />
 
         <TextView
-            android:id="@+id/tvTemplatePracticeLayPercent"
+            android:id="@+id/tvTemplateNegativePracticeLayView"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="@string/template_practice_lay_view"
-            android:textColor="@color/naturalBlue" />
+            android:text="@string/template_practice_lay_add"
+            android:textColor="@color/positiveGreen" />
     </LinearLayout>
 
 </LinearLayout>
