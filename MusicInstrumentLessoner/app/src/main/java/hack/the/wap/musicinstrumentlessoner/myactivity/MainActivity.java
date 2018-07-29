@@ -24,6 +24,7 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import hack.the.wap.musicinstrumentlessoner.R;
 import hack.the.wap.musicinstrumentlessoner.debug.DebugMode;
@@ -223,10 +224,10 @@ public class MainActivity extends AppCompatActivity
         if (DebugMode.DEBUG_MOD) {
             Log.e("DEBUG", "DEBUG_SESSION_DATA list ▼ ");
             Log.e("DEBUG", "DEBUG_SESSION_DATA >>> user : " + session.getMainUser());
-            ArrayList<TemplateDto> templates = session.getTemplates();
+            HashMap<String,TemplateDto> templates = session.getTemplates();
             ArrayList<NotificationDto> notifications = session.getNotifications();
             ArrayList<UserGroupDto> userGroups = session.getUserGroups();
-            for (TemplateDto dto : templates) {
+            for (TemplateDto dto : templates.values()) {
                 Log.e("DEBUG", "DEBUG_SESSION_DATA >>> template : " + dto);
             }
             for (NotificationDto dto : notifications) {

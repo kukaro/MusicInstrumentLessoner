@@ -152,7 +152,7 @@ public class TemplateDetailActivity extends AppCompatActivity {
                         })
                         .convert();
 
-                session.getTemplates().get(TemplateFragment.curTemplate).getTemplatePractices().set(curPractice - 1, dto);
+                session.getTemplates().get(mainTemplate.getMusicTitle()).getTemplatePractices().set(curPractice - 1, dto);
                 session.showAllSession();
             } else if (resultCode == RESULT_CANCELED) {
                 // Oops! User has canceled the recording

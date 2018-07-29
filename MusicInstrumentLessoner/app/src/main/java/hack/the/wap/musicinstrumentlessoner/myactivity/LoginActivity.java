@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import hack.the.wap.musicinstrumentlessoner.R;
 import hack.the.wap.musicinstrumentlessoner.debug.DebugMode;
@@ -66,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void setSession() {
         session = Session.getInstance();
-        if(DebugMode.DEBUG_MOD){
+        if (DebugMode.DEBUG_MOD) {
             DEBUG_SET_SESSION();
         }
     }
@@ -170,7 +171,7 @@ public class LoginActivity extends AppCompatActivity {
             String musician4 = getResources().getString(R.string.debug_pachelbel_name);
             String tMain4 = getResources().getString(R.string.debug_pachelbel_main);
             String tSub4 = getResources().getString(R.string.debug_pachelbel_sub);
-            TemplateDto canon = new TemplateDto(owner4, musicTitle4, musician4, tMain4, tSub4,20);
+            TemplateDto canon = new TemplateDto(owner4, musicTitle4, musician4, tMain4, tSub4, 20);
 
             /*
                 Dummy Notification1 : not1
@@ -220,11 +221,11 @@ public class LoginActivity extends AppCompatActivity {
             /*
                 Insert Template data
              */
-            ArrayList<TemplateDto> templates = new ArrayList<>();
-            templates.add(moonlight3rd);
-            templates.add(surpriseSymphony);
-            templates.add(czernyNo95);
-            templates.add(canon);
+            HashMap<String, TemplateDto> templates = new HashMap<>();
+            templates.put(moonlight3rd.getMusicTitle(), moonlight3rd);
+            templates.put(surpriseSymphony.getMusicTitle(), surpriseSymphony);
+            templates.put(czernyNo95.getMusicTitle(), czernyNo95);
+            templates.put(canon.getMusicTitle(), canon);
 
             /*
                 Insert Notification data

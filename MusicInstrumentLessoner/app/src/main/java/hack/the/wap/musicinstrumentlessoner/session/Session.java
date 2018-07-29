@@ -4,6 +4,7 @@ import android.os.Debug;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import hack.the.wap.musicinstrumentlessoner.debug.DebugMode;
 import hack.the.wap.musicinstrumentlessoner.model.dto.NotificationDto;
@@ -15,7 +16,7 @@ public class Session {
     private static Session instance;
     private UserDto mainUser;
     private ArrayList<NotificationDto> notifications;
-    private ArrayList<TemplateDto> templates;
+    private HashMap<String, TemplateDto> templates;
     private ArrayList<UserGroupDto> userGroups;
 
     private Session() {
@@ -37,11 +38,11 @@ public class Session {
         this.notifications = notifications;
     }
 
-    public ArrayList<TemplateDto> getTemplates() {
+    public HashMap<String, TemplateDto> getTemplates() {
         return templates;
     }
 
-    public void setTemplates(ArrayList<TemplateDto> templates) {
+    public void setTemplates(HashMap<String, TemplateDto> templates) {
         this.templates = templates;
     }
 
