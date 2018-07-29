@@ -1,10 +1,19 @@
 package hack.the.wap.musicinstrumentlessoner.model.dto;
 
 import java.io.Serializable;
+import java.util.Random;
 
-public class TemplatePracticeDto implements Serializable{
+import hack.the.wap.musicinstrumentlessoner.debug.DebugMode;
+
+public class TemplatePracticeDto implements Serializable {
+    private static Random random;
     private int practiceId;
+    private int percent;
     private String fileName;
+
+    {
+        random = new Random();
+    }
 
     public TemplatePracticeDto(int practiceId, String fileName) {
         this.practiceId = practiceId;
@@ -25,6 +34,18 @@ public class TemplatePracticeDto implements Serializable{
 
     public void setFileName(String fileName) {
         this.fileName = fileName;
+    }
+
+    public int getPercent() {
+        return percent;
+    }
+
+    public void setPercent(int percent) {
+        if (DebugMode.DEBUG_MOD) {
+            this.percent = 50 + random.nextInt(51);
+            return;
+        }
+        this.percent = percent;
     }
 
     @Override

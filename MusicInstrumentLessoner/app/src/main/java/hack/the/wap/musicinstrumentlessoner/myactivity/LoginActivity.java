@@ -138,7 +138,9 @@ public class LoginActivity extends AppCompatActivity {
             String tMain1 = getResources().getString(R.string.debug_beethoven_main);
             String tSub1 = getResources().getString(R.string.debug_beethoven_sub);
             TemplateDto moonlight3rd = new TemplateDto(owner1, musicTitle1, musician1, tMain1, tSub1);
-            moonlight3rd.getTemplatePractices().set(0, new TemplatePracticeDto(1, getResources().getString(R.string.debug_tempate_detail_moonlight_index0)));
+            TemplatePracticeDto m3rdPractice = new TemplatePracticeDto(1, getResources().getString(R.string.debug_tempate_detail_moonlight_index0));
+            m3rdPractice.setPercent(30);
+            moonlight3rd.getTemplatePractices().set(0, m3rdPractice);
 
              /*
                 Dummy Template2 : SurpriseSymphony

@@ -21,6 +21,7 @@ import hack.the.wap.musicinstrumentlessoner.session.Session;
 
 public class TemplateDetailActivity extends AppCompatActivity {
     private static Session session;
+    private TemplateDetailActivity instance;
     private ArrayList<TemplatePracticeDto> templatePractices;
     private TemplateDto mainTemplate;
     private ImageView ivTemplateDetailLayLeftArrow;
@@ -39,7 +40,6 @@ public class TemplateDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_template_detail);
-
         ivTemplateDetailLayLeftArrow = findViewById(R.id.ivTemplateDetailLayLeftArrow);
         ivTemplateDetailLayTeacher = findViewById(R.id.ivTemplateDetailLayTeacher);
         ivTemplateDetailLayMusician = findViewById(R.id.ivTemplateDetailLayMusician);
@@ -47,6 +47,7 @@ public class TemplateDetailActivity extends AppCompatActivity {
         tvTemplateDetailLayMusicianName = findViewById(R.id.tvTemplateDetailLayMusicianName);
         tvTemplateDetailLayTeacherNameSlot = findViewById(R.id.tvTemplateDetailLayTeacherNameSlot);
         llActTemplateDetail = findViewById(R.id.llActTemplateDetail);
+        instance = this;
 
         Intent intent = getIntent();
         mainTemplate = (TemplateDto) intent.getSerializableExtra("data");
@@ -60,11 +61,17 @@ public class TemplateDetailActivity extends AppCompatActivity {
 
         templatePractices = mainTemplate.getTemplatePractices();
         for (TemplatePracticeDto dto : templatePractices) {
-            if(dto.getFileName()!=null){
+            if (dto.getFileName() != null) {
                 TemplatePositivePracticeLayout atom = new TemplatePositivePracticeLayout(this);
                 atom.setCustomAttr(dto);
+                atom.setOnClickListener(v -> {
+                    Intent posIntent = new Intent(this, PracticeDetailActivity.class);
+                    posIntent.putExtra("data", dto);
+                    posIntent.putExtra("main", mainTemplate);
+                    startActivity(posIntent);
+                });
                 llActTemplateDetail.addView(atom);
-            }else{
+            } else {
                 TemplateNegativePracticeLayout atom = new TemplateNegativePracticeLayout(this);
                 atom.setCustomAttr(dto);
                 llActTemplateDetail.addView(atom);
