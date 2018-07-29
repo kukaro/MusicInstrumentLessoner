@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--real resource-->
+    <string name="template_practice_lay_count">No.</string>
+    <string name="template_practice_lay_percent">곡 완성도 : </string>
+    <string name="template_practice_lay_percent_end">%</string>
+    <string name="template_practice_lay_view">view detail</string>
+
+    <!--debug resource-->
+    <string name="debug_template_practice_lay_count1">No.1</string>
+    <string name="debug_template_practice_lay_percent1">곡 완성도 : 90%</string>
+</resources>

@@ -174,7 +174,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_margin="10dp"
-                android:background="@drawable/template_lay_rounded"
+                android:background="@drawable/template_postive_lay_rounded"
                 android:orientation="horizontal"></LinearLayout>
 
 
