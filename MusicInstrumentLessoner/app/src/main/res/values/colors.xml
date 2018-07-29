@@ -12,4 +12,6 @@
     <color name="notificationMiColor">#3B3E60</color>
     <color name="commonDateColor">#8C8F95</color>
     <color name="commonMenuColor">#121422</color>
+    <color name="positiveGreen">#5DCA57</color>
+    <color name="naturalBlue">#004DB7</color>
 </resources>
