@@ -19,6 +19,7 @@ public class PracticeDetailActivity extends AppCompatActivity {
     private TextView tvPracticeDetailLayName;
     private TextView tvPracticeDetailLayCount;
     private TextView tvPracticeDetailLayPercent;
+    private TextView tvPracticeDetailLayFileName;
     private ImageView ivPracticeDetailLayTeacher;
     private ImageView ivPracticeDetailLayMusician;
 
@@ -42,6 +43,7 @@ public class PracticeDetailActivity extends AppCompatActivity {
         tvPracticeDetailLayName = findViewById(R.id.tvPracticeDetailLayName);
         tvPracticeDetailLayCount = findViewById(R.id.tvPracticeDetailLayCount);
         tvPracticeDetailLayPercent = findViewById(R.id.tvPracticeDetailLayPercent);
+        tvPracticeDetailLayFileName = findViewById(R.id.tvPracticeDetailLayFileName);
         ivPracticeDetailLayTeacher = findViewById(R.id.ivPracticeDetailLayTeacher);
         ivPracticeDetailLayMusician = findViewById(R.id.ivPracticeDetailLayMusician);
         viewSetValue();
@@ -60,5 +62,6 @@ public class PracticeDetailActivity extends AppCompatActivity {
         tvPracticeDetailLayName.setText(""+mainTemplate.getMusicTitle());
         tvPracticeDetailLayCount.setText("" + getResources().getText(R.string.template_practice_lay_count) + mainTemplatePractice.getPracticeId());
         tvPracticeDetailLayPercent.setText("" + getResources().getText(R.string.template_practice_lay_percent) + mainTemplatePractice.getPercent()+getResources().getText(R.string.template_practice_lay_percent_end));
+        tvPracticeDetailLayFileName.setText(""+getResources().getText(R.string.template_practice_lay_fileName_pre)+mainTemplatePractice.getFileName());
     }
 }
