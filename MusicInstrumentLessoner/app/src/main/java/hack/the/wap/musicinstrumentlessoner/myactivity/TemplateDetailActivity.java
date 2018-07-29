@@ -11,8 +11,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.io.File;
 import java.util.ArrayList;
 
+import cafe.adriel.androidaudiorecorder.AndroidAudioRecorder;
+import cafe.adriel.androidaudiorecorder.model.AudioChannel;
+import cafe.adriel.androidaudiorecorder.model.AudioSampleRate;
+import cafe.adriel.androidaudiorecorder.model.AudioSource;
 import hack.the.wap.musicinstrumentlessoner.R;
 import hack.the.wap.musicinstrumentlessoner.debug.DebugImageMatch;
 import hack.the.wap.musicinstrumentlessoner.model.dto.TemplateDto;
@@ -33,6 +38,8 @@ public class TemplateDetailActivity extends AppCompatActivity {
     private TextView tvTemplateDetailLayMusicianName;
     private TextView tvTemplateDetailLayTeacherNameSlot;
     private LinearLayout llActTemplateDetail;
+    private int curChoice;
+    private String curFile;
 
     {
         session = Session.getInstance();
@@ -76,8 +83,27 @@ public class TemplateDetailActivity extends AppCompatActivity {
             } else {
                 TemplateNegativePracticeLayout atom = new TemplateNegativePracticeLayout(this);
                 atom.setCustomAttr(dto);
-                atom.setOnClickListener(v->{
-                    makeRecordDialog();
+                atom.setOnClickListener(v -> {
+                    String rootDir = mkdir(dto);
+                    String filePath = rootDir + "/recorded_audio.wav";
+                    int requestCode = 0;
+                    curChoice = dto.getPracticeId();
+                    curFile = filePath;
+                    AndroidAudioRecorder.with(this)
+                            // Required
+                            .setFilePath(filePath)
+                            .setColor(R.color.colorPrimaryDark)
+                            .setRequestCode(requestCode)
+
+                            // Optional
+                            .setSource(AudioSource.MIC)
+                            .setChannel(AudioChannel.STEREO)
+                            .setSampleRate(AudioSampleRate.HZ_48000)
+                            .setAutoStart(true)
+                            .setKeepDisplayOn(true)
+
+                            // Start recording
+                            .record();
                 });
                 llActTemplateDetail.addView(atom);
             }
@@ -92,12 +118,28 @@ public class TemplateDetailActivity extends AppCompatActivity {
         });
     }
 
-    private void makeRecordDialog(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        LayoutInflater inflater = getLayoutInflater();
-        View view = inflater.inflate(R.layout.dialog_record_layout,null);
-        builder.setView(view);
-        AlertDialog dialog = builder.create();
-        dialog.show();
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 0) {
+            if (resultCode == RESULT_OK) {
+                TemplatePracticeDto dto = new TemplatePracticeDto(curChoice, curFile);
+                //TODO
+            } else if (resultCode == RESULT_CANCELED) {
+                // Oops! User has canceled the recording
+            }
+        }
+    }
+
+    private String mkdir(TemplatePracticeDto dto) {
+        File dir = new File(getResources().getString(R.string.file_default_dir) + mainTemplate.getMusicTitle());
+        if (!dir.isDirectory()) {
+            dir.mkdir();
+        }
+        dir = new File(getResources().getString(R.string.file_default_dir) + mainTemplate.getMusicTitle() + "/" + dto.getPracticeId());
+        if (!dir.isDirectory()) {
+            dir.mkdir();
+        }
+        return getResources().getString(R.string.file_default_dir) + mainTemplate.getMusicTitle() + "/" + dto.getPracticeId();
     }
 }
