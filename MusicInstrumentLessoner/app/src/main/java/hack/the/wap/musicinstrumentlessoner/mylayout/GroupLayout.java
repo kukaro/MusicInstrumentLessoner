@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import hack.the.wap.musicinstrumentlessoner.R;
 import hack.the.wap.musicinstrumentlessoner.debug.DebugImageMatch;
+import hack.the.wap.musicinstrumentlessoner.model.dto.TeacherDto;
 import hack.the.wap.musicinstrumentlessoner.model.dto.UserGroupDto;
 
 /*
@@ -75,16 +76,24 @@ public class GroupLayout extends LinearLayout {
         typedArray.recycle();
     }
 
-    public void setCustomAttr(String name,String date,String main,String musicTitle){
+    public void setCustomAttr(String name, String date, String main, String musicTitle) {
         tvGroupLayName.setText(name);
         tvGroupLayMain.setText(main);
         tvGroupLayMusicTitle.setText(musicTitle);
     }
 
-    public void setCustomAttr(UserGroupDto dto){
+    public void setCustomAttr(UserGroupDto dto) {
         ivGroupLayEduImage.setImageResource(DebugImageMatch.getImageFromName(dto.getName()));
         tvGroupLayName.setText(dto.getName());
-        //tvGroupLayMain.setText(dto.getMain());
-        //tvGroupLayMusicTitle.setText(dto.getTemplate().getMusicTitle());
+        tvGroupLayMain.setText(""
+                + getResources().getText(R.string.group_lay_teacher) + dto.getTeachers().size() + getResources().getText(R.string.punit)
+                + getResources().getText(R.string.sep)
+                + getResources().getText(R.string.group_lay_user) + dto.getUsers().size() + getResources().getText(R.string.punit));
+        int templateCount = 0;
+        for (TeacherDto atom : dto.getTeachers().values()) {
+            templateCount += atom.getTemplates().size();
+        }
+        tvGroupLayMusicTitle.setText("" + getResources().getText(R.string.group_lay_tempate_count)
+                + templateCount + getResources().getText(R.string.cunit));
     }
 }

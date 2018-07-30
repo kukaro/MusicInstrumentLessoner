@@ -23,6 +23,10 @@ public class DebugImageMatch extends AppCompatActivity{
                 return R.drawable.beethoven_round;
             case "Haydn":
                 return R.drawable.haydn_round;
+            case "피아노리브레 강남센터":
+                return R.drawable.music_place_round;
+            case "SMMA아카데미":
+                return R.drawable.kanna_round;
             default:
                 return R.drawable.logo_user_round;
         }

@@ -7,8 +7,16 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+
+import java.util.HashMap;
 
 import hack.the.wap.musicinstrumentlessoner.R;
+import hack.the.wap.musicinstrumentlessoner.model.dto.UserGroupDto;
+import hack.the.wap.musicinstrumentlessoner.mylayout.GroupLayout;
+import hack.the.wap.musicinstrumentlessoner.mylayout.ImageLayout;
+import hack.the.wap.musicinstrumentlessoner.mylayout.NotificationLayout;
 import hack.the.wap.musicinstrumentlessoner.session.Session;
 
 
@@ -24,7 +32,9 @@ public class GroupFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private static View groupFragmentView;
+    private static LinearLayout llFragGroup;
     private static Session session;
+    private static HashMap<String, UserGroupDto> userGroups;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -67,6 +77,13 @@ public class GroupFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         groupFragmentView = inflater.inflate(R.layout.fragment_group, container, false);
+        llFragGroup = groupFragmentView.findViewById(R.id.llFragGroup);
+        userGroups = session.getUserGroups();
+        for (UserGroupDto dto : userGroups.values()) {
+            GroupLayout atom = new GroupLayout(getContext());
+            atom.setCustomAttr(dto);
+            llFragGroup.addView(atom);
+        }
         return groupFragmentView;
     }
 

@@ -242,9 +242,9 @@ public class LoginActivity extends AppCompatActivity {
             /*
                 Insert User Group data
              */
-            ArrayList<UserGroupDto> userGroups = new ArrayList<>();
-            userGroups.add(libre);
-            userGroups.add(smma);
+            HashMap<String, UserGroupDto> userGroups = new HashMap<>();
+            userGroups.put(libre.getName(), libre);
+            userGroups.put(smma.getName(), smma);
 
             session.setMainUser(mina);
             session.setTemplates(templates);

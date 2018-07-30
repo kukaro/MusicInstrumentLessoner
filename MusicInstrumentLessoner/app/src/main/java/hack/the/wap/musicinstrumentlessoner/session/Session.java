@@ -17,7 +17,7 @@ public class Session {
     private UserDto mainUser;
     private ArrayList<NotificationDto> notifications;
     private HashMap<String, TemplateDto> templates;
-    private ArrayList<UserGroupDto> userGroups;
+    private HashMap<String, UserGroupDto> userGroups;
 
     private Session() {
     }
@@ -46,11 +46,11 @@ public class Session {
         this.templates = templates;
     }
 
-    public ArrayList<UserGroupDto> getUserGroups() {
+    public HashMap<String, UserGroupDto> getUserGroups() {
         return userGroups;
     }
 
-    public void setUserGroups(ArrayList<UserGroupDto> userGroups) {
+    public void setUserGroups(HashMap<String, UserGroupDto> userGroups) {
         this.userGroups = userGroups;
     }
 

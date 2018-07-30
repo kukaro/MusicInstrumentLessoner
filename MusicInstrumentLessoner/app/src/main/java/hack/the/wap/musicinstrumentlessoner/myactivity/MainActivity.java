@@ -224,16 +224,16 @@ public class MainActivity extends AppCompatActivity
         if (DebugMode.DEBUG_MOD) {
             Log.e("DEBUG", "DEBUG_SESSION_DATA list ▼ ");
             Log.e("DEBUG", "DEBUG_SESSION_DATA >>> user : " + session.getMainUser());
-            HashMap<String,TemplateDto> templates = session.getTemplates();
+            HashMap<String, TemplateDto> templates = session.getTemplates();
             ArrayList<NotificationDto> notifications = session.getNotifications();
-            ArrayList<UserGroupDto> userGroups = session.getUserGroups();
+            HashMap<String, UserGroupDto> userGroups = session.getUserGroups();
             for (TemplateDto dto : templates.values()) {
                 Log.e("DEBUG", "DEBUG_SESSION_DATA >>> template : " + dto);
             }
             for (NotificationDto dto : notifications) {
                 Log.e("DEBUG", "DEBUG_SESSION_DATA >>> notification : " + dto);
             }
-            for (UserGroupDto dto : userGroups) {
+            for (UserGroupDto dto : userGroups.values()) {
                 Log.e("DEBUG", "DEBUG_SESSION_DATA >>> userGroups : " + dto);
             }
         }
