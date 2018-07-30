@@ -1,15 +1,26 @@
 package hack.the.wap.musicinstrumentlessoner.model.dto;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class UserGroupDto {
+public class UserGroupDto implements Serializable{
     private String name;
+    private String main;
+    private String sub;
     private HashMap<String, TeacherDto> teachers;
     private HashMap<String, UserDto> users;
 
     public UserGroupDto(String name) {
         this.name = name;
+        users = new HashMap<>();
+        teachers = new HashMap<>();
+    }
+
+    public UserGroupDto(String name, String main, String sub) {
+        this.name = name;
+        this.main = main;
+        this.sub = sub;
         users = new HashMap<>();
         teachers = new HashMap<>();
     }
@@ -44,6 +55,22 @@ public class UserGroupDto {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getMain() {
+        return main;
+    }
+
+    public void setMain(String main) {
+        this.main = main;
+    }
+
+    public String getSub() {
+        return sub;
+    }
+
+    public void setSub(String sub) {
+        this.sub = sub;
     }
 
     @Override

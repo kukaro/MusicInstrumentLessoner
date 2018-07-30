@@ -1,6 +1,7 @@
 package hack.the.wap.musicinstrumentlessoner.myfragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -14,6 +15,9 @@ import java.util.HashMap;
 
 import hack.the.wap.musicinstrumentlessoner.R;
 import hack.the.wap.musicinstrumentlessoner.model.dto.UserGroupDto;
+import hack.the.wap.musicinstrumentlessoner.myactivity.MainActivity;
+import hack.the.wap.musicinstrumentlessoner.myactivity.TemplateDetailActivity;
+import hack.the.wap.musicinstrumentlessoner.myactivity.UserGroupDetailActivity;
 import hack.the.wap.musicinstrumentlessoner.mylayout.GroupLayout;
 import hack.the.wap.musicinstrumentlessoner.mylayout.ImageLayout;
 import hack.the.wap.musicinstrumentlessoner.mylayout.NotificationLayout;
@@ -82,6 +86,11 @@ public class GroupFragment extends Fragment {
         for (UserGroupDto dto : userGroups.values()) {
             GroupLayout atom = new GroupLayout(getContext());
             atom.setCustomAttr(dto);
+            atom.setOnClickListener(v -> {
+                Intent intent = new Intent(MainActivity.getInstance(), UserGroupDetailActivity.class);
+                intent.putExtra("data", dto);
+                startActivity(intent);
+            });
             llFragGroup.addView(atom);
         }
         return groupFragmentView;
