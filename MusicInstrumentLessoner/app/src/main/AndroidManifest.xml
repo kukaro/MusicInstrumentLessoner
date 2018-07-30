@@ -35,7 +35,8 @@
         <activity android:name=".myactivity.TemplateDetailActivity" />
         <activity android:name=".myactivity.PracticeDetailActivity" />
         <activity android:name=".myactivity.TeacherPracticeDetailActivity" />
-        <activity android:name=".myactivity.UserGroupDetailActivity"></activity>
+        <activity android:name=".myactivity.UserGroupDetailActivity" />
+        <activity android:name=".myactivity.GuideActivity"></activity>
     </application>
 
 </manifest>

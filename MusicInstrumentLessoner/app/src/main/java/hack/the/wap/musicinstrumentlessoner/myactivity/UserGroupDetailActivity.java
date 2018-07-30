@@ -69,5 +69,15 @@ public class UserGroupDetailActivity extends AppCompatActivity {
     private void viewSetValue() {
         ivActUserGroupDetailMusicPlace.setImageResource(DebugImageMatch.getImageFromName(mainUserGroup.getName()));
         tvActUserGroupDetailName.setText(mainUserGroup.getName());
+        if(mainUserGroup.getMain()!=null){
+            tvActUserGroupDetailMain.setText(mainUserGroup.getMain());
+        }else{
+            tvActUserGroupDetailMain.setText(getResources().getString(R.string.user_group_empty_default));
+        }
+        if(mainUserGroup.getSub()!=null){
+            tvActUserGroupDetailSub.setText(mainUserGroup.getSub());
+        }else{
+            tvActUserGroupDetailSub.setText(getResources().getString(R.string.user_group_empty_default));
+        }
     }
 }

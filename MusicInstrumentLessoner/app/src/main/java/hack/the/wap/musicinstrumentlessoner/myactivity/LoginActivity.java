@@ -208,7 +208,9 @@ public class LoginActivity extends AppCompatActivity {
                 Dummy Group1 : Libre
              */
             String gName1 = getResources().getString(R.string.debug_libre_name);
-            UserGroupDto libre = new UserGroupDto(gName1);
+            String gMain1 = getResources().getString(R.string.debug_libre_detail_main);
+            String gSub1 = getResources().getString(R.string.debug_libre_detail_sub);
+            UserGroupDto libre = new UserGroupDto(gName1, gMain1, gSub1);
             libre.addTeacher((TeacherDto) choa);
             libre.addUser(kanna);
             libre.addUser(segyong);
@@ -218,7 +220,9 @@ public class LoginActivity extends AppCompatActivity {
                 Dummy Group2 : SMMA
              */
             String gName2 = getResources().getString(R.string.debug_smma_name);
-            UserGroupDto smma = new UserGroupDto(gName2);
+            String gMain2 = getResources().getString(R.string.debug_smma_detail_main);
+            String gSub2 = getResources().getString(R.string.debug_smma_detail_sub);
+            UserGroupDto smma = new UserGroupDto(gName2, gMain2, gSub2);
             smma.addTeacher((TeacherDto) dahyun);
             smma.addUser(hyoju);
 

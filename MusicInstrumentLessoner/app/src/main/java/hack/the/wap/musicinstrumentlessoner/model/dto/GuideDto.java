@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class GuideDto {
     private String main;
-    private String type;//초,마디
+    private String type;//초,마디 s,d
     private HashMap<String,String> data;
 
     public GuideDto(String main, String type) {

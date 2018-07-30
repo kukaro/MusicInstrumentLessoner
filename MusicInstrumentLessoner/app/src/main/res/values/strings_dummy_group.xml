@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="debug_libre_name">피아노리브레 강남센터</string>
+    <string name="debug_libre_main">선생님 : 4명 / 학생수 80명</string>
+    <string name="debug_libre_sub">내가 사용가능 템플릿 : 100개</string>
+    <string name="debug_libre_detail_main">강남구 역삼1동 818-5 혜진빌딩 3층</string>
+    <string name="debug_libre_detail_sub">모든 임직원들이 음악을 전공한 전문가들이며 격이 다른 커리큘럼으로 레슨만 받아도 실력이 향샹되는 검증된 교육시스템을 갖추고 있습니다.</string>
+
+    <string name="debug_smma_name">SMMA아카데미</string>
+    <string name="debug_smma_main">선생님 : 1 / 학생수 23명</string>
+    <string name="debug_smma_sub">내가 사용가능 템플릿 : 40개</string>
+    <string name="debug_smma_detail_main">노원구 하계2동 270</string>
+    <string name="debug_smma_detail_sub">현재 필드에서 활발히 활동하고 있는 강사 100명과 SMMA ACADEMY의 최적의 교육프로그램과 환경을 수강생분들에게 제공하고 있습니다.</string>
+
+</resources>

@@ -99,6 +99,7 @@
                     android:fontFamily="@font/a_old_l"
                     android:gravity="left"
                     android:text="메인"
+                    android:paddingBottom="10dp"
                     android:textColor="@color/white"
                     android:textSize="20dp" />
 
@@ -106,6 +107,7 @@
                     android:id="@+id/tvActUserGroupDetailSub"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/commonDateColor"
                     android:text="서브" />
             </LinearLayout>
 
