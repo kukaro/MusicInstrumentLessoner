@@ -155,18 +155,26 @@
             android:padding="10dp">
 
             <TextView
-                android:id="@+id/tvGuideActMusicMainExplain"
+                android:id="@+id/tvGuideActMusicMainExplainTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/a_old_l"
                 android:text="@string/tvActGuideMain"
+                android:paddingBottom="10dp"
                 android:textSize="14dp" />
 
             <LinearLayout
                 android:id="@+id/llActUserGroupDetailTeacher"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"></LinearLayout>
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvGuideActMusicMainExplain"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="설명적어주세요" />
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -186,11 +194,17 @@
                 android:text="@string/tvActGuideSub"
                 android:textSize="14dp" />
 
-            <LinearLayout
-                android:id="@+id/llActUserGroupDetailUser"
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"></LinearLayout>
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/llActUserGroupDetailUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"></LinearLayout>
+            </ScrollView>
+
         </LinearLayout>
     </LinearLayout>
 

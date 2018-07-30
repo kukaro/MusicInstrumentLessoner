@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import hack.the.wap.musicinstrumentlessoner.R;
@@ -21,6 +22,8 @@ public class GuideActivity extends AppCompatActivity {
     private ImageView ivGuideActMusician;
     private TextView tvGuideActTeacherName;
     private TextView tvGuideActMusicName;
+    private TextView tvGuideActMusicMainExplain;
+    private LinearLayout llActUserGroupDetailUser;
 
     {
         session = Session.getInstance();
@@ -35,6 +38,8 @@ public class GuideActivity extends AppCompatActivity {
         ivGuideActMusician = findViewById(R.id.ivGuideActMusician);
         tvGuideActTeacherName = findViewById(R.id.tvGuideActTeacherName);
         tvGuideActMusicName = findViewById(R.id.tvGuideActMusicName);
+        tvGuideActMusicMainExplain = findViewById(R.id.tvGuideActMusicMainExplain);
+        llActUserGroupDetailUser = findViewById(R.id.llActUserGroupDetailUser);
 
         instance = this;
 
@@ -57,6 +62,27 @@ public class GuideActivity extends AppCompatActivity {
         ivGuideActMusician.setImageResource(DebugImageMatch.getImageFromName(mainTemplate.getMusician()));
         tvGuideActTeacherName.setText(mainTemplate.getOwner().getName());
         tvGuideActMusicName.setText(mainTemplate.getMusicTitle());
+        if(mainTemplate.getGuide()!=null){
+            if(mainTemplate.getGuide().getMain()!=null){
+                tvGuideActMusicMainExplain.setText(mainTemplate.getGuide().getMain());
+            }else{
+                tvGuideActMusicMainExplain.setText(getResources().getText(R.string.tvActGuideNoData));
+            }
+            if(!mainTemplate.getGuide().getData().isEmpty()){
+                TextView tvTmp = new TextView(this);
+                tvTmp.setText("준비중임돠");
+                llActUserGroupDetailUser.addView(tvTmp);
+            }else{
+                TextView tvTmp = new TextView(this);
+                tvTmp.setText(getResources().getString(R.string.tvActGuideNoData));
+                llActUserGroupDetailUser.addView(tvTmp);
+            }
+        }else{
+            tvGuideActMusicMainExplain.setText(getResources().getText(R.string.tvActGuideNoData));
+            TextView tvTmp = new TextView(this);
+            tvTmp.setText(getResources().getString(R.string.tvActGuideNoData));
+            llActUserGroupDetailUser.addView(tvTmp);
+        }
     }
 
     public GuideActivity getInstance() {

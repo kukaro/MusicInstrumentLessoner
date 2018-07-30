@@ -11,6 +11,7 @@ import java.util.HashMap;
 
 import hack.the.wap.musicinstrumentlessoner.R;
 import hack.the.wap.musicinstrumentlessoner.debug.DebugMode;
+import hack.the.wap.musicinstrumentlessoner.model.dto.GuideDto;
 import hack.the.wap.musicinstrumentlessoner.model.dto.NotificationDto;
 import hack.the.wap.musicinstrumentlessoner.model.dto.TeacherDto;
 import hack.the.wap.musicinstrumentlessoner.model.dto.TemplateDto;
@@ -152,7 +153,8 @@ public class LoginActivity extends AppCompatActivity {
             String musician2 = getResources().getString(R.string.debug_haydn_name);
             String tMain2 = getResources().getString(R.string.debug_haydn_main);
             String tSub2 = getResources().getString(R.string.debug_haydn_sub);
-            TemplateDto surpriseSymphony = new TemplateDto(owner2, musicTitle2, musician2, tMain2, tSub2);
+            GuideDto guide2 = new GuideDto(getResources().getString(R.string.debug_haydn_explain), "time");
+            TemplateDto surpriseSymphony = new TemplateDto(owner2, musicTitle2, musician2, tMain2, tSub2, guide2);
             ((TeacherDto) owner2).addTemplate(surpriseSymphony);
             
             /*

@@ -1,12 +1,17 @@
 package hack.the.wap.musicinstrumentlessoner.model.dto;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class GuideDto {
+public class GuideDto implements Serializable {
     private String main;
-    private String type;//초,마디 s,d
-    private HashMap<String,String> data;
+    private String type;//초,마디 time,bar
+    private HashMap<String, String> data;
+
+    {
+        data = new HashMap<>();
+    }
 
     public GuideDto(String main, String type) {
         this.main = main;
@@ -37,7 +42,7 @@ public class GuideDto {
         this.data = data;
     }
 
-    public void addData(String unit,String value){
+    public void addData(String unit, String value) {
         data.put(unit, value);
     }
 

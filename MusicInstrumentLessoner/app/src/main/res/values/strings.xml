@@ -54,6 +54,8 @@
     <string name="debug_haydn_music">놀람 교향곡</string>
     <string name="debug_haydn_main">남은 반복횟수 : 9 / 10</string>
     <string name="debug_haydn_sub">곡 성공률 : 90%</string>
+    <string name="debug_haydn_explain">1악장 - 아다지오 - 비바체 아사이 (Adagio - vivace assai, 느릿느릿하게 - 충분히 빠르고 활기차게)\n2악장 - 안단테 (Andante, 사람의 걸음걸이만큼 느리게)\n3악장 - 메뉴에토: 알레그로 몰토 (Menuetto: Allegro molto, 아주 빠르게)\n4악장 - 피날레: 알레그로 몰토 (Finale: Allegro molto, 아주 빠르게)</string>
+
 
     <string name="debug_czerny_name">Czerny</string>
     <string name="debug_czerny_music">체르니 95번</string>

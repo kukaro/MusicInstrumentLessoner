@@ -10,8 +10,8 @@ public class TemplateDto implements Serializable {
     private String musician;
     private String main;
     private String sub;
+    private GuideDto guide;
     private ArrayList<TemplatePracticeDto> templatePractices;
-
 
     /**
      * Create Template
@@ -28,6 +28,29 @@ public class TemplateDto implements Serializable {
         this.musician = musician;
         this.main = main;
         this.sub = sub;
+        templatePractices = new ArrayList<>();
+        for (int i = 0; i < DEFAULT_PRACTICE_SIZE; i++) {
+            templatePractices.add(new TemplatePracticeDto(i + 1, null));
+        }
+    }
+
+    /**
+     * Create Template
+     *
+     * @param owner
+     * @param musicTitle
+     * @param musician
+     * @param main
+     * @param sub
+     * @param guide
+     */
+    public TemplateDto(UserDto owner, String musicTitle, String musician, String main, String sub, GuideDto guide) {
+        this.owner = owner;
+        this.musicTitle = musicTitle;
+        this.musician = musician;
+        this.main = main;
+        this.sub = sub;
+        this.guide = guide;
         templatePractices = new ArrayList<>();
         for (int i = 0; i < DEFAULT_PRACTICE_SIZE; i++) {
             templatePractices.add(new TemplatePracticeDto(i + 1, null));
@@ -93,6 +116,14 @@ public class TemplateDto implements Serializable {
 
     public ArrayList<TemplatePracticeDto> getTemplatePractices() {
         return templatePractices;
+    }
+
+    public GuideDto getGuide() {
+        return guide;
+    }
+
+    public void setGuide(GuideDto guide) {
+        this.guide = guide;
     }
 
     public void setTemplatePractices(ArrayList<TemplatePracticeDto> templatePractices) {
