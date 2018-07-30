@@ -38,9 +38,11 @@ public class TemplateDetailActivity extends AppCompatActivity {
     private ImageView ivTemplateDetailLayLeftArrow;
     private ImageView ivTemplateDetailLayTeacher;
     private ImageView ivTemplateDetailLayMusician;
+    private ImageView ivTemplateDetailActGuide;
     private TextView tvTemplateDetailLayName;
     private TextView tvTemplateDetailLayMusicianName;
     private TextView tvTemplateDetailLayTeacherNameSlot;
+    private TextView tvTemplateDetailActGuide;
     private LinearLayout llActTemplateDetail;
     private LinearLayout llTemplateDetailLayTeacherListen;
 
@@ -63,9 +65,11 @@ public class TemplateDetailActivity extends AppCompatActivity {
         ivTemplateDetailLayLeftArrow = findViewById(R.id.ivTemplateDetailLayLeftArrow);
         ivTemplateDetailLayTeacher = findViewById(R.id.ivTemplateDetailLayTeacher);
         ivTemplateDetailLayMusician = findViewById(R.id.ivTemplateDetailLayMusician);
+        ivTemplateDetailActGuide = findViewById(R.id.ivTemplateDetailActGuide);
         tvTemplateDetailLayName = findViewById(R.id.tvTemplateDetailLayName);
         tvTemplateDetailLayMusicianName = findViewById(R.id.tvTemplateDetailLayMusicianName);
         tvTemplateDetailLayTeacherNameSlot = findViewById(R.id.tvTemplateDetailLayTeacherNameSlot);
+        tvTemplateDetailActGuide = findViewById(R.id.tvTemplateDetailActGuide);
         llActTemplateDetail = findViewById(R.id.llActTemplateDetail);
         llTemplateDetailLayTeacherListen = findViewById(R.id.llTemplateDetailLayTeacherListen);
         instance = this;
@@ -133,6 +137,16 @@ public class TemplateDetailActivity extends AppCompatActivity {
             Intent teacherIntent = new Intent(this, TeacherPracticeDetailActivity.class);
             teacherIntent.putExtra("main", mainTemplate);
             startActivity(teacherIntent);
+        });
+        ivTemplateDetailActGuide.setOnClickListener(v -> {
+            Intent guideIntent = new Intent(this, GuideActivity.class);
+            guideIntent.putExtra("main", mainTemplate);
+            startActivity(guideIntent);
+        });
+        tvTemplateDetailActGuide.setOnClickListener(v -> {
+            Intent guideIntent = new Intent(this, GuideActivity.class);
+            guideIntent.putExtra("main", mainTemplate);
+            startActivity(guideIntent);
         });
     }
 

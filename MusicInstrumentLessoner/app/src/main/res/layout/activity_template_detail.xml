@@ -138,6 +138,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical"
+            android:weightSum="1"
             android:padding="10dp">
 
             <ImageView
@@ -153,13 +154,14 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/tvTemplateDetailActGuide"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
             android:text="@string/guide_button"
             android:textColor="@color/black" />
+
         <LinearLayout
             android:id="@+id/llTemplateDetailLayTeacherListen"
             android:layout_width="wrap_content"
