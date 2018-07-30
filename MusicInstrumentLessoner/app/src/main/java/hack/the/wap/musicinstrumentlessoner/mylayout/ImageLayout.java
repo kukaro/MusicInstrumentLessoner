@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 import hack.the.wap.musicinstrumentlessoner.R;
 
 public class ImageLayout extends LinearLayout {
-    private ImageView ivMyImage;
+    protected ImageView ivMyImage;
 
     {
         initView();

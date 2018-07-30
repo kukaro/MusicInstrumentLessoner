@@ -5,12 +5,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import hack.the.wap.musicinstrumentlessoner.R;
 import hack.the.wap.musicinstrumentlessoner.debug.DebugImageMatch;
+import hack.the.wap.musicinstrumentlessoner.model.dto.TeacherDto;
 import hack.the.wap.musicinstrumentlessoner.model.dto.TemplateDto;
+import hack.the.wap.musicinstrumentlessoner.model.dto.UserDto;
 import hack.the.wap.musicinstrumentlessoner.model.dto.UserGroupDto;
+import hack.the.wap.musicinstrumentlessoner.mylayout.ImageLayout;
+import hack.the.wap.musicinstrumentlessoner.mylayout.TeacherImageLayout;
+import hack.the.wap.musicinstrumentlessoner.mylayout.UserImageLayout;
 import hack.the.wap.musicinstrumentlessoner.session.Session;
 
 public class UserGroupDetailActivity extends AppCompatActivity {
@@ -21,6 +27,8 @@ public class UserGroupDetailActivity extends AppCompatActivity {
     private TextView tvActUserGroupDetailName;
     private TextView tvActUserGroupDetailMain;
     private TextView tvActUserGroupDetailSub;
+    private LinearLayout llActUserGroupDetailTeacher;
+    private LinearLayout llActUserGroupDetailUser;
 
 
     {
@@ -40,18 +48,25 @@ public class UserGroupDetailActivity extends AppCompatActivity {
         tvActUserGroupDetailName = findViewById(R.id.tvActUserGroupDetailName);
         tvActUserGroupDetailMain = findViewById(R.id.tvActUserGroupDetailMain);
         tvActUserGroupDetailSub = findViewById(R.id.tvActUserGroupDetailSub);
-
+        llActUserGroupDetailTeacher = findViewById(R.id.llActUserGroupDetailTeacher);
+        llActUserGroupDetailUser = findViewById(R.id.llActUserGroupDetailUser);
+        for (TeacherDto dto : mainUserGroup.getTeachers().values()) {
+            llActUserGroupDetailTeacher.addView(new TeacherImageLayout(this, dto));
+        }
+        for (UserDto dto : mainUserGroup.getUsers().values()) {
+            llActUserGroupDetailUser.addView(new UserImageLayout(this, dto));
+        }
         viewSetListener();
         viewSetValue();
     }
 
-    private void viewSetListener(){
-        ivActUserGroupDetailLeftArrow.setOnClickListener(v->{
+    private void viewSetListener() {
+        ivActUserGroupDetailLeftArrow.setOnClickListener(v -> {
             finish();
         });
     }
 
-    private void viewSetValue(){
+    private void viewSetValue() {
         ivActUserGroupDetailMusicPlace.setImageResource(DebugImageMatch.getImageFromName(mainUserGroup.getName()));
         tvActUserGroupDetailName.setText(mainUserGroup.getName());
     }

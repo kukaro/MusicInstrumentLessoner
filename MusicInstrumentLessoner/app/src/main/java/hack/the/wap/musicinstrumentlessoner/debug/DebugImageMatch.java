@@ -21,6 +21,14 @@ public class DebugImageMatch extends AppCompatActivity{
                 return R.drawable.mina;
             case "Beethoven":
                 return R.drawable.beethoven_round;
+            case "Segyong":
+                return R.drawable.segyong_round;
+            case "Gain":
+                return R.drawable.gain_round;
+            case "Hyoju":
+                return R.drawable.hyoju_round;
+            case "Kanna":
+                return R.drawable.kanna_round;
             case "Haydn":
                 return R.drawable.haydn_round;
             case "피아노리브레 강남센터":
