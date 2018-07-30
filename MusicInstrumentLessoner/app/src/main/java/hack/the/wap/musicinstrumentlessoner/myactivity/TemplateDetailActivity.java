@@ -78,7 +78,8 @@ public class TemplateDetailActivity extends AppCompatActivity {
         ivTemplateDetailLayMusician.setImageResource(DebugImageMatch.getImageFromName(mainTemplate.getMusician()));
         tvTemplateDetailLayName.setText(mainTemplate.getMusicTitle());
         tvTemplateDetailLayMusicianName.setText(mainTemplate.getMusician());
-        tvTemplateDetailLayTeacherNameSlot.setText(getResources().getString(R.string.tempalte_detail_act_teacher_pre) + mainTemplate.getOwner().getName());
+        tvTemplateDetailLayTeacherNameSlot.setText(getResources().getString(R.string.tempalte_detail_act_teacher_pre)
+                + mainTemplate.getOwner().getName());
 
         templatePractices = mainTemplate.getTemplatePractices();
         for (TemplatePracticeDto dto : templatePractices) {
