@@ -34,7 +34,8 @@
             android:theme="@style/MainAppTheme" />
         <activity android:name=".myactivity.TemplateDetailActivity" />
         <activity android:name=".myactivity.PracticeDetailActivity" />
-        <activity android:name=".myactivity.TeacherPracticeDetailActivity"></activity>
+        <activity android:name=".myactivity.TeacherPracticeDetailActivity" />
+        <activity android:name=".myactivity.UserGroupDetailActivity"></activity>
     </application>
 
 </manifest>

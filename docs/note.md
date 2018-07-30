@@ -3,6 +3,9 @@
 선생님도 설명및 예제, 연주방법을 템플릿화 시킬 수 있음  
 원래 한번 연주한거 밖에 연습못했는데 듣고 스스로 연습할 수 있음  
 
+https://stackoverflow.com/questions/3046669/how-do-i-get-a-mp3-files-total-time-in-java  
+mp3 file length  
+
 ##TODO
 내가 만든 dto흐름 분석  
 더미 데이터 어떻게 되있고 어떤식으로 되있는지 분석  
