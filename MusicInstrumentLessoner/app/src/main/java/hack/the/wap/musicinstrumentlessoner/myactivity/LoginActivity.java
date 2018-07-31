@@ -239,6 +239,11 @@ public class LoginActivity extends AppCompatActivity {
             smma.addTeacher((TeacherDto) dahyun);
             smma.addUser(hyoju);
             smma.addInstrument(getResources().getString(R.string.flute));
+            smma.addInstrument(getResources().getString(R.string.trumpet));
+            smma.addInstrument(getResources().getString(R.string.saxophone));
+            smma.addGenre(getResources().getString(R.string.jazz_band));
+            smma.addGenre(getResources().getString(R.string.petite_harmonie));
+            smma.addGenre(getResources().getString(R.string.pipe_music));
 
             /*
                 Insert Template data
