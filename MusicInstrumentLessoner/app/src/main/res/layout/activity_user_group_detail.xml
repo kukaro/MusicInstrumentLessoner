@@ -138,11 +138,17 @@
                 android:text="@string/tv_teacher"
                 android:textSize="14dp" />
 
-            <LinearLayout
-                android:id="@+id/llActUserGroupDetailTeacher"
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"></LinearLayout>
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/llActUserGroupDetailTeacher"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"></LinearLayout>
+            </ScrollView>
+
         </LinearLayout>
 
         <LinearLayout
@@ -162,11 +168,17 @@
                 android:text="@string/tv_user"
                 android:textSize="14dp" />
 
-            <LinearLayout
-                android:id="@+id/llActUserGroupDetailUser"
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"></LinearLayout>
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/llActUserGroupDetailUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"></LinearLayout>
+            </ScrollView>
+
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
