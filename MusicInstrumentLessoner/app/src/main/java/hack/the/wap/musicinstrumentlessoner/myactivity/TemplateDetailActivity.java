@@ -170,6 +170,8 @@ public class TemplateDetailActivity extends AppCompatActivity {
                             @Override
                             public void onSuccess(File file) {
                                 dto.setFileName(file.getAbsolutePath());
+                                dto.setPercent(0);
+                                finish();
                                 Log.e("TAG", "onSuccess: " + file.getAbsolutePath());
                             }
 
