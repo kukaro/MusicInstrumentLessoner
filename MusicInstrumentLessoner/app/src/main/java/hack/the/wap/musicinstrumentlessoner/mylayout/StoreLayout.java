@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -47,7 +48,7 @@ public class StoreLayout extends LinearLayout {
     }
 
     private void initView() {
-        inflate(getContext(), R.layout.template_layout, this);
+        inflate(getContext(), R.layout.store_layout, this);
         ivStoreLayGroupImage = findViewById(R.id.ivStoreGroupImage);
         tvStoreLayGroupTitle = findViewById(R.id.tvStoreLayGroupTitle);
         tvStoreLayMain = findViewById(R.id.tvStoreLayMain);

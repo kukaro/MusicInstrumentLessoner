@@ -9,7 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import java.util.HashMap;
+
 import hack.the.wap.musicinstrumentlessoner.R;
+import hack.the.wap.musicinstrumentlessoner.model.dto.UserGroupDto;
+import hack.the.wap.musicinstrumentlessoner.mylayout.StoreLayout;
 import hack.the.wap.musicinstrumentlessoner.session.Session;
 
 /**
@@ -21,15 +25,13 @@ import hack.the.wap.musicinstrumentlessoner.session.Session;
  * create an instance of this fragment.
  */
 public class StoreFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private static View storeFragmentView;
     private static LinearLayout llFragStore;
     private static Session session;
+    private static HashMap<String, UserGroupDto> userGroups;
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
@@ -71,6 +73,12 @@ public class StoreFragment extends Fragment {
                              Bundle savedInstanceState) {
         storeFragmentView = inflater.inflate(R.layout.fragment_store, container, false);
         llFragStore = storeFragmentView.findViewById(R.id.llFragStore);
+        userGroups = session.getUserGroups();
+        for (UserGroupDto dto : userGroups.values()) {
+            StoreLayout atom = new StoreLayout(getContext());
+            atom.setCustomAttr(dto);
+            llFragStore.addView(atom);
+        }
         return storeFragmentView;
     }
 
