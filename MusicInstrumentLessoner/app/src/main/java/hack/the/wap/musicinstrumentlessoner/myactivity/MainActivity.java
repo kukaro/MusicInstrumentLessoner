@@ -33,6 +33,7 @@ import hack.the.wap.musicinstrumentlessoner.model.dto.TemplateDto;
 import hack.the.wap.musicinstrumentlessoner.model.dto.UserGroupDto;
 import hack.the.wap.musicinstrumentlessoner.myfragment.GroupFragment;
 import hack.the.wap.musicinstrumentlessoner.myfragment.NotificationFragment;
+import hack.the.wap.musicinstrumentlessoner.myfragment.StoreFragment;
 import hack.the.wap.musicinstrumentlessoner.myfragment.TemplateFragment;
 import hack.the.wap.musicinstrumentlessoner.mytoggle.MyActionBarDrawerToggle;
 import hack.the.wap.musicinstrumentlessoner.myview.MyNavigationView;
@@ -40,12 +41,13 @@ import hack.the.wap.musicinstrumentlessoner.session.Session;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, GroupFragment.OnFragmentInteractionListener,
-        NotificationFragment.OnFragmentInteractionListener, TemplateFragment.OnFragmentInteractionListener {
+        NotificationFragment.OnFragmentInteractionListener, TemplateFragment.OnFragmentInteractionListener, StoreFragment.OnFragmentInteractionListener {
     private static MainActivity instance;
     private static ImageView ivUserMain;
     private static NotificationFragment notificationFragment;
     private static TemplateFragment templateFragment;
     private static GroupFragment groupFragment;
+    private static StoreFragment storeFragment;
     private static Session session;
     private static Menu menu;
     private String userName;
@@ -57,6 +59,7 @@ public class MainActivity extends AppCompatActivity
         notificationFragment = new NotificationFragment();
         templateFragment = new TemplateFragment();
         groupFragment = new GroupFragment();
+        storeFragment = new StoreFragment();
         session = Session.getInstance();
         DEBUG_SESSION_DATA();
     }
@@ -172,7 +175,10 @@ public class MainActivity extends AppCompatActivity
             menu.clear();
             getMenuInflater().inflate(R.menu.group_menu, menu);
         } else if (id == R.id.nav_store) {
-
+            FragmentManager fm = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fm.beginTransaction();
+            fragmentTransaction.replace(R.id.flFragment, storeFragment);
+            fragmentTransaction.commit();
         } else if (id == R.id.nav_information) {
 
         }
