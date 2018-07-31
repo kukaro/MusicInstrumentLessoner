@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import hack.the.wap.musicinstrumentlessoner.R;
 import hack.the.wap.musicinstrumentlessoner.debug.DebugImageMatch;
-import hack.the.wap.musicinstrumentlessoner.model.dto.StoreDto;
+import hack.the.wap.musicinstrumentlessoner.model.dto.UserGroupDto;
 
 /*
 참고 사이트 : https://medium.com/@douglas.iacovelli/the-beauty-of-custom-views-and-how-to-do-it-79c7d78e2088
@@ -19,9 +19,11 @@ import hack.the.wap.musicinstrumentlessoner.model.dto.StoreDto;
 
 public class StoreLayout extends LinearLayout {
     private ImageView ivStoreLayGroupImage;
-    private TextView tvStoreLayMusicTitle;
+    private TextView tvStoreLayGroupTitle;
     private TextView tvStoreLayMain;
-    private TextView tvStoreLaySub;
+    private TextView tvStoreLayInstrument;
+    private TextView tvStoreLayGenre;
+
 
     {
         initView();
@@ -47,41 +49,33 @@ public class StoreLayout extends LinearLayout {
     private void initView() {
         inflate(getContext(), R.layout.template_layout, this);
         ivStoreLayGroupImage = findViewById(R.id.ivStoreGroupImage);
-        tvStoreLayMusicTitle = findViewById(R.id.tvStoreLayMusicTitle);
+        tvStoreLayGroupTitle = findViewById(R.id.tvStoreLayGroupTitle);
         tvStoreLayMain = findViewById(R.id.tvStoreLayMain);
-        tvStoreLaySub= findViewById(R.id.tvStoreLaySub);
-        ivStoreLayTeacherImage = findViewById(R.id.ivStoreLayTeacherImage);
+        tvStoreLayInstrument = findViewById(R.id.tvStoreLayInstrument);
+        tvStoreLayGenre = findViewById(R.id.tvStoreLayGenre);
     }
 
     private void getAttrs(AttributeSet attributeSet) {
-        TypedArray typedArray = getContext().obtainStyledAttributes(attributeSet, R.styleable.StoreLayout);
-        setTypeArray(typedArray);
     }
 
     private void getAttrs(AttributeSet attributeSet, int defStyle) {
-        TypedArray typedArray = getContext().obtainStyledAttributes(attributeSet, R.styleable.StoreLayout, defStyle, 0);
-        setTypeArray(typedArray);
     }
 
-    private void setTypeArray(TypedArray typedArray) {
-        int templateLayUserImage = typedArray.getResourceId(R.styleable.StoreLayout_template_lay_user_image, R.drawable.beethoven_round);
-        String templateLayMusicTitle = typedArray.getString(R.styleable.StoreLayout_template_lay_music_title);
-        String templateLayMain = typedArray.getString(R.styleable.StoreLayout_template_lay_main);
-        String templateLaySub = typedArray.getString(R.styleable.StoreLayout_template_lay_sub);
-        int templateLayTeacherImage = typedArray.getResourceId(R.styleable.StoreLayout_template_lay_teacher_image,R.drawable.choa_round);
-        ivStoreLayUserImage.setImageResource(templateLayUserImage);
-        tvStoreLayMusicTitle.setText(templateLayMusicTitle);
-        tvStoreLayMain.setText(templateLayMain);
-        tvStoreLaySub.setText(templateLaySub);
-        ivStoreLayTeacherImage.setImageResource(templateLayTeacherImage);
-        typedArray.recycle();
-    }
-
-    public void setCustomAttr(StoreDto dto){
-        ivStoreLayUserImage.setImageResource(DebugImageMatch.getImageFromName(dto.getMusician()));
-        tvStoreLayMusicTitle.setText(dto.getMusicTitle());
+    public void setCustomAttr(UserGroupDto dto) {
+        ivStoreLayGroupImage.setImageResource(DebugImageMatch.getImageFromName(dto.getName()));
+        tvStoreLayGroupTitle.setText(dto.getName());
         tvStoreLayMain.setText(dto.getMain());
-        tvStoreLaySub.setText(dto.getSub());
-        ivStoreLayTeacherImage.setImageResource(DebugImageMatch.getImageFromName(dto.getOwner().getName()));
+        String instrument = getResources().getString(R.string.store_lay_instrument);
+        for (String atom : dto.getInstrument().values()) {
+            instrument = instrument + atom + getResources().getString(R.string.store_lay_comma);
+        }
+        instrument = instrument.substring(0, instrument.length() - getResources().getString(R.string.store_lay_comma).length());
+        tvStoreLayInstrument.setText(instrument);
+        String genre = getResources().getString(R.string.store_lay_genre);
+        for (String atom : dto.getGenre().values()) {
+            genre = genre + atom + getResources().getString(R.string.store_lay_comma);
+        }
+        genre = genre.substring(0, genre.length() - getResources().getString(R.string.store_lay_comma).length());
+        tvStoreLayGenre.setText(genre);
     }
 }
