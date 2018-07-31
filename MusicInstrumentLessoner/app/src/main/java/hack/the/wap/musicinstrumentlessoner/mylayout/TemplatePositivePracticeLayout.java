@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.os.Debug;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -24,6 +25,8 @@ public class TemplatePositivePracticeLayout extends LinearLayout {
     private static Random random;
     private TextView tvTemplatePositivePracticeLayCount;
     private TextView tvTemplatePositiveLayPercent;
+    private ImageView ivTemplatePositivePracticeLayListen;
+    private ImageView ivTemplatePositivePracticeLayView;
 
     {
         initView();
@@ -50,6 +53,8 @@ public class TemplatePositivePracticeLayout extends LinearLayout {
         inflate(getContext(), R.layout.template_positive_practice_layout, this);
         tvTemplatePositivePracticeLayCount = findViewById(R.id.tvTemplatePositivePracticeLayCount);
         tvTemplatePositiveLayPercent = findViewById(R.id.tvTemplatePositiveLayPercent);
+        ivTemplatePositivePracticeLayListen=findViewById(R.id.ivTemplatePositivePracticeLayListen);
+        ivTemplatePositivePracticeLayView=findViewById(R.id.ivTemplatePositivePracticeLayView);
     }
 
     public void setCustomAttr(TemplatePracticeDto dto) {
@@ -58,5 +63,13 @@ public class TemplatePositivePracticeLayout extends LinearLayout {
             tvTemplatePositiveLayPercent.setText(""+getResources().getText(R.string.template_practice_lay_percent)
                     + dto.getPercent() + getResources().getText(R.string.template_practice_lay_percent_end));
         }
+    }
+
+    public ImageView getIvTemplatePositivePracticeLayListen() {
+        return ivTemplatePositivePracticeLayListen;
+    }
+
+    public ImageView getIvTemplatePositivePracticeLayView() {
+        return ivTemplatePositivePracticeLayView;
     }
 }

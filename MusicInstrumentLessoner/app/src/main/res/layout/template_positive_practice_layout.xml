@@ -32,6 +32,17 @@
         android:orientation="horizontal">
 
         <ImageView
+            android:id="@+id/ivTemplatePositivePracticeLayListen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:adjustViewBounds="true"
+            android:maxHeight="30dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/listen" />
+
+        <ImageView
             android:id="@+id/ivTemplatePositivePracticeLayView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -41,14 +52,6 @@
             android:maxHeight="30dp"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/view" />
-
-        <TextView
-            android:id="@+id/tvTemplatePositivePracticeLayView"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="@string/template_practice_lay_view"
-            android:textColor="@color/naturalBlue" />
     </LinearLayout>
 
 </LinearLayout>
