@@ -154,6 +154,10 @@ public class LoginActivity extends AppCompatActivity {
             String tMain2 = getResources().getString(R.string.debug_haydn_main);
             String tSub2 = getResources().getString(R.string.debug_haydn_sub);
             GuideDto guide2 = new GuideDto(getResources().getString(R.string.debug_haydn_explain), "time");
+            guide2.addData(getResources().getString(R.string.debug_haydn_exp_data_time1),getResources().getString(R.string.debug_haydn_exp_data_main1));
+            guide2.addData(getResources().getString(R.string.debug_haydn_exp_data_time2),getResources().getString(R.string.debug_haydn_exp_data_main2));
+            guide2.addData(getResources().getString(R.string.debug_haydn_exp_data_time3),getResources().getString(R.string.debug_haydn_exp_data_main3));
+            guide2.addData(getResources().getString(R.string.debug_haydn_exp_data_time4),getResources().getString(R.string.debug_haydn_exp_data_main4));
             TemplateDto surpriseSymphony = new TemplateDto(owner2, musicTitle2, musician2, tMain2, tSub2, guide2);
             ((TeacherDto) owner2).addTemplate(surpriseSymphony);
             

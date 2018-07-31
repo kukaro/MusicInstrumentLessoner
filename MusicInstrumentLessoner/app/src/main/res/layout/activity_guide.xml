@@ -147,9 +147,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:layout_weight="0.5"
             android:background="@drawable/notification_user_rounded"
             android:orientation="vertical"
             android:padding="10dp">
@@ -179,9 +178,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:layout_weight="0.5"
             android:background="@drawable/notification_user_rounded"
             android:orientation="vertical"
             android:padding="10dp">
@@ -192,6 +190,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/a_old_l"
                 android:text="@string/tvActGuideSub"
+                android:paddingBottom="10dp"
                 android:textSize="14dp" />
 
             <ScrollView
