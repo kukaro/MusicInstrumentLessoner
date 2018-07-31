@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import com.semantive.waveformandroid.waveform.Segment;
 import com.semantive.waveformandroid.waveform.WaveformFragment;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -33,10 +34,14 @@ public class CustomWaveformFragment extends WaveformFragment {
      */
     @Override
     protected List<Segment> getSegments() {
-        return Arrays.asList(
-                new Segment(3.0, 4.0, Color.rgb(238, 23, 104)),
-                new Segment(90.2, 100.8, Color.rgb(238, 23, 104)),
-                new Segment(120.2, 130.6, Color.rgb(238, 23, 104)),
-                new Segment(140.4, 145.9, Color.rgb(238, 23, 104)));
+        List<Segment> arr=new ArrayList<>();
+        if (!PresentFile.fileName.equals("/storage/self/primary/Music/놀람 교향곡/T/recorded_audio.mp3")) {
+            arr = Arrays.asList(
+                    new Segment(3.0, 4.0, Color.rgb(238, 23, 104)),
+                    new Segment(90.2, 100.8, Color.rgb(238, 23, 104)),
+                    new Segment(120.2, 130.6, Color.rgb(238, 23, 104)),
+                    new Segment(140.4, 145.9, Color.rgb(238, 23, 104)));
+        }
+        return arr;
     }
 }
