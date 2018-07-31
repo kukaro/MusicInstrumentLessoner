@@ -48,7 +48,6 @@
             android:id="@+id/tvTemplateLayMain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
             android:gravity="left"
             android:paddingBottom="5dp"
             android:text="@string/debug_beethoven_main" />
@@ -58,6 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="left"
+            android:textColor="@color/musicPersonalColor"
             android:text="@string/debug_beethoven_sub" />
 
     </LinearLayout>
