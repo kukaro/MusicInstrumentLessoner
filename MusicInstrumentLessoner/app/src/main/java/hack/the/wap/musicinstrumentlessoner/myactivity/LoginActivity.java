@@ -130,6 +130,79 @@ public class LoginActivity extends AppCompatActivity {
             String name6 = getResources().getString(R.string.debug_kanna_name);
             String email6 = getResources().getString(R.string.debug_kanna_email);
             UserDto kanna = new UserDto(name6, email6, password);
+            /*
+                Dummy User7 : jia
+             */
+            String name7 = getResources().getString(R.string.debug_jia_name);
+            String email7 = getResources().getString(R.string.debug_jia_email);
+            UserDto jia = new UserDto(name7, email7, password);
+            /*
+                Dummy User8 : dongwon
+             */
+            String name8 = getResources().getString(R.string.debug_dongwon_name);
+            String email8 = getResources().getString(R.string.debug_dongwon_email);
+            UserDto dongwon = new UserDto(name8, email8, password);
+            /*
+                Dummy User9 : gain
+             */
+            String name9 = getResources().getString(R.string.debug_sohyun_name);
+            String email9 = getResources().getString(R.string.debug_sohyun_email);
+            UserDto sohyun = new UserDto(name9, email9, password);
+            /*
+                Dummy User10 : gain
+             */
+            String name10 = getResources().getString(R.string.debug_jihyun_name);
+            String email10 = getResources().getString(R.string.debug_jihyun_email);
+            UserDto jihyun = new UserDto(name10, email10, password);
+            /*
+                Dummy User11 : gain
+             */
+            String name11 = getResources().getString(R.string.debug_sarang_name);
+            String email11 = getResources().getString(R.string.debug_sarang_email);
+            UserDto sarang = new UserDto(name11, email11, password);
+            /*
+                Dummy User12 : gain
+             */
+            String name12 = getResources().getString(R.string.debug_woobin_name);
+            String email12 = getResources().getString(R.string.debug_woobin_email);
+            UserDto woobin = new UserDto(name12, email12, password);
+            /*
+                Dummy User13 : gain
+             */
+            String name13 = getResources().getString(R.string.debug_dongsuck_name);
+            String email13 = getResources().getString(R.string.debug_dongsuck_email);
+            UserDto dongsuck = new UserDto(name13, email13, password);
+            /*
+                Dummy User14 : gain
+             */
+            String name14 = getResources().getString(R.string.debug_jiho_name);
+            String email14 = getResources().getString(R.string.debug_jiho_email);
+            UserDto jiho = new UserDto(name14, email14, password);
+            /*
+                Dummy User15 : gain
+             */
+            String name15 = getResources().getString(R.string.debug_taehie_name);
+            String email15 = getResources().getString(R.string.debug_taehie_email);
+            UserDto taehie = new UserDto(name15, email15, password);
+            /*
+                Dummy User16 : gain
+             */
+            String name16 = getResources().getString(R.string.debug_youjung_name);
+            String email16 = getResources().getString(R.string.debug_youjung_email);
+            UserDto youjung = new UserDto(name16, email16, password);
+            /*
+                Dummy User17 : gain
+             */
+            String name17 = getResources().getString(R.string.debug_joohyun_name);
+            String email17 = getResources().getString(R.string.debug_joohyun_email);
+            TeacherDto joohyun = new TeacherDto(name17, email17, password);
+            /*
+                Dummy User18 : gain
+             */
+            String name18 = getResources().getString(R.string.debug_jeny_name);
+            String email18 = getResources().getString(R.string.debug_jeny_email);
+            TeacherDto jeny = new TeacherDto(name18, email18, password);
+            
 
             /*
                 Dummy Template1 : Moonlight3rd
