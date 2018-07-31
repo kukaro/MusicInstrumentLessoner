@@ -3,16 +3,21 @@ package hack.the.wap.musicinstrumentlessoner.mylayout;
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.widget.TextView;
 
+import hack.the.wap.musicinstrumentlessoner.R;
 import hack.the.wap.musicinstrumentlessoner.debug.DebugImageMatch;
-import hack.the.wap.musicinstrumentlessoner.model.dto.TeacherDto;
 import hack.the.wap.musicinstrumentlessoner.model.dto.UserDto;
 
 public class UserImageLayout extends ImageLayout {
     private UserDto mainUser;
+    private TextView tvMyImageName;
+    private TextView tvMyImageEmail;
     public UserImageLayout(Context context, UserDto dto) {
         super(context);
         mainUser = dto;
+        tvMyImageName = findViewById(R.id.tvMyImageName);
+        tvMyImageEmail = findViewById(R.id.tvMyImageEmail);
         setImage();
     }
 
@@ -30,5 +35,7 @@ public class UserImageLayout extends ImageLayout {
 
     public void setImage(){
         ivMyImage.setImageResource(DebugImageMatch.getImageFromName(mainUser.getName()));
+        tvMyImageName.setText(mainUser.getName());
+        tvMyImageEmail.setText(mainUser.getEmail());
     }
 }
