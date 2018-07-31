@@ -31,6 +31,56 @@ public class DebugImageMatch extends AppCompatActivity{
                 return R.drawable.kanna_round;
             case "Haydn":
                 return R.drawable.haydn_round;
+            case "Jia":
+                return R.drawable.jia_round;
+            case "Dongwon":
+                return R.drawable.dongwon_round;
+            case "Jihyun":
+                return R.drawable.jihyun_round;
+            case "Sarang":
+                return R.drawable.sarang_round;
+            case "Woobin":
+                return R.drawable.woobin_round;
+            case "Dongsuck":
+                return R.drawable.dongsuck_round;
+            case "Jiho":
+                return R.drawable.jiho_round;
+            case "Taehie":
+                return R.drawable.taehie_round;
+            case "Youjung":
+                return R.drawable.youjung_round;
+            case "Sohyun":
+                return R.drawable.sohyun_round;
+            case "Joohyun":
+                return R.drawable.joohyun_round;
+            case "Jeny":
+                return R.drawable.jeny_round;
+            case "Lim jung hyeon":
+                return R.drawable.canon_rock_round;
+            case "Folk song":
+                return R.drawable.taryeong_round;
+            case "Metallica":
+                return R.drawable.enter_the_sand_man_round;
+            case "Yoon suk joon":
+                return R.drawable.airplane_round;
+            case "Chopin":
+                return R.drawable.chopin_round;
+            case "Celine dion":
+                return R.drawable.mhwgo_round;
+            case "Mozart":
+                return R.drawable.turkie_round;
+            case "Czerny":
+                return R.drawable.czerny80_round;
+            case "Vivaldi":
+                return R.drawable.vivaldi_round;
+            case "Folk song2":
+                return R.drawable.arirang_round;
+            case "Schubert":
+                return R.drawable.schubert_round;
+            case "Han in hyun":
+                return R.drawable.realsanae_round;
+            case "WAP":
+                return R.drawable.wap_round;
             case "피아노리브레 강남센터":
                 return R.drawable.music_place_round;
             case "SMMA아카데미":

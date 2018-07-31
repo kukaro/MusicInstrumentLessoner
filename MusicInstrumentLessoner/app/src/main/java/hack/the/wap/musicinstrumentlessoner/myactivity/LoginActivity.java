@@ -324,6 +324,60 @@ public class LoginActivity extends AppCompatActivity {
             smma.addGenre(getResources().getString(R.string.pipe_music));
 
             /*
+                Dummy Group3 : with
+             */
+            String gName3 = getResources().getString(R.string.debug_with_name);
+            String gMain3 = getResources().getString(R.string.debug_with_detail_main);
+            String gSub3 = getResources().getString(R.string.debug_with_detail_sub);
+            UserGroupDto with = new UserGroupDto(gName3, gMain3, gSub3);
+            with.addTeacher(joohyun);
+            with.addTeacher(jeny);
+            with.addUser(hyoju);
+            with.addUser(youjung);
+            with.addUser(jiho);
+            with.addUser(woobin);
+            with.addUser(sarang);
+            with.addInstrument(getResources().getString(R.string.trumpet));
+            with.addInstrument(getResources().getString(R.string.saxophone));
+            with.addGenre(getResources().getString(R.string.jazz_band));
+            with.addGenre(getResources().getString(R.string.pipe_music));
+            
+             /*
+                Dummy Group4 : pmc
+             */
+            String gName4 = getResources().getString(R.string.debug_pmc_name);
+            String gMain4 = getResources().getString(R.string.debug_pmc_detail_main);
+            String gSub4 = getResources().getString(R.string.debug_pmc_detail_sub);
+            UserGroupDto pmc = new UserGroupDto(gName4, gMain4, gSub4);
+            pmc.addTeacher((TeacherDto) choa);
+            pmc.addUser(kanna);
+            pmc.addUser(dongwon);
+            pmc.addUser(jihyun);
+            pmc.addUser(taehie);
+            pmc.addUser(sohyun);
+            pmc.addInstrument(getResources().getString(R.string.trumpet));
+            pmc.addInstrument(getResources().getString(R.string.saxophone));
+            pmc.addGenre(getResources().getString(R.string.jazz_band));
+            pmc.addGenre(getResources().getString(R.string.pipe_music));
+            
+            /*
+                Dummy Group5 : brain
+             */
+            String gName5 = getResources().getString(R.string.debug_brain_name);
+            String gMain5 = getResources().getString(R.string.debug_brain_detail_main);
+            String gSub5 = getResources().getString(R.string.debug_brain_detail_sub);
+            UserGroupDto brain = new UserGroupDto(gName5, gMain5, gSub5);
+            brain.addTeacher(jeny);
+            brain.addUser(gain);
+            brain.addUser(segyong);
+            brain.addUser(dongsuck);
+            brain.addUser(jia);
+            brain.addUser(hyoju);
+            brain.addInstrument(getResources().getString(R.string.saxophone));
+            brain.addGenre(getResources().getString(R.string.pipe_music));
+            
+            
+            /*
                 Insert Template data
              */
             HashMap<String, TemplateDto> templates = new HashMap<>();
@@ -346,6 +400,9 @@ public class LoginActivity extends AppCompatActivity {
             HashMap<String, UserGroupDto> userGroups = new HashMap<>();
             userGroups.put(libre.getName(), libre);
             userGroups.put(smma.getName(), smma);
+            userGroups.put(with.getName(), with);
+            userGroups.put(pmc.getName(), pmc);
+            userGroups.put(brain.getName(), brain);
 
             session.setMainUser(mina);
             session.setTemplates(templates);
