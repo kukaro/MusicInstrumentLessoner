@@ -10,11 +10,15 @@ public class UserGroupDto implements Serializable{
     private String sub;
     private HashMap<String, TeacherDto> teachers;
     private HashMap<String, UserDto> users;
+    private HashMap<String, String> instruments;
+    private HashMap<String, String> genres;
 
     public UserGroupDto(String name) {
         this.name = name;
         users = new HashMap<>();
         teachers = new HashMap<>();
+        instruments = new HashMap<>();
+        genres = new HashMap<>();
     }
 
     public UserGroupDto(String name, String main, String sub) {
@@ -23,6 +27,8 @@ public class UserGroupDto implements Serializable{
         this.sub = sub;
         users = new HashMap<>();
         teachers = new HashMap<>();
+        instruments = new HashMap<>();
+        genres = new HashMap<>();
     }
 
     public HashMap<String, UserDto> getUsers() {
@@ -73,11 +79,40 @@ public class UserGroupDto implements Serializable{
         this.sub = sub;
     }
 
+    public HashMap<String, String> getInstrument() {
+        return instruments;
+    }
+
+    public void setInstrument(HashMap<String, String> instruments) {
+        this.instruments = instruments;
+    }
+
+    public HashMap<String, String> getGenre() {
+        return genres;
+    }
+
+    public void setGenre(HashMap<String, String> genres) {
+        this.genres = genres;
+    }
+
+    public void addInstrument(String instrument){
+        this.instruments.put(instrument, instrument);
+    }
+
+    public void addGenre(String genre){
+        this.genres.put(genre, genre);
+    }
+
     @Override
     public String toString() {
         return "UserGroupDto{" +
-                "teachers=" + teachers +
+                "name='" + name + '\'' +
+                ", main='" + main + '\'' +
+                ", sub='" + sub + '\'' +
+                ", teachers=" + teachers +
                 ", users=" + users +
+                ", instruments=" + instruments +
+                ", genres=" + genres +
                 '}';
     }
 }
