@@ -108,6 +108,14 @@ public class UserGroupDto implements Serializable{
         this.genres.put(genre, genre);
     }
 
+    public boolean isMine() {
+        return mine;
+    }
+
+    public void setMine(boolean mine) {
+        this.mine = mine;
+    }
+
     @Override
     public String toString() {
         return "UserGroupDto{" +

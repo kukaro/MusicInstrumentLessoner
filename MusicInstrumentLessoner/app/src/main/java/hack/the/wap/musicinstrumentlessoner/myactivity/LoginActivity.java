@@ -341,6 +341,7 @@ public class LoginActivity extends AppCompatActivity {
             with.addInstrument(getResources().getString(R.string.saxophone));
             with.addGenre(getResources().getString(R.string.jazz_band));
             with.addGenre(getResources().getString(R.string.pipe_music));
+            with.setMine(true);
             
              /*
                 Dummy Group4 : pmc
@@ -359,6 +360,7 @@ public class LoginActivity extends AppCompatActivity {
             pmc.addInstrument(getResources().getString(R.string.saxophone));
             pmc.addGenre(getResources().getString(R.string.jazz_band));
             pmc.addGenre(getResources().getString(R.string.pipe_music));
+            pmc.setMine(true);
             
             /*
                 Dummy Group5 : brain
@@ -375,6 +377,7 @@ public class LoginActivity extends AppCompatActivity {
             brain.addUser(hyoju);
             brain.addInstrument(getResources().getString(R.string.saxophone));
             brain.addGenre(getResources().getString(R.string.pipe_music));
+            brain.setMine(true);
             
             
             /*

@@ -84,14 +84,16 @@ public class GroupFragment extends Fragment {
         llFragGroup = groupFragmentView.findViewById(R.id.llFragGroup);
         userGroups = session.getUserGroups();
         for (UserGroupDto dto : userGroups.values()) {
-            GroupLayout atom = new GroupLayout(getContext());
-            atom.setCustomAttr(dto);
-            atom.setOnClickListener(v -> {
-                Intent intent = new Intent(MainActivity.getInstance(), UserGroupDetailActivity.class);
-                intent.putExtra("data", dto);
-                startActivity(intent);
-            });
-            llFragGroup.addView(atom);
+            if(dto.isMine()){
+                GroupLayout atom = new GroupLayout(getContext());
+                atom.setCustomAttr(dto);
+                atom.setOnClickListener(v -> {
+                    Intent intent = new Intent(MainActivity.getInstance(), UserGroupDetailActivity.class);
+                    intent.putExtra("data", dto);
+                    startActivity(intent);
+                });
+                llFragGroup.addView(atom);
+            }
         }
         return groupFragmentView;
     }
