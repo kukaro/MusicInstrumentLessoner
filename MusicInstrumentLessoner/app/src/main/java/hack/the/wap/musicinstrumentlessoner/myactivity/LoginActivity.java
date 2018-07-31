@@ -225,10 +225,10 @@ public class LoginActivity extends AppCompatActivity {
             libre.addInstrument(getResources().getString(R.string.piano));
             libre.addInstrument(getResources().getString(R.string.violin));
             libre.addInstrument(getResources().getString(R.string.flute));
-//            libre.addGenre(getResources().getString(R.string.music));
+            libre.addGenre(getResources().getString(R.string.string_music));
             libre.addGenre(getResources().getString(R.string.classic));
-//            libre.addGenre(getResources().getString());
-            
+            libre.addGenre(getResources().getString(R.string.pipe_music));
+
             /*
                 Dummy Group2 : SMMA
              */
@@ -238,6 +238,7 @@ public class LoginActivity extends AppCompatActivity {
             UserGroupDto smma = new UserGroupDto(gName2, gMain2, gSub2);
             smma.addTeacher((TeacherDto) dahyun);
             smma.addUser(hyoju);
+            smma.addInstrument(getResources().getString(R.string.flute));
 
             /*
                 Insert Template data
