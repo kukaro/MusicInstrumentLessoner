@@ -8,6 +8,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.TreeMap;
+
 import hack.the.wap.musicinstrumentlessoner.R;
 import hack.the.wap.musicinstrumentlessoner.debug.DebugImageMatch;
 import hack.the.wap.musicinstrumentlessoner.model.dto.TemplateDto;
@@ -70,12 +72,11 @@ public class GuideActivity extends AppCompatActivity {
                 tvGuideActMusicMainExplain.setText(getResources().getText(R.string.tvActGuideNoData));
             }
             if (!mainTemplate.getGuide().getData().isEmpty()) {
-//                TextView tvTmp = new TextView(this);
-                for(String key:mainTemplate.getGuide().getData().keySet()){
-                    GuideExplainLayout atom = new GuideExplainLayout(this,key,mainTemplate.getGuide().getData().get(key));
+                TreeMap<String, String> tm = new TreeMap<>(mainTemplate.getGuide().getData());
+                for (String key : tm.keySet()) {
+                    GuideExplainLayout atom = new GuideExplainLayout(this, key, mainTemplate.getGuide().getData().get(key));
                     llActUserGroupDetailUser.addView(atom);
                 }
-//                llActUserGroupDetailUser.addView(tvTmp);
             } else {
                 TextView tvTmp = new TextView(this);
                 tvTmp.setText(getResources().getString(R.string.tvActGuideNoData));
