@@ -215,11 +215,11 @@ public class LoginActivity extends AppCompatActivity {
             TemplateDto moonlight3rd = new TemplateDto(owner1, musicTitle1, musician1, tMain1, tSub1);
             TemplatePracticeDto m3rdPractice = new TemplatePracticeDto(1, getResources().getString(R.string.debug_tempate_detail_moonlight_index0));
             m3rdPractice.setPercent(30);
-            m3rdPractice.addData(getResources().getString(R.string.debug_haydn_exp_data_time1),getResources().getString(R.string.debug_haydn_exp_data_main1));
-            m3rdPractice.addData(getResources().getString(R.string.debug_haydn_exp_data_time2),getResources().getString(R.string.debug_haydn_exp_data_main2));
-            m3rdPractice.addData(getResources().getString(R.string.debug_haydn_exp_data_time3),getResources().getString(R.string.debug_haydn_exp_data_main3));
-            m3rdPractice.addData(getResources().getString(R.string.debug_haydn_exp_data_time4),getResources().getString(R.string.debug_haydn_exp_data_main4));
-            m3rdPractice.addData(getResources().getString(R.string.debug_haydn_exp_data_time5),getResources().getString(R.string.debug_haydn_exp_data_main5));
+            m3rdPractice.addData(getResources().getString(R.string.debug_haydn_exp_data_time1), getResources().getString(R.string.debug_haydn_exp_data_main1));
+            m3rdPractice.addData(getResources().getString(R.string.debug_haydn_exp_data_time2), getResources().getString(R.string.debug_haydn_exp_data_main2));
+            m3rdPractice.addData(getResources().getString(R.string.debug_haydn_exp_data_time3), getResources().getString(R.string.debug_haydn_exp_data_main3));
+            m3rdPractice.addData(getResources().getString(R.string.debug_haydn_exp_data_time4), getResources().getString(R.string.debug_haydn_exp_data_main4));
+            m3rdPractice.addData(getResources().getString(R.string.debug_haydn_exp_data_time5), getResources().getString(R.string.debug_haydn_exp_data_main5));
             moonlight3rd.getTemplatePractices().set(0, m3rdPractice);
             ((TeacherDto) owner1).addTemplate(moonlight3rd);
 
@@ -232,11 +232,11 @@ public class LoginActivity extends AppCompatActivity {
             String tMain2 = getResources().getString(R.string.debug_haydn_main);
             String tSub2 = getResources().getString(R.string.debug_haydn_sub);
             GuideDto guide2 = new GuideDto(getResources().getString(R.string.debug_haydn_explain), "time");
-            guide2.addData(getResources().getString(R.string.debug_haydn_exp_data_time1),getResources().getString(R.string.debug_haydn_exp_data_main1));
-            guide2.addData(getResources().getString(R.string.debug_haydn_exp_data_time2),getResources().getString(R.string.debug_haydn_exp_data_main2));
-            guide2.addData(getResources().getString(R.string.debug_haydn_exp_data_time3),getResources().getString(R.string.debug_haydn_exp_data_main3));
-            guide2.addData(getResources().getString(R.string.debug_haydn_exp_data_time4),getResources().getString(R.string.debug_haydn_exp_data_main4));
-            guide2.addData(getResources().getString(R.string.debug_haydn_exp_data_time5),getResources().getString(R.string.debug_haydn_exp_data_main5));
+            guide2.addData(getResources().getString(R.string.debug_haydn_exp_data_time1), getResources().getString(R.string.debug_haydn_exp_data_main1));
+            guide2.addData(getResources().getString(R.string.debug_haydn_exp_data_time2), getResources().getString(R.string.debug_haydn_exp_data_main2));
+            guide2.addData(getResources().getString(R.string.debug_haydn_exp_data_time3), getResources().getString(R.string.debug_haydn_exp_data_main3));
+            guide2.addData(getResources().getString(R.string.debug_haydn_exp_data_time4), getResources().getString(R.string.debug_haydn_exp_data_main4));
+            guide2.addData(getResources().getString(R.string.debug_haydn_exp_data_time5), getResources().getString(R.string.debug_haydn_exp_data_main5));
             TemplateDto surpriseSymphony = new TemplateDto(owner2, musicTitle2, musician2, tMain2, tSub2, guide2);
             ((TeacherDto) owner2).addTemplate(surpriseSymphony);
             
@@ -261,6 +261,116 @@ public class LoginActivity extends AppCompatActivity {
             String tSub4 = getResources().getString(R.string.debug_pachelbel_sub);
             TemplateDto canon = new TemplateDto(owner4, musicTitle4, musician4, tMain4, tSub4, 20);
             ((TeacherDto) owner4).addTemplate(canon);
+            
+            /*
+                Dummy Template5 : Canon_rock
+             */
+            UserDto owner5 = joohyun;
+            String musicTitle5 = getResources().getString(R.string.debug_canon_rock_music);
+            String musician5 = getResources().getString(R.string.debug_canon_rock_name);
+            String tMain5 = getResources().getString(R.string.debug_canon_rock_main);
+            String tSub5 = getResources().getString(R.string.debug_canon_rock_sub);
+            TemplateDto canonRock = new TemplateDto(owner5, musicTitle5, musician5, tMain5, tSub5, 20);
+            ((TeacherDto) owner5).addTemplate(canonRock);
+            
+            /*
+                Dummy Template6 : Taryeong
+             */
+            UserDto owner6 = jeny;
+            String musicTitle6 = getResources().getString(R.string.debug_taryeong_music);
+            String musician6 = getResources().getString(R.string.debug_taryeong_name);
+            String tMain6 = getResources().getString(R.string.debug_taryeong_main);
+            String tSub6 = getResources().getString(R.string.debug_taryeong_sub);
+            TemplateDto folkSong = new TemplateDto(owner6, musicTitle6, musician6, tMain6, tSub6, 20);
+            ((TeacherDto) owner6).addTemplate(folkSong);
+            
+            /*
+                Dummy Template7 : Metallica
+             */
+            UserDto owner7 = joohyun;
+            String musicTitle7 = getResources().getString(R.string.debug_taryeong_music);
+            String musician7 = getResources().getString(R.string.debug_taryeong_name);
+            String tMain7 = getResources().getString(R.string.debug_taryeong_main);
+            String tSub7 = getResources().getString(R.string.debug_taryeong_sub);
+            TemplateDto enterTheSandman = new TemplateDto(owner7, musicTitle7, musician7, tMain7, tSub7, 20);
+            ((TeacherDto) owner7).addTemplate(enterTheSandman);
+            
+             /*
+                Dummy Template8 : YoonSuckJoon
+             */
+            UserDto owner8 = jeny;
+            String musicTitle8 = getResources().getString(R.string.debug_airplane_music);
+            String musician8 = getResources().getString(R.string.debug_airplane_name);
+            String tMain8 = getResources().getString(R.string.debug_airplane_main);
+            String tSub8 = getResources().getString(R.string.debug_airplane_sub);
+            TemplateDto airplain = new TemplateDto(owner8, musicTitle8, musician8, tMain8, tSub8, 20);
+            ((TeacherDto) owner8).addTemplate(airplain);
+            
+             /*
+                Dummy Template9 : Chopin
+             */
+            UserDto owner9 = dahyun;
+            String musicTitle9 = getResources().getString(R.string.debug_fantasia_music);
+            String musician9 = getResources().getString(R.string.debug_fantasia_name);
+            String tMain9 = getResources().getString(R.string.debug_fantasia_main);
+            String tSub9 = getResources().getString(R.string.debug_fantasia_sub);
+            TemplateDto chopin = new TemplateDto(owner9, musicTitle9, musician9, tMain9, tSub9, 20);
+            ((TeacherDto) owner9).addTemplate(chopin);
+            
+             /*
+                Dummy Template10 : Celine dion
+             */
+            UserDto owner10 = dahyun;
+            String musicTitle10 = getResources().getString(R.string.debug_mhwgo_music);
+            String musician10 = getResources().getString(R.string.debug_mhwgo_name);
+            String tMain10 = getResources().getString(R.string.debug_mhwgo_main);
+            String tSub10 = getResources().getString(R.string.debug_mhwgo_sub);
+            TemplateDto celineDion = new TemplateDto(owner10, musicTitle10, musician10, tMain10, tSub10, 20);
+            ((TeacherDto) owner10).addTemplate(celineDion);
+            
+            /*
+                Dummy Template11 : Mozart
+             */
+            UserDto owner11 = dahyun;
+            String musicTitle11 = getResources().getString(R.string.debug_turkie_music);
+            String musician11 = getResources().getString(R.string.debug_turkie_name);
+            String tMain11 = getResources().getString(R.string.debug_turkie_main);
+            String tSub11 = getResources().getString(R.string.debug_turkie_sub);
+            TemplateDto mozart = new TemplateDto(owner11, musicTitle11, musician11, tMain11, tSub11, 21);
+            ((TeacherDto) owner11).addTemplate(mozart);
+            
+             /*
+                Dummy Template12 : Vivaldi
+             */
+            UserDto owner12 = jeny;
+            String musicTitle12 = getResources().getString(R.string.debug_vivaldi_music);
+            String musician12 = getResources().getString(R.string.debug_vivaldi_name);
+            String tMain12 = getResources().getString(R.string.debug_vivaldi_main);
+            String tSub12 = getResources().getString(R.string.debug_vivaldi_sub);
+            TemplateDto vivaldi = new TemplateDto(owner12, musicTitle12, musician12, tMain12, tSub12, 22);
+            ((TeacherDto) owner12).addTemplate(vivaldi);
+            
+             /*
+                Dummy Template13 : RealSanae
+             */
+            UserDto owner13 = joohyun;
+            String musicTitle13 = getResources().getString(R.string.debug_realsanae_music);
+            String musician13 = getResources().getString(R.string.debug_realsanae_name);
+            String tMain13 = getResources().getString(R.string.debug_realsanae_main);
+            String tSub13 = getResources().getString(R.string.debug_realsanae_sub);
+            TemplateDto realSanae = new TemplateDto(owner13, musicTitle13, musician13, tMain13, tSub13, 10);
+            ((TeacherDto) owner13).addTemplate(realSanae);
+            
+             /*
+                Dummy Template14 : Wap
+             */
+            UserDto owner14 = joohyun;
+            String musicTitle14 = getResources().getString(R.string.debug_wapthehack_music);
+            String musician14 = getResources().getString(R.string.debug_wapthehack_name);
+            String tMain14 = getResources().getString(R.string.debug_wapthehack_main);
+            String tSub14 = getResources().getString(R.string.debug_wapthehack_sub);
+            TemplateDto wap = new TemplateDto(owner14, musicTitle14, musician14, tMain14, tSub14, 10);
+            ((TeacherDto) owner14).addTemplate(wap);
 
             /*
                 Dummy Notification1 : not1
@@ -388,6 +498,16 @@ public class LoginActivity extends AppCompatActivity {
             templates.put(surpriseSymphony.getMusicTitle(), surpriseSymphony);
             templates.put(czernyNo95.getMusicTitle(), czernyNo95);
             templates.put(canon.getMusicTitle(), canon);
+            templates.put(canonRock.getMusicTitle(), canonRock);
+            templates.put(folkSong.getMusicTitle(), folkSong);
+            templates.put(enterTheSandman.getMusicTitle(), enterTheSandman);
+            templates.put(airplain.getMusicTitle(), airplain);
+            templates.put(chopin.getMusicTitle(), chopin);
+            templates.put(celineDion.getMusicTitle(), celineDion);
+            templates.put(mozart.getMusicTitle(), mozart);
+            templates.put(vivaldi.getMusicTitle(), vivaldi);
+            templates.put(realSanae.getMusicTitle(), realSanae);
+            templates.put(wap.getMusicTitle(), wap);
 
             /*
                 Insert Notification data

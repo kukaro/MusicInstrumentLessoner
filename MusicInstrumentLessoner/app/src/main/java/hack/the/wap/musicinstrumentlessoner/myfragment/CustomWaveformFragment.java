@@ -34,8 +34,8 @@ public class CustomWaveformFragment extends WaveformFragment {
     @Override
     protected List<Segment> getSegments() {
         return Arrays.asList(
-                new Segment(55.2, 55.8, Color.rgb(238, 23, 104)),
-                new Segment(56.2, 56.6, Color.rgb(238, 23, 104)),
-                new Segment(58.4, 59.9, Color.rgb(184, 92, 184)));
+                new Segment(90.2, 100.8, Color.rgb(238, 23, 104)),
+                new Segment(120.2, 130.6, Color.rgb(238, 23, 104)),
+                new Segment(140.4, 145.9, Color.rgb(238, 23, 104)));
     }
 }
