@@ -1,6 +1,7 @@
 package hack.the.wap.musicinstrumentlessoner.model.dto;
 
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.Random;
 
 import hack.the.wap.musicinstrumentlessoner.debug.DebugMode;
@@ -10,9 +11,11 @@ public class TemplatePracticeDto implements Serializable {
     private int practiceId;
     private int percent;
     private String fileName;
+    private HashMap<String, String> data;
 
     {
         random = new Random();
+        data = new HashMap<>();
     }
 
     public TemplatePracticeDto(int practiceId, String fileName) {
@@ -48,11 +51,26 @@ public class TemplatePracticeDto implements Serializable {
         this.percent = percent;
     }
 
+    public HashMap<String, String> getData() {
+        return data;
+    }
+
+    public void setData(HashMap<String, String> data) {
+        this.data = data;
+    }
+
+
+    public void addData(String unit, String value) {
+        data.put(unit, value);
+    }
+
     @Override
     public String toString() {
         return "TemplatePracticeDto{" +
                 "practiceId=" + practiceId +
+                ", percent=" + percent +
                 ", fileName='" + fileName + '\'' +
+                ", data=" + data +
                 '}';
     }
 }

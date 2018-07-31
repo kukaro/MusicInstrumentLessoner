@@ -142,6 +142,11 @@ public class LoginActivity extends AppCompatActivity {
             TemplateDto moonlight3rd = new TemplateDto(owner1, musicTitle1, musician1, tMain1, tSub1);
             TemplatePracticeDto m3rdPractice = new TemplatePracticeDto(1, getResources().getString(R.string.debug_tempate_detail_moonlight_index0));
             m3rdPractice.setPercent(30);
+            m3rdPractice.addData(getResources().getString(R.string.debug_haydn_exp_data_time1),getResources().getString(R.string.debug_haydn_exp_data_main1));
+            m3rdPractice.addData(getResources().getString(R.string.debug_haydn_exp_data_time2),getResources().getString(R.string.debug_haydn_exp_data_main2));
+            m3rdPractice.addData(getResources().getString(R.string.debug_haydn_exp_data_time3),getResources().getString(R.string.debug_haydn_exp_data_main3));
+            m3rdPractice.addData(getResources().getString(R.string.debug_haydn_exp_data_time4),getResources().getString(R.string.debug_haydn_exp_data_main4));
+            m3rdPractice.addData(getResources().getString(R.string.debug_haydn_exp_data_time5),getResources().getString(R.string.debug_haydn_exp_data_main5));
             moonlight3rd.getTemplatePractices().set(0, m3rdPractice);
             ((TeacherDto) owner1).addTemplate(moonlight3rd);
 

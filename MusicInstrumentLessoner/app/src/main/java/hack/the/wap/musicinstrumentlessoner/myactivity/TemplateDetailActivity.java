@@ -90,8 +90,14 @@ public class TemplateDetailActivity extends AppCompatActivity {
             if (dto.getFileName() != null) {
                 TemplatePositivePracticeLayout atom = new TemplatePositivePracticeLayout(this);
                 atom.setCustomAttr(dto);
-                atom.getIvTemplatePositivePracticeLayListen().setOnClickListener(v->{
+                atom.getIvTemplatePositivePracticeLayListen().setOnClickListener(v -> {
                     Intent posIntent = new Intent(this, PracticeDetailActivity.class);
+                    posIntent.putExtra("data", dto);
+                    posIntent.putExtra("main", mainTemplate);
+                    startActivity(posIntent);
+                });
+                atom.getIvTemplatePositivePracticeLayView().setOnClickListener(v -> {
+                    Intent posIntent = new Intent(this, PracticeListenActivity.class);
                     posIntent.putExtra("data", dto);
                     posIntent.putExtra("main", mainTemplate);
                     startActivity(posIntent);
