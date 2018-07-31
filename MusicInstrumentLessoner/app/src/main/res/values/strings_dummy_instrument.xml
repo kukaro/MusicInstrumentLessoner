@@ -2,6 +2,7 @@
 <resources>
     <string name="flute">플룻</string>
     <string name="recorder">리코더</string>
+    <string name="violin">바이올린</string>
     <string name="danso">단소</string>
     <string name="piano">피아노</string>
     <string name="elec_guitar">일렉기타</string>

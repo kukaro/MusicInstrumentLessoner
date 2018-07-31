@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class UserGroupDto implements Serializable{
+    private boolean mine;
     private String name;
     private String main;
     private String sub;
@@ -12,6 +13,10 @@ public class UserGroupDto implements Serializable{
     private HashMap<String, UserDto> users;
     private HashMap<String, String> instruments;
     private HashMap<String, String> genres;
+
+    {
+        mine = false;
+    }
 
     public UserGroupDto(String name) {
         this.name = name;
