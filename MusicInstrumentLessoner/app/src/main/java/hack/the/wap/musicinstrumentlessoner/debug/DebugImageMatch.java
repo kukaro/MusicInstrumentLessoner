@@ -85,6 +85,12 @@ public class DebugImageMatch extends AppCompatActivity{
                 return R.drawable.music_place_round;
             case "SMMA아카데미":
                 return R.drawable.kanna_round;
+            case "위드피아노 위례센터":
+                return R.drawable.with_place_round;
+            case "PMC 실용음악학원":
+                return R.drawable.pmc_place_round;
+            case "브레인기타학원":
+                return R.drawable.brain_place_round;
             default:
                 return R.drawable.logo_user_round;
         }
