@@ -13,6 +13,7 @@
     <string name="login_act_forgot_password">FORGOT \nPASSWORD?</string>
 
     <!--navigation bar string-->
+    <string name="nav_bar_my_note">my note</string>
     <string name="nav_bar_notification">notification</string>
     <string name="nav_bar_template">template</string>
     <string name="nav_bar_group">group</string>
