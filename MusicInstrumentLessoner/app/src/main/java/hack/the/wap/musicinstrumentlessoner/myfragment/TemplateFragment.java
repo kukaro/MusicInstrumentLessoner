@@ -18,6 +18,7 @@ import hack.the.wap.musicinstrumentlessoner.model.dto.TemplateDto;
 import hack.the.wap.musicinstrumentlessoner.myactivity.AddTemplateActivity;
 import hack.the.wap.musicinstrumentlessoner.myactivity.MainActivity;
 import hack.the.wap.musicinstrumentlessoner.myactivity.TemplateDetailActivity;
+import hack.the.wap.musicinstrumentlessoner.mylayout.MySearchLayout;
 import hack.the.wap.musicinstrumentlessoner.mylayout.TemplateLayout;
 import hack.the.wap.musicinstrumentlessoner.session.Session;
 

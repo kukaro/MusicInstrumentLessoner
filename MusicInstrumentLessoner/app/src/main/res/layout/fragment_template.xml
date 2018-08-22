@@ -8,6 +8,7 @@
     tools:context=".myfragment.TemplateFragment">
 
     <hack.the.wap.musicinstrumentlessoner.mylayout.MySearchLayout
+        android:id="@+id/msFragTemplate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
