@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
+
     tools:context=".myactivity.PracticeDetailActivity">
 
     <LinearLayout
@@ -147,10 +148,32 @@
 
     </LinearLayout>
 
-    <FrameLayout
-        android:id="@+id/flPracticeFragment"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:weightSum="1"
+        android:orientation="vertical">
 
-    </FrameLayout>
+        <FrameLayout
+            android:id="@+id/flPracticeFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.9">
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:background="@color/black"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnPracticeDetailLaySwitch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Button" />
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

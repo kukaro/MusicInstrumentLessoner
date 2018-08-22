@@ -1,49 +1,40 @@
 package hack.the.wap.musicinstrumentlessoner.myfragment;
 
 import android.content.Context;
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import java.util.HashMap;
-
 import hack.the.wap.musicinstrumentlessoner.R;
-import hack.the.wap.musicinstrumentlessoner.model.dto.UserGroupDto;
-import hack.the.wap.musicinstrumentlessoner.myactivity.MainActivity;
-import hack.the.wap.musicinstrumentlessoner.myactivity.UserGroupDetailActivity;
-import hack.the.wap.musicinstrumentlessoner.mylayout.GroupLayout;
+import hack.the.wap.musicinstrumentlessoner.debug.DebugMode;
+import hack.the.wap.musicinstrumentlessoner.mylayout.GuideExplainLayout;
 import hack.the.wap.musicinstrumentlessoner.session.Session;
-
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link GroupFragment.OnFragmentInteractionListener} interface
+ * {@link WrongFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link GroupFragment#newInstance} factory method to
+ * Use the {@link WrongFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class GroupFragment extends Fragment {
+public class WrongFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    private static View groupFragmentView;
-    private static LinearLayout llFragGroup;
+    private View wrongFragmentView;
+    private LinearLayout llFragWrong;
     private static Session session;
-    private static HashMap<String, UserGroupDto> userGroups;
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
 
-    public GroupFragment() {
+    public WrongFragment() {
         session = Session.getInstance();
     }
 
@@ -53,11 +44,11 @@ public class GroupFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment GroupFragment.
+     * @return A new instance of fragment WrongFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static GroupFragment newInstance(String param1, String param2) {
-        GroupFragment fragment = new GroupFragment();
+    public static WrongFragment newInstance(String param1, String param2) {
+        WrongFragment fragment = new WrongFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -77,22 +68,10 @@ public class GroupFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        groupFragmentView = inflater.inflate(R.layout.fragment_group, container, false);
-        llFragGroup = groupFragmentView.findViewById(R.id.llFragGroup);
-        userGroups = session.getUserGroups();
-        for (UserGroupDto dto : userGroups.values()) {
-            if(dto.isMine()){
-                GroupLayout atom = new GroupLayout(getContext());
-                atom.setCustomAttr(dto);
-                atom.setOnClickListener(v -> {
-                    Intent intent = new Intent(MainActivity.getInstance(), UserGroupDetailActivity.class);
-                    intent.putExtra("data", dto);
-                    startActivity(intent);
-                });
-                llFragGroup.addView(atom);
-            }
-        }
-        return groupFragmentView;
+        wrongFragmentView = inflater.inflate(R.layout.fragment_wrong, container, false);
+        llFragWrong = wrongFragmentView.findViewById(R.id.llFragWrong);
+        debugSetView();
+        return wrongFragmentView;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -117,6 +96,17 @@ public class GroupFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    private void debugSetView(){
+        if(DebugMode.DEBUG_MOD){
+            GuideExplainLayout debugGuide1 = new GuideExplainLayout(this.getContext(),"00:03","음이 틀렸습니다. 라->솔");
+            GuideExplainLayout debugGuide2 = new GuideExplainLayout(this.getContext(),"01:30","초킹으로 해야합니다.");
+            GuideExplainLayout debugGuide3 = new GuideExplainLayout(this.getContext(),"02:00","음이 틀렸습니다. 도->시");
+            llFragWrong.addView(debugGuide1);
+            llFragWrong.addView(debugGuide2);
+            llFragWrong.addView(debugGuide3);
+        }
     }
 
     /**
