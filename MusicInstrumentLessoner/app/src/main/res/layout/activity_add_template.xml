@@ -87,62 +87,65 @@
         android:orientation="vertical">
 
         <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@drawable/add_template_item_rounded"
-        android:orientation="horizontal"
-        android:padding="10dp"
-        android:layout_margin="10dp"
-        android:weightSum="1">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginRight="10dp"
-            android:layout_weight="0.1"
-            android:gravity="center"
-            android:orientation="horizontal">
-
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/add_template_item_rounded"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:weightSum="1">
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.1"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/ivAddTemplateActInputTemplate"
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/ivAddTemplateActInputTemplate"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:maxHeight="40dp"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/input_template" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvAddTemplateActInputTemplate"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:adjustViewBounds="true"
-                    android:maxHeight="40dp"
-                    android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/input_template" />
-
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="@string/actAddTemplateInputTemplate"
+                    android:textColor="@color/inputTemplate" />
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/tvAddTemplateActInputTemplate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="left"
-                android:textColor="@color/inputTemplate"
-                android:text="@string/actAddTemplateInputTemplate" />
+            <EditText
+                android:id="@+id/etAddTemplateActInputTemplate"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.9" />
         </LinearLayout>
 
-        <EditText
-            android:id="@+id/etAddTemplateActInputTemplate"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="0.9" />
-    </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_margin="10dp"
             android:background="@drawable/add_template_item_rounded"
             android:orientation="horizontal"
             android:padding="10dp"
-            android:layout_margin="10dp"
             android:weightSum="1">
 
             <LinearLayout
@@ -176,8 +179,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="left"
-                    android:textColor="@color/inputMusician"
-                    android:text="@string/actAddTemplateInputMusician" />
+                    android:text="@string/actAddTemplateInputMusician"
+                    android:textColor="@color/inputMusician" />
             </LinearLayout>
 
             <EditText
@@ -186,13 +189,14 @@
                 android:layout_height="match_parent"
                 android:layout_weight="0.9" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_margin="10dp"
             android:background="@drawable/add_template_item_rounded"
             android:orientation="horizontal"
             android:padding="10dp"
-            android:layout_margin="10dp"
             android:weightSum="1">
 
             <LinearLayout
@@ -226,23 +230,42 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="left"
-                    android:textColor="@color/inputImage"
-                    android:text="@string/actAddTemplateInputImage" />
+                    android:text="@string/actAddTemplateInputImage"
+                    android:textColor="@color/inputImage" />
             </LinearLayout>
 
-            <EditText
-                android:id="@+id/etAddTemplateActInputImage"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="0.9" />
+                android:layout_weight="0.9"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:adjustViewBounds="true"
+                    android:maxHeight="30dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/add" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/actAddTemplateInputFile"
+                    android:textColor="@color/positiveGreen" />
+            </LinearLayout>
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_margin="10dp"
             android:background="@drawable/add_template_item_rounded"
             android:orientation="horizontal"
             android:padding="10dp"
-            android:layout_margin="10dp"
             android:weightSum="1">
 
             <LinearLayout
@@ -276,23 +299,42 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="left"
-                    android:textColor="@color/inputMusic"
-                    android:text="@string/actAddTemplateInputTemplate" />
+                    android:text="@string/actAddTemplateInputMusic"
+                    android:textColor="@color/inputMusic" />
             </LinearLayout>
 
-            <EditText
-                android:id="@+id/etAddTemplateActInputMusic"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="0.9" />
+                android:gravity="center"
+                android:layout_weight="0.9">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:adjustViewBounds="true"
+                    android:maxHeight="30dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/add" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/actAddTemplateInputFile"
+                    android:textColor="@color/positiveGreen" />
+            </LinearLayout>
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_margin="10dp"
             android:background="@drawable/add_template_item_rounded"
             android:orientation="horizontal"
             android:padding="10dp"
-            android:layout_margin="10dp"
             android:weightSum="1">
 
             <LinearLayout
@@ -326,15 +368,40 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="left"
-                    android:textColor="@color/inputScore"
-                    android:text="@string/actAddTemplateInputTemplate" />
+                    android:text="@string/actAddTemplateInputScore"
+                    android:textColor="@color/inputScore" />
             </LinearLayout>
 
-            <EditText
-                android:id="@+id/etAddTemplateActInputScore"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="0.9" />
+                android:gravity="center"
+                android:layout_weight="0.9" >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:adjustViewBounds="true"
+                    android:maxHeight="30dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/add" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/actAddTemplateInputFile"
+                    android:textColor="@color/positiveGreen" />
+            </LinearLayout>
+
         </LinearLayout>
+        <Button
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/actAddTemplateBtn"/>
     </LinearLayout>
 </LinearLayout>
