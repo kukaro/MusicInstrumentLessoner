@@ -194,6 +194,8 @@ public class MainActivity extends AppCompatActivity
             FragmentTransaction fragmentTransaction = fm.beginTransaction();
             fragmentTransaction.replace(R.id.flFragment, myNoteFragment);
             fragmentTransaction.commit();
+            menu.clear();
+            getMenuInflater().inflate(R.menu.my_note_menu, menu);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
