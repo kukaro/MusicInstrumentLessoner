@@ -51,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
         ivLogin = findViewById(R.id.ivLogin);
         ivLogin.setOnClickListener(v -> {
             Request request = new Request.Builder()
-                    .url("http://localhost:4000")
+                    .url("http://172.16.101.199:4000")
                     .get()
                     .build();
             client.newCall(request).enqueue(new Callback() {
